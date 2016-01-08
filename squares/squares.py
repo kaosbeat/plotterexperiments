@@ -85,8 +85,8 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 		# 	g.append(tr)
 
 		if subwaves:
-			p1 = getrandompoint(wav, "sin", 1500)
-			p2 = getrandompoint(wav, "sin", 1500)
+			p1 = getrandompoint(wav, wavtype[idx], 1500)
+			p2 = getrandompoint(wav, wavtype[wavetype.length - 1], 1500)
 			# print p1
 			while randpointer < rez-1:
 				# print randpointer
