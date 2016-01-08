@@ -99,7 +99,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				transforms.perpendicular_noise(l, noise)
 				g.append(l)
 				p1 = p2
-				p2 = getrandompoint(wav, "", 2500)
+				p2 = getrandompoint(wav, wavtype[idx], 2500)
 				l = shapes.line(p1, p2)
 				g.append(l)
 				p1 = p2
