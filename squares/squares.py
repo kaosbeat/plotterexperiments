@@ -102,12 +102,12 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				g.append(l)
 				p1 = p2
 				p2 = getrandompoint(wav, wavtype[idx], wavesize[idx])
-				# l = shapes.line(p1, p2)
-				# g.append(l)
-				# p1 = p2
-				# p2 = getrandompoint(wav, wavtype[idx], wavesize[idx])
-				# l = shapes.line(p1, p2)
-				# g.append(l)
+				l = shapes.line(p1, p2)
+				g.append(l)
+				p1 = p2
+				p2 = getrandompoint(wav, wavtype[idx], wavesize[idx])
+				l = shapes.line(p1, p2)
+				g.append(l)
 			print "done"
 
 
