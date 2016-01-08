@@ -56,9 +56,9 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 			if waveshape[idx] == "cross":
 				atom = shapes.cross(size,np.cos(wav[i])*size)
 			if waveshape[idx] == "rect":
-				atom = shapes.cross(size,np.sin(wav[i])*size)
+				atom = shapes.rectangle(size,np.sin(wav[i])*size)
 			if waveshape[idx] == "circle":
-				atom = shapes.cross(size,signal.sawtooth(wav[i])*size)				
+				atom = shapes.circle(signal.sawtooth(wav[i])*size)				
 			if wavtype[idx] == "sin":
 				transforms.offset(atom, (i*interval, np.sin(wav[i])*wavesize[idx] )) 
 			if wavtype[idx] == "cos":
