@@ -53,19 +53,19 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 		for i in range(0,rez):
 			# print wav1[i]
 			if wavtype[idx] == "sin":
-				if waveshape == "cross"
+				if waveshape == "cross":
 				sq = shapes.cross(size,np.cos(wav[i])*size)
 				transforms.offset(sq, (i*interval, np.sin(wav[i])*wavesize[idx] )) 
 				if waves:
 					g.append(sq)
 			if wavtype[idx] == "cos":
-				if waveshape == "cross"
+				if waveshape == "cross":
 				sq = shapes.cross(size,np.sin(wav[i])*size)
 				transforms.offset(sq, (i*interval, np.cos(wav[i])*wavesize[idx] )) 
 				if waves:
 					g.append(sq)		
 			if wavtype[idx] == "saw":
-				if waveshape == "cross"
+				if waveshape == "cross":
 				sq = shapes.cross(size,signal.sawtooth(wav[i])*size)
 				transforms.offset(sq, (i*interval, signal.sawtooth(wav[i])*wavesize[idx] )) 
 				if waves:
@@ -105,7 +105,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 
 
 
-somewaves(True, True, [wav1, wav2, wav3], ["sin", "sin", "saw"], [2100, 3000, 1500], ["rect", "cross", "circle"])
+somewaves(True, True, [wav1, wav2, wav3], ["sin", "saw", "saw"], [2100, 3000, 1500], ["rect", "cross", "circle"])
 
 io.view(g)
 
