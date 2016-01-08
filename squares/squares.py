@@ -104,8 +104,8 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 					p2 = getrandompoint(wav, wavtype[w], wavesize[w])
 				
 			print "done"
-
 somewaves(False, True, [wav1, wav2, wav2, wav3, wav1], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
+somewaves(False, True, [wav1, wav2, wav2, wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
 
 #somewaves(False, True, [wav1, wav2, wav2, wav1, wav3], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
 # somewaves(True,False,[wav3],["saw"],[3000],["cross"])
