@@ -45,13 +45,13 @@ def getrandompoint(wave, table, Vsize):
 
 
 def somewaves(waves, subwaves, wavtype = [], wavesize = []):
-	for wav in wavtype:
-		print wav, x, wavesize[x]
+	for idx, wav in enumerate(wavtype):
+		print wav, x, wavesize[idx]
 		plotter.select_pen(random,randint(1,3))
 		for i in range(0,rez):
 			# print wav1[i]
 			sq = shapes.cross(size,np.cos(wav[i])*size)
-			transforms.offset(sq, (i*interval, np.sin(wav[i])*1500 )) 
+			transforms.offset(sq, (i*interval, np.sin(wav[i])*wavesize[idx] )) 
 			if waves:
 				g.append(sq)
 
@@ -67,24 +67,24 @@ def somewaves(waves, subwaves, wavtype = [], wavesize = []):
 		# if waves:
 		# 	g.append(tr)
 
-	if subwaves:
-		p1 = getrandompoint(wav1, "sin", 1500)
-		p2 = getrandompoint(wav1, "sin", 1500)
-		print p1
-		while randpointer < rez-1:
-			# print randpointer
-		# for i in range(int(randwavesize)):
+		if subwaves:
+			p1 = getrandompoint(wav1, "sin", 1500)
 			p2 = getrandompoint(wav1, "sin", 1500)
-			l = shapes.line(p1, p2)
-			g.append(l)
-			p1 = p2
-			p2 = getrandompoint(wav2, "cos", 2500)
-			l = shapes.line(p1, p2)
-			g.append(l)
-			p1 = p2
-			p2 = getrandompoint(wav1, "cos", 500)
-			l = shapes.line(p1, p2)
-			g.append(l)
+			print p1
+			while randpointer < rez-1:
+				# print randpointer
+			# for i in range(int(randwavesize)):
+				p2 = getrandompoint(wav1, "sin", 1500)
+				l = shapes.line(p1, p2)
+				g.append(l)
+				p1 = p2
+				p2 = getrandompoint(wav2, "cos", 2500)
+				l = shapes.line(p1, p2)
+				g.append(l)
+				p1 = p2
+				p2 = getrandompoint(wav1, "cos", 500)
+				l = shapes.line(p1, p2)
+				g.append(l)
 
 
 
