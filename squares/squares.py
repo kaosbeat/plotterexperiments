@@ -48,7 +48,7 @@ def getrandompoint(wave, table, Vsize):
 
 def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], waveshape = []):
 	for idx, wav in enumerate(wavperiod):
-		print wav, idx, wavesize[idx]
+		# print wav, idx, wavesize[idx]
 		plotter.select_pen(random.randint(1,3))
 		for i in range(0,rez):
 			# print wav1[i]
