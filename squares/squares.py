@@ -44,7 +44,7 @@ def getrandompoint(wave, table, Vsize):
 		return (randpointer*interval, np.cos(wave[randpointer])*Vsize)
 
 
-def somewaves(waves, wavtype = [], wavesize = [], subwaves):
+def somewaves(waves, subwaves, wavtype = [], wavesize = []):
 	for wav, x in wavtype:
 		print wav, x, wavesize[x]
 		plotter.select_pen(random,randint(1,3))
@@ -88,7 +88,7 @@ def somewaves(waves, wavtype = [], wavesize = [], subwaves):
 
 
 
-somewaves(True, [wav1, wav2, wav1], [100, 300, 500], True)
+somewaves(True, True, [wav1, wav2, wav1], [100, 300, 500])
 
 io.view(g)
 
