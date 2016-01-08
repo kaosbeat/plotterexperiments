@@ -25,6 +25,7 @@ randpointer = 0
 randpointerjump = 5
 wav1 = np.linspace(0,2*np.pi,rez)
 wav2 = np.linspace(0,np.pi,rez)
+wav3 = np.linspace(0,8*np.pi,rez)
 randwavesize = size/10
 g = shapes.group([])
 # help(shapes.cross)
@@ -88,7 +89,7 @@ def somewaves(waves, subwaves, wavtype = [], wavesize = []):
 
 
 
-somewaves(True, True, [wav1, wav2, wav1], [100, 300, 500])
+somewaves(True, True, [wav1, wav2, wav3], [2100, 3000, 1500])
 
 io.view(g)
 
