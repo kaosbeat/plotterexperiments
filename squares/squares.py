@@ -19,7 +19,7 @@ from scipy import signal
 # 	plot the results using a combination shape
 # first wave
 
-rez = 200
+rez = 20
 size = 200
 interval = 50
 randpointer = 0
