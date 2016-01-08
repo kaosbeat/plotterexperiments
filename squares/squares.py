@@ -22,7 +22,7 @@ from scipy import signal
 rez = 200 #keep it below 300 unless you know what you do
 size = 120
 noise = size*1.5
-interval = 50
+interval = 250
 randpointer = 0
 randpointerjump = 20
 randpointerbackrange = 4
