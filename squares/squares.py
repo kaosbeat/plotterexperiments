@@ -39,7 +39,7 @@ def getrandompoint(wave, table, Vsize):
 	randpointer = randpointer + random.randint(0, randpointerjump)
 	if randpointer >= rez:
 		randpointer = rez-1
-	print randpointer
+	# print randpointer
 	if table == "sin":
 		return (randpointer*interval, np.sin(wave[randpointer])*Vsize)
 	if table == "cos":
