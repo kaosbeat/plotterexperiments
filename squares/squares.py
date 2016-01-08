@@ -37,7 +37,7 @@ g = shapes.group([])
 def getrandompoint(wave, table, Vsize):	
 	global randpointer
 	# global randpointerjump
-	randpointer = randpointer + int(randpointerjump/2 - random.randint(0, randpointerjump))
+	randpointer = randpointer + int(randpointerjump/ - random.randint(0, randpointerjump))
 	if randpointer < 0:
 		randpointer = 0
 	if randpointer >= rez:
