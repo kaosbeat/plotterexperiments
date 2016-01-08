@@ -45,12 +45,13 @@ def getrandompoint(wave, table, Vsize):
 		return (randpointer*interval, np.cos(wave[randpointer])*Vsize)
 
 
-def somewaves(waves, subwaves, wavtype = [], wavesize = []):
-	for idx, wav in enumerate(wavtype):
+def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], waveshape = []):
+	for idx, wav in enumerate(wavperiod):
 		print wav, idx, wavesize[idx]
 		plotter.select_pen(random.randint(1,3))
 		for i in range(0,rez):
 			# print wav1[i]
+			if wav
 			sq = shapes.cross(size,np.cos(wav[i])*size)
 			transforms.offset(sq, (i*interval, np.sin(wav[i])*wavesize[idx] )) 
 			if waves:
@@ -69,8 +70,8 @@ def somewaves(waves, subwaves, wavtype = [], wavesize = []):
 		# 	g.append(tr)
 
 		if subwaves:
-			p1 = getrandompoint(wav1, "sin", 1500)
-			p2 = getrandompoint(wav1, "sin", 1500)
+			p1 = getrandompoint(wav, "sin", 1500)
+			p2 = getrandompoint(wav, "sin", 1500)
 			print p1
 			while randpointer < rez-1:
 				# print randpointer
@@ -89,7 +90,7 @@ def somewaves(waves, subwaves, wavtype = [], wavesize = []):
 
 
 
-somewaves(True, True, [wav1, wav2, wav3], [2100, 3000, 1500])
+somewaves(True, True, [wav1, wav2, wav3], ["sin", "sin", "cos"], [2100, 3000, 1500], ["rect", "cross", "circle"])
 
 io.view(g)
 
