@@ -64,7 +64,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 			if wavtype[idx] == "cos":
 				transforms.offset(sq, (i*interval, np.cos(wav[idx])*wavesize[idx] )) 
 			if wavtype[idx] == "saw":
-				transforms.offset(sq, (i*interval, signal.sawtooth(wav[idx])*wavesize[idx] )) 
+				transforms.offset(s, (i*interval, signal.sawtooth(wav[idx])*wavesize[idx] )) 
 			if waves:
 				g.append(atom)
 
