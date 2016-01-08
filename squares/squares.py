@@ -48,6 +48,7 @@ def getrandompoint(wave, table, Vsize):
 
 def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], waveshape = []):
 	for idx, wav in enumerate(wavperiod):
+		print(wavperiod[idx], wavtype[idx], wavesize[idx], waveshape[idx])
 		# print wav, idx, wavesize[idx]
 		plotter.select_pen(random.randint(1,3))
 		for i in range(0,rez):
@@ -70,6 +71,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 					transforms.offset(sq, (i*interval, signal.sawtooth(wav[idx])*wavesize[idx] )) 
 					if waves:
 						g.append(sq)	
+
 
 
 
@@ -105,8 +107,8 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 
 
 
-somewaves(True, True, [wav1, wav2, wav3], ["sin", "saw", "saw"], [2100, 3000, 1500], ["rect", "cross", "circle"])
-
+# somewaves(True, True, [wav1, wav2, wav3], ["sin", "saw", "saw"], [2100, 3000, 1500], ["rect", "cross", "circle"])
+somewaves(True,False,[wav3],[saw],[3000],[cross])
 io.view(g)
 
 
