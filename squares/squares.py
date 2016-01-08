@@ -84,7 +84,7 @@ def somewaves(waves,subwaves):
 
 
 
-somewaves(False, True)
+somewaves(True, True)
 
 io.view(g)
 
