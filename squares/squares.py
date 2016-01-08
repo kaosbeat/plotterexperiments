@@ -19,7 +19,7 @@ from scipy import signal
 # 	plot the results using a combination shape
 # first wave
 
-rez = 200 #keep it below 300 unless you know what you do
+rez = 20 #keep it below 300 unless you know what you do
 size = 120
 noise = size*1.5
 interval = 150
