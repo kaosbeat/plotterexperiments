@@ -20,7 +20,7 @@ from scipy import signal
 # first wave
 
 rez = 20
-size = 200
+size = 20
 interval = 50
 randpointer = 0
 randpointerjump = 5
