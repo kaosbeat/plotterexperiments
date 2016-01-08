@@ -112,8 +112,8 @@ somewaves(False, True, [wav1, wav2, wav2, wav3, wav1], ["cos", "saw", "saw", "si
 
 #somewaves(False, True, [wav1, wav2, wav2, wav1, wav3], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
 # somewaves(True,False,[wav3],["saw"],[3000],["cross"])
-
-io.view(g)
+print g
+# io.view(g)
 
 
 
