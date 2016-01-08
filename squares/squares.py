@@ -60,7 +60,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				atom = shapes.rectangle(size,np.sin(wav[i])*size)
 			if waveshape[idx] == "circle":
 				atom = shapes.circle(signal.sawtooth(wav[i])*size)
-				transforms.perpendicular_noise(atom, 300)
+				transforms.perpendicular_noise(atom, noise)
 			if waveshape[idx] == "spiral":
 				atom = spiral_archimedean(size, num_turns=5, wrapping_constant=1, direction='cw', segments=500)			
 			if wavtype[idx] == "sin":
@@ -93,7 +93,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 			# for i in range(int(randwavesize)):
 				p2 = getrandompoint(wav1, "sin", 1500)
 				l = shapes.line(p1, p2)
-				transforms.perpendicular_noise(l, 200)
+				transforms.perpendicular_noise(l, noise)
 				g.append(l)
 				p1 = p2
 				p2 = getrandompoint(wav2, "cos", 2500)
