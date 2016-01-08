@@ -31,7 +31,7 @@ randwavesize = size/10
 g = shapes.group([])
 # help(shapes.cross)
 # help(random)
-print (signal.sawtooth(np.pi))
+print (signal.sawtooth(wav1, 100))
 
 def getrandompoint(wave, table, Vsize):	
 	global randpointer
