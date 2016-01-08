@@ -60,11 +60,11 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 			if waveshape[idx] == "circle":
 				atom = shapes.cross(size,signal.sawtooth(wav[i])*size)				
 			if wavtype[idx] == "sin":
-				transforms.offset(atom, (i*interval, np.sin(wav[idx])*wavesize[idx] )) 
+				transforms.offset(atom, (i*interval, np.sin(wav[i])*wavesize[idx] )) 
 			if wavtype[idx] == "cos":
-				transforms.offset(atom, (i*interval, np.cos(wav[idx])*wavesize[idx] )) 
+				transforms.offset(atom, (i*interval, np.cos(wav[i])*wavesize[idx] )) 
 			if wavtype[idx] == "saw":
-				transforms.offset(atom, (i*interval, signal.sawtooth(wav[idx])*wavesize[idx] )) 
+				transforms.offset(atom, (i*interval, signal.sawtooth(wav[i])*wavesize[idx] )) 
 			if waves:
 				g.append(atom)
 
