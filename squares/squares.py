@@ -45,12 +45,12 @@ def getrandompoint(wave, table, Vsize):
 
 
 def somewaves(waves,wavtype = [],subwaves):
-	for x in wavtype:
+	for wav in wavtype:
 		plotter.select_pen(random,randint(1,3))
 		for i in range(0,rez):
 			# print wav1[i]
-			sq = shapes.cross(size,np.cos(wav1[i])*size)
-			transforms.offset(sq, (i*interval, np.sin(wav1[i])*1500 )) 
+			sq = shapes.cross(size,np.cos(wav[i])*size)
+			transforms.offset(sq, (i*interval, np.sin(wav[i])*1500 )) 
 			if waves:
 				g.append(sq)
 
