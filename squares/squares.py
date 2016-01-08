@@ -116,7 +116,7 @@ print g.width, g.height
 transforms.scale(g, 0.3)
 print g.width, g.height
 
-# io.view(g)
+io.view(g)
 
 
 
