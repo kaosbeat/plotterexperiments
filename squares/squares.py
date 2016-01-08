@@ -105,7 +105,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 
 
 
-somewaves(False, True, [wav1, wav2, wav3], ["sin", "cos", "cos"], [2100, 3000, 1500], ["sp", "cross", "circle"])
+somewaves(False, True, [wav1, wav2, wav3], ["sin", "cos", "cos"], [2100, 3000, 1500], ["spiral", "cross", "circle"])
 # somewaves(True,False,[wav3],["saw"],[3000],["cross"])
 
 io.view(g)
