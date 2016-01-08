@@ -60,7 +60,8 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 			if waveshape[idx] == "circle":
 				atom = shapes.circle(signal.sawtooth(wav[i])*size)
 				transforms.perpendicular_noise(atom, 300)
-						
+			if waveshape[idx] == "spiral":
+				atom = spiral_archimedean(size, num_turns=5, wrapping_constant=1, direction='cw', segments=500)			
 			if wavtype[idx] == "sin":
 				transforms.offset(atom, (i*interval, np.sin(wav[i])*wavesize[idx] )) 
 			if wavtype[idx] == "cos":
