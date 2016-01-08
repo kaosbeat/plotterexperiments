@@ -64,6 +64,14 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				transforms.offset(sq, (i*interval, np.cos(wav[i])*wavesize[idx] )) 
 				if waves:
 					g.append(sq)		
+			if wavtype[idx] == "saw":
+				if waveshape == "cross"
+				sq = shapes.cross(size,signal.sawtooth(wav[i])*size)
+				transforms.offset(sq, (i*interval, signal.sawtooth(wav[i])*wavesize[idx] )) 
+				if waves:
+					g.append(sq)	
+
+
 
 		# plotter.select_pen(2)
 		# tr = shapes.rectangle(size,np.cos(wav1[i])*size)
@@ -97,7 +105,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 
 
 
-somewaves(True, True, [wav1, wav2, wav3], ["sin", "sin", "cos"], [2100, 3000, 1500], ["rect", "cross", "circle"])
+somewaves(True, True, [wav1, wav2, wav3], ["sin", "sin", "saw"], [2100, 3000, 1500], ["rect", "cross", "circle"])
 
 io.view(g)
 
