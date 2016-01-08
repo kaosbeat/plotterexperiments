@@ -22,7 +22,7 @@ from scipy import signal
 rez = 200 #keep it below 300 unless you know what you do
 size = 120
 noise = size*1.5
-interval = 250
+interval = 150
 randpointer = 0
 randpointerjump = 20
 randpointerbackrange = 4
@@ -110,7 +110,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 
 
 
-somewaves(False, True, [wav1, wav1, wav2], ["sin", "cos", "cos"], [2100, 3000, 1500], ["rect", "cross", "cross"])  
+somewaves(False, True, [wav1, wav1, wav2], ["sin", "cos", "cos"], [5100, 8000, 1500], ["rect", "cross", "cross"])  
 # somewaves(True,False,[wav3],["saw"],[3000],["cross"])
 
 io.view(g)
