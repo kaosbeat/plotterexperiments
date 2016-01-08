@@ -45,23 +45,26 @@ def getrandompoint(wave, table, Vsize):
 
 
 def somewaves(waves,wavtype = [],subwaves):
-	for i in range(0,rez):
-		# print wav1[i]
-		plotter.select_pen(1)
-		sq = shapes.cross(size,np.cos(wav1[i])*size)
-		transforms.offset(sq, (i*interval, np.sin(wav1[i])*1500 )) 
-		if waves:
-			g.append(sq)
-		plotter.select_pen(2)
-		tr = shapes.rectangle(size,np.cos(wav1[i])*size)
-		transforms.offset(tr, (i*interval, np.cos(wav1[i])*3500 )) 
-		if waves:
-			g.append(tr)
-		plotter.select_pen(3)
-		tr = shapes.circle(np.cos(wav2[i])*size)
-		transforms.offset(tr, (i*interval, np.cos(wav1[i])*2500 )) 
-		if waves:
-			g.append(tr)
+	for x in wavtype:
+		for i in range(0,rez):
+			# print wav1[i]
+			plotter.select_pen(1)
+			sq = shapes.cross(size,np.cos(wav1[i])*size)
+			transforms.offset(sq, (i*interval, np.sin(wav1[i])*1500 )) 
+			if waves:
+				g.append(sq)
+
+				
+		# plotter.select_pen(2)
+		# tr = shapes.rectangle(size,np.cos(wav1[i])*size)
+		# transforms.offset(tr, (i*interval, np.cos(wav1[i])*3500 )) 
+		# if waves:
+		# 	g.append(tr)
+		# plotter.select_pen(3)
+		# tr = shapes.circle(np.cos(wav2[i])*size)
+		# transforms.offset(tr, (i*interval, np.cos(wav1[i])*2500 )) 
+		# if waves:
+		# 	g.append(tr)
 
 	if subwaves:
 		p1 = getrandompoint(wav1, "sin", 1500)
