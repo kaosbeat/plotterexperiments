@@ -108,7 +108,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				# p2 = getrandompoint(wav, wavtype[idx], wavesize[idx])
 				# l = shapes.line(p1, p2)
 				# g.append(l)
-
+			print "done"
 
 
 somewaves(False, True, [wav1, wav1, wav2, wav1], ["sin", "cos", "cos", "sin"], [5100, 8000, 1500, 6000], ["rect", "cross", "cross", "cross"])  
