@@ -59,7 +59,8 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				atom = shapes.rectangle(size,np.sin(wav[i])*size)
 			if waveshape[idx] == "circle":
 				atom = shapes.circle(signal.sawtooth(wav[i])*size)
-				transforms.perpendicular_noise(atom, 300)				
+				transforms.perpendicular_noise(atom, 300)
+						
 			if wavtype[idx] == "sin":
 				transforms.offset(atom, (i*interval, np.sin(wav[i])*wavesize[idx] )) 
 			if wavtype[idx] == "cos":
