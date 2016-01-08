@@ -21,6 +21,7 @@ from scipy import signal
 
 rez = 20
 size = 20
+noise = size*1.5
 interval = 50
 randpointer = 0
 randpointerjump = 5
