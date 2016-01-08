@@ -47,7 +47,7 @@ def getrandompoint(wave, table, Vsize):
 def somewaves(waves, subwaves, wavtype = [], wavesize = []):
 	for idx, wav in enumerate(wavtype):
 		print wav, idx, wavesize[idx]
-		plotter.select_pen(random,randint(1,3))
+		plotter.select_pen(random.randint(1,3))
 		for i in range(0,rez):
 			# print wav1[i]
 			sq = shapes.cross(size,np.cos(wav[i])*size)
