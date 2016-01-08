@@ -53,26 +53,20 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 		plotter.select_pen(random.randint(1,3))
 		for i in range(0,rez):
 			# print wav1[i]
+			if waveshape[idx] == "cross":
+				atom = shapes.cross(size,np.cos(wav[i])*size)
+			if waveshape[idx] == "rect":
+				atom = shapes.cross(size,np.sin(wav[i])*size)
+			if waveshape[idx] == "circle":
+				atom = shapes.cross(size,signal.sawtooth(wav[i])*size)				
 			if wavtype[idx] == "sin":
-				if waveshape[idx] == "cross":
-					sq = shapes.cross(size,np.cos(wav[i])*size)
-				transforms.offset(sq, (i*interval, np.sin(wav[idx])*wavesize[idx] )) 
-				if waves:
-					g.append(sq)
+				transforms.offset(atom, (i*interval, np.sin(wav[idx])*wavesize[idx] )) 
 			if wavtype[idx] == "cos":
-				if waveshape[idx] == "cross":
-					sq = shapes.cross(size,np.sin(wav[i])*size)
-					transforms.offset(sq, (i*interval, np.cos(wav[idx])*wavesize[idx] )) 
-					if waves:
-						g.append(sq)		
+				transforms.offset(sq, (i*interval, np.cos(wav[idx])*wavesize[idx] )) 
 			if wavtype[idx] == "saw":
-				if waveshape[idx] == "cross":
-					sq = shapes.cross(size,signal.sawtooth(wav[i])*size)
-					transforms.offset(sq, (i*interval, signal.sawtooth(wav[idx])*wavesize[idx] )) 
-					if waves:
-						g.append(sq)	
-
-
+				transforms.offset(sq, (i*interval, signal.sawtooth(wav[idx])*wavesize[idx] )) 
+			if waves:
+				g.append(atom)
 
 
 		# plotter.select_pen(2)
