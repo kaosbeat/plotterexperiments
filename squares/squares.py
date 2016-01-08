@@ -24,7 +24,7 @@ size = 12
 noise = size*1.5
 interval = 150
 randpointer = 0
-randpointerjump = 
+randpointerjump = 100
 randpointerbackrange = 0.4  #(number between 0-0.5)
 wav1 = np.linspace(0,2*np.pi,rez)
 wav2 = np.linspace(0,np.pi,rez)
@@ -38,7 +38,7 @@ g = shapes.group([])
 def getrandompoint(wave, table, Vsize):	
 	global randpointer
 	# global randpointerjump
-	randpointer = randpointer + int(randpointerjump/randpointerbackrange - random.randint(0, randpointerjump))
+	randpointer = randpointer + int(randpointerjump*randpointerbackrange - random.randint(0, randpointerjump))
 	if randpointer < 0:
 		randpointer = 0
 	if randpointer >= rez:
