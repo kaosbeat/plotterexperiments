@@ -55,19 +55,19 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 			if wavtype[idx] == "sin":
 				if waveshape[idx] == "rect":
 					sq = shapes.cross(size,np.cos(wav[i])*size)
-					transforms.offset(sq, (i*interval, np.sin(wav[i])*wavesize[idx] )) 
+					transforms.offset(sq, (i*interval, np.sin(wav[idx])*wavesize[idx] )) 
 					if waves:
 						g.append(sq)
 			if wavtype[idx] == "cos":
 				if waveshape[idx] == "cross":
 					sq = shapes.cross(size,np.sin(wav[i])*size)
-					transforms.offset(sq, (i*interval, np.cos(wav[i])*wavesize[idx] )) 
+					transforms.offset(sq, (i*interval, np.cos(wav[idx])*wavesize[idx] )) 
 					if waves:
 						g.append(sq)		
 			if wavtype[idx] == "saw":
 				if waveshape[idx] == "cross":
 					sq = shapes.cross(size,signal.sawtooth(wav[i])*size)
-					transforms.offset(sq, (i*interval, signal.sawtooth(wav[i])*wavesize[idx] )) 
+					transforms.offset(sq, (i*interval, signal.sawtooth(wav[idx])*wavesize[idx] )) 
 					if waves:
 						g.append(sq)	
 
