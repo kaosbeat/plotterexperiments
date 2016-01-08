@@ -96,7 +96,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 			while randpointer < rez-1:
 				# print randpointer
 			# for i in range(int(randwavesize)):
-				for w in range(len(wavetype)):
+				for w in range(len(wavtype)):
 					l = shapes.line(p1, p2)
 					# transforms.perpendicular_noise(l, noise)
 					g.append(l)
