@@ -91,11 +91,12 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 
 		if subwaves:
 			p1 = getrandompoint(wav, wavtype[idx], wavesize[idx])
+			p2 = getrandompoint(wav, wavtype[len(wavtype) - 1], wavesize[len(wavtype) -1])
 			# print p1
 			while randpointer < rez-1:
 				# print randpointer
 			# for i in range(int(randwavesize)):
-				p2 = getrandompoint(wav, wavtype[len(wavtype) - 1], wavesize[len(wavtype) -1])
+				
 				l = shapes.line(p1, p2)
 				transforms.perpendicular_noise(l, noise)
 				g.append(l)
