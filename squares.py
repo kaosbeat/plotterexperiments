@@ -35,7 +35,7 @@ def getrandompoint(wave, table, Vsize):
 	global randpointer
 	# global randpointerjump
 	randpointer = randpointer + random.randint(0, randpointerjump)
-	if randpointer > rez:
+	if randpointer >= rez:
 		randpointer = rez-1
 	print randpointer
 	if table == "sin":
