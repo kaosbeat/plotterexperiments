@@ -11,6 +11,7 @@ horizon = (viewport[0] / 2, viewport[1] / 2)
 import math
 import random
 import numpy as np
+from scipy import signal
 
 #additive syths, 
 #	plot a sine wave using a shape (circle)
