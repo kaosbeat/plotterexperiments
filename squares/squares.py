@@ -42,7 +42,8 @@ def getrandompoint(wave, table, Vsize):
 		return (randpointer*interval, np.sin(wave[randpointer])*Vsize)
 	if table == "cos":
 		return (randpointer*interval, np.cos(wave[randpointer])*Vsize)
-	
+
+def setwave()
 
 def somewaves(waves,subwaves):
 	for i in range(0,rez):
