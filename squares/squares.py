@@ -24,7 +24,7 @@ size = 12
 noise = size*1.5
 interval = 150
 randpointer = 0
-randpointerjump = 10
+randpointerjump = 30
 randpointerbackrange = 0.5 #(number between 0.50-0.99)
 wav1 = np.linspace(0,2*np.pi,rez)
 wav2 = np.linspace(0,np.pi,rez)
@@ -105,8 +105,9 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				
 			print "done"
 
+somewaves(False, True, [wav1, wav2, wav2], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
 
-somewaves(False, True, [wav1, wav2, wav2, wav1, wav3], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
+#somewaves(False, True, [wav1, wav2, wav2, wav1, wav3], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
 # somewaves(True,False,[wav3],["saw"],[3000],["cross"])
 
 io.view(g)
