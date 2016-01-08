@@ -54,8 +54,8 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 			if wavtype == "sin":
 				sq = shapes.cross(size,np.cos(wav[i])*size)
 				transforms.offset(sq, (i*interval, np.sin(wav[i])*wavesize[idx] )) 
-			if waves:
-				g.append(sq)
+				if waves:
+					g.append(sq)
 
 
 		# plotter.select_pen(2)
