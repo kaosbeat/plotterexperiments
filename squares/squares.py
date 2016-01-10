@@ -25,9 +25,9 @@ from scipy import signal
 # first wave
 
 rez = 200 #keep it below 300 unless you know what you do
-size = 12
+size = 120
 noise = size*1.5
-interval = 15
+interval = 120
 randpointer = 0
 randpointerjump = 5
 randpointerbackrange = 0.6 #(number between 0.50-0.99)
