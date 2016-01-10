@@ -1,12 +1,12 @@
 from chiplotle import *
-from chiplotle.tools.plottertools import instantiate_virtual_plotter
-plotter =  instantiate_virtual_plotter(type="DXY1300")
-plotter.margins.hard.draw_outline()
+# from chiplotle.tools.plottertools import instantiate_virtual_plotter
+# plotter =  instantiate_virtual_plotter(type="DXY1300")
+# plotter.margins.hard.draw_outline()
 
 b = 0
 
-viewport = (10320,7920)
-horizon = (viewport[0] / 2, viewport[1] / 2)
+# viewport = (10320,7920)
+# horizon = (viewport[0] / 2, viewport[1] / 2)
 
 import math
 import random
