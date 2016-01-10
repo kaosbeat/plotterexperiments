@@ -120,10 +120,10 @@ somewaves(False, True, [wav1, wav2, wav2, wav1, wav3], ["sin", "saw", "cos", "si
 
 print g.width, g.height
 
-if (pltmax[0]/g.width > pltmax[1]/g.height):
-	transforms.scale(g, pltmax[0] / g.width)
+if (pltmax[0]/g.width < pltmax[1]/g.height):
+	transforms.scale(g, pltmax[0]-100 / g.width)
 else:
-	transforms.scale(g, pltmax[1]/g.height)
+	transforms.scale(g, pltmax[1]-100/g.height)
 
 print g.width, g.height
 
