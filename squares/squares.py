@@ -61,7 +61,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 	for idx, wav in enumerate(wavperiod):
 		
 		# print wav, idx, wavesize[idx]
-		plotter.select_pen(random.randint(1,3))
+		# plotter.select_pen(random.randint(1,3))
 		for i in range(0,rez):
 			#print(wav, wavtype[idx], wavesize[idx], waveshape[idx])
 			if waveshape[idx] == "cross":
