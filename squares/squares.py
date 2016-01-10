@@ -118,8 +118,8 @@ print g.width, g.height
 transforms.scale(g, 0.3)
 print g.width, g.height
 
-io.save(g)
-io.view(g)
+io.save_hpgl(g, "test.plt")
+# io.view(g)
 
 
 
