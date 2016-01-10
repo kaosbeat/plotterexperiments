@@ -122,7 +122,7 @@ print g.width, g.height
 
 if (pltmax[0]/g.width > pltmax[1]/g.height):
 	transforms.scale(g, pltmax[0] / g.width)
-else
+else:
 	transforms.scale(g, pltmax[1]/g.height)
 
 print g.width, g.height
