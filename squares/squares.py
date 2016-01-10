@@ -27,9 +27,9 @@ from scipy import signal
 rez = 200 #keep it below 300 unless you know what you do
 size = 120
 noise = size*1.5
-interval = 200
+interval = 120
 randpointer = 30
-randpointerjump = 4
+randpointerjump = 6
 randpointerbackrange = 0.6 #(number between 0.50-0.99)
 wav1 = np.linspace(0,2*np.pi,rez)
 wav2 = np.linspace(0,np.pi,rez)
