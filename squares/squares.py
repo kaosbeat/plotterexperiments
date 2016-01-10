@@ -2,7 +2,7 @@ from chiplotle import *
 # from chiplotle.tools.plottertools import instantiate_virtual_plotter
 # plotter =  instantiate_virtual_plotter(type="DXY1300")
 # plotter.margins.hard.draw_outline()
-plotter = instantiate_plotters(type="DXY1300")[0]
+# plotter = instantiate_plotters( )[0]
 plotter.select_pen(1)
 b = 0
 
