@@ -58,6 +58,7 @@ def getrandompoint(wave, table, Vsize):
 
 
 def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], waveshape = []):
+	global noise
 	for idx, wav in enumerate(wavperiod):
 		
 		# print wav, idx, wavesize[idx]
