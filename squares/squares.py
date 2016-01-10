@@ -3,7 +3,10 @@ from chiplotle.tools.plottertools import instantiate_virtual_plotter
 plotter =  instantiate_virtual_plotter(type="DXY1300")
 # plotter.margins.hard.draw_outline()
 # plotter = instantiate_plotters( )[0]
-coords = plotter.margins.soft.all_coordinates
+# real plotter says
+#    Drawing limits: (left 0; bottom 0; right 16158; top 11040)
+pltmax = [16158, 11040]
+#coords = plotter.margins.soft.all_coordinates
 plotter.select_pen(1)
 b = 0
 
@@ -114,7 +117,10 @@ somewaves(False, True, [wav1, wav2, wav2, wav3, wav1], ["sin", "saw", "cos", "si
 
 #somewaves(False, True, [wav1, wav2, wav2, wav1, wav3], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
 # somewaves(True,False,[wav3],["saw"],[3000],["cross"])
+
 print g.width, g.height
+
+
 transforms.scale(g, 0.3)
 print g.width, g.height
 transforms.offset(g, (g.width, g.height))
