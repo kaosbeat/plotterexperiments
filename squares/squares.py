@@ -123,8 +123,10 @@ print g.width, g.height
 if (pltmax[0]/g.width > pltmax[1]/g.height):
 	transforms.scale(g, pltmax[0] / g.width)
 else
+	transforms.scale(g, pltmax[1]/g.height)
 
 print g.width, g.height
+
 transforms.offset(g, (g.width, g.height))
 
 # io.save_hpgl(g, "test.plt")
