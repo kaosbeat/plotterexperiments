@@ -3,6 +3,7 @@ from chiplotle.tools.plottertools import instantiate_virtual_plotter
 # plotter =  instantiate_virtual_plotter(type="DXY1300")
 # plotter.margins.hard.draw_outline()
 plotter = instantiate_plotters( )[0]
+coords = plotter.margins.soft.all_coordinates
 plotter.select_pen(1)
 b = 0
 
@@ -117,6 +118,7 @@ print g.width, g.height
 transforms.scale(g, 0.3)
 print g.width, g.height
 
+io.save(g)
 io.view(g)
 
 
