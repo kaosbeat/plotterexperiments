@@ -117,7 +117,7 @@ def someinterference(preprism, prismlength, preprismsize, wavs = ["sin", "sin", 
 	for idx,wav in enumerate(wavs):
 		pnts = []		
 		for i in range(rez):
-			pnts.append((i*interval, np.sin(wav1)*1000))
+			pnts.append()
 		p = shapes.path(pnts)
 	g.append(p)	
 	#
