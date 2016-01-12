@@ -111,7 +111,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				
 			print "done"
 
-def someinterference(preprism, prismlength, preprismsize, wavs = ["sin", "sin", "sin"]]):
+def someinterference(preprism, prismlength, preprismsize, wavs = ["sin", "sin", "sin"]):
 	#precalc waveshapes
 	#draw for debug
 	for idx,wav in enumerate(wavs):
