@@ -100,7 +100,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 			p2 = getrandompoint(wav, wavtype[len(wavtype) - 1], wavesize[len(wavtype) -1])
 			# print p1
 			while randpointer < rez-1:
-				 print randpointer
+				print randpointer
 			# for i in range(int(randwavesize)):
 				for w in range(len(wavtype)):
 					l = shapes.line(p1, p2)
