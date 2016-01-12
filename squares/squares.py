@@ -111,13 +111,13 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				
 			print "done"
 
-def someinterference(preprism, prismlength, preprismsize, wavs = ["sin", "sin", "sin"]):
+def someinterference(preprism, prismlength, preprismsize, wavs = [wav1, wav2, wav3]):
 	#precalc waveshapes
 	#draw for debug
 	for idx,wav in enumerate(wavs):
 		pnts = []		
 		for i in range(rez):
-			q = (i*interval, np.sin(wav1[i])*1000)
+			q = (i*interval, np.sin(wav[i])*1000)
 			print(q)
 			pnts.append(q)
 		p = shapes.path(pnts)
