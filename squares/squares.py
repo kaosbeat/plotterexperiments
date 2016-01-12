@@ -115,15 +115,16 @@ def someinterference(preprism, prismlength, preprismsize, wavs = ["sin", "sin", 
 	#precalc waveshapes
 	#draw for debug
 	for idx,wav in enumerate(wavs):
-		p = shapes.path()
+		pnts = []		
 		for i in range(rez):
-			(i*interval, np.sin(wav1)*1000)
-
+			pnts.add(i*interval, np.sin(wav1)*1000)
+		p = shapes.path(pnts)
+	g.append(p)	
 	#
-	for sl = shapes.line
+	#for sl = shapes.line
 
 
-
+someinterference(100,100,100)
 
 
 plotter.select_pen(1)
