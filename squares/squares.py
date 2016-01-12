@@ -111,6 +111,14 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				
 			print "done"
 
+def someinterference(preprism, prismlength, preprismsize, wavs = ["sin", "sin", "sin"]]):
+	#precalc waveshapes
+
+	#
+	for sl = shapes.line
+
+
+
 plotter.select_pen(1)
 noise = 100
 #somewaves(False, True, [wav1, wav2, wav2, wav3, wav1], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
