@@ -154,7 +154,7 @@ print g.width, g.height
 
 transforms.offset(g, (g.width, g.height))
 
-# io.save_hpgl(g, "test.plt")
+io.save_hpgl(g, "test.plt")
 io.view(g)
 
 
