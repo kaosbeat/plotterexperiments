@@ -113,9 +113,13 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 
 def someinterference(preprism, prismlength, preprismsize, wavs = ["sin", "sin", "sin"]]):
 	#precalc waveshapes
-
+	#draw for debug
+	for wav in wavs:
+		wav = (i*interval, np.sin(wav[i])*wavesize[idx] )) 
 	#
 	for sl = shapes.line
+
+
 
 
 
