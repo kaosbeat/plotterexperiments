@@ -115,6 +115,7 @@ def someinterference(preprism, prismlength, preprismsize, wavs = ["sin", "sin", 
 	#precalc waveshapes
 	#draw for debug
 	for idx,wav in enumerate(wavs):
+		p = shapes.path()
 		for i in range(rez):
 			(i*interval, np.sin(wav1)*1000)
 
