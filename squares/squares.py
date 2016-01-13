@@ -143,7 +143,7 @@ print "first pass"
 #print g.width, g.height
 noise = 500
 plotter.select_pen(2)
-somewaves(True, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
+somewaves(F, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
 plotter.select_pen(3)
 somewaves(False, True, [wav1, wav3, wav1, wav2, wav2], ["sin", "sin", "sin", "cos", "saw"], [1000, 1500, 3500, 3000, 5000], ["rect", "cross", "cross", "rect", "cross"])  
 # somewaves(True,False,[wav3],["saw"],[3000],["cross"])
