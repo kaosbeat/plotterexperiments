@@ -97,7 +97,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 		# 	g.append(tr)
 
 		if subwaves:
-			g = shapes.group([])
+			
 			p1 = getrandompoint(wav, wavtype[idx], wavesize[idx])
 			p2 = getrandompoint(wav, wavtype[len(wavtype) - 1], wavesize[len(wavtype) -1])
 			# print p1
