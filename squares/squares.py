@@ -148,7 +148,7 @@ plotter.select_pen(3)
 somewaves(False, True, [wav1, wav3, wav1, wav2, wav2], ["sin", "sin", "sin", "cos", "saw"], [1000, 1500, 3500, 3000, 5000], ["rect", "cross", "cross", "rect", "cross"])  
 # somewaves(True,False,[wav3],["saw"],[3000],["cross"])
 print "second pass"
-print plotter.width, plotter.height
+#print plotter.width, plotter.height
 
 # if (pltmax[0]/g.width < pltmax[1]/g.height):
 # 	transforms.scale(g, (pltmax[0]-100)/g.width)
