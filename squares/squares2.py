@@ -91,7 +91,7 @@ def wavesdown(pen,freq, offset, width, min, max):
 	for f in range(width):
 		#set height
 		p1 = (f*freq + offset , max)
-		p2 = (f*freq , random.randint(min,max))
+		p2 = (f*freq + offset, random.randint(min,max))
 		l = shapes.line(p1, p2)
 		g.append(l)
 	g.append(shapes.line((freq*width,max),(freq*width,0)))
