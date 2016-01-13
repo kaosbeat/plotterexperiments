@@ -59,7 +59,7 @@ def getrandompoint(wave, table, Vsize):
 def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], waveshape = []):
 	global noise
 	global plotter
-	g = shapes.group([])
+	
 	for idx, wav in enumerate(wavperiod):
 		plotter.select_pen(idx)
 		# print wav, idx, wavesize[idx]
