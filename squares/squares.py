@@ -62,7 +62,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 	
 	for idx, wav in enumerate(wavperiod):
 		plotter.select_pen(idx)
-		g = shapes.group([])
+		
 		# print wav, idx, wavesize[idx]
 		# plotter.select_pen(random.randint(1,3))
 		for i in range(0,rez):
