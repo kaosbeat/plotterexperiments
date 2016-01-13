@@ -61,7 +61,6 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 	global noise
 	global plotter
 	global g
-	g = shapes.group([])
 	for idx, wav in enumerate(wavperiod):
 		
 		# print wav, idx, wavesize[idx]
