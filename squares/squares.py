@@ -35,7 +35,6 @@ wav1 = np.linspace(0,2*np.pi,rez)
 wav2 = np.linspace(0,np.pi,rez)
 wav3 = np.linspace(0,8*np.pi,rez)
 randwavesize = size/10
-g = shapes.group([])
 # help(shapes.cross)
 # help(random)
 # print (signal.sawtooth(wav3))
@@ -59,6 +58,8 @@ def getrandompoint(wave, table, Vsize):
 
 def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], waveshape = []):
 	global noise
+	global plotter
+	g = shapes.group([])
 	for idx, wav in enumerate(wavperiod):
 		
 		# print wav, idx, wavesize[idx]
@@ -82,7 +83,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				transforms.offset(atom, (i*interval, signal.sawtooth(wav[i])*wavesize[idx] )) 
 			if waves:
 				g.append(atom)
-
+		plotter.write(g)
 
 		# plotter.select_pen(2)
 		# tr = shapes.rectangle(size,np.cos(wav1[i])*size)
@@ -110,6 +111,10 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 					p2 = getrandompoint(wav, wavtype[w], wavesize[w])
 				
 			print "done"
+			plotter.write(g)
+
+
+
 
 def someinterference(preprism, prismlength, preprismsize, wavs = [wav1, wav2, wav3]):
 	#precalc waveshapes
@@ -133,29 +138,29 @@ def someinterference(preprism, prismlength, preprismsize, wavs = [wav1, wav2, wa
 
 plotter.select_pen(1)
 noise = 100
-#somewaves(False, True, [wav1, wav2, wav2, wav3, wav1], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
+somewaves(False, True, [wav1, wav2, wav2, wav3, wav1], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
 print "first pass"
 #print g.width, g.height
 noise = 500
-#plotter.select_pen(2)
-#somewaves(True, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
-#plotter.select_pen(3)
+plotter.select_pen(2)
+somewaves(True, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
+plotter.select_pen(3)
 somewaves(False, True, [wav1, wav3, wav1, wav2, wav2], ["sin", "sin", "sin", "cos", "saw"], [1000, 1500, 3500, 3000, 5000], ["rect", "cross", "cross", "rect", "cross"])  
 # somewaves(True,False,[wav3],["saw"],[3000],["cross"])
 print "second pass"
-print g.width, g.height
+print plotter.width, plotter.height
 
-if (pltmax[0]/g.width < pltmax[1]/g.height):
-	transforms.scale(g, (pltmax[0]-100)/g.width)
-else:
-	transforms.scale(g, (pltmax[1]-100)/g.height)
+# if (pltmax[0]/g.width < pltmax[1]/g.height):
+# 	transforms.scale(g, (pltmax[0]-100)/g.width)
+# else:
+# 	transforms.scale(g, (pltmax[1]-100)/g.height)
 
-print g.width, g.height
+# print g.width, g.height
 
-transforms.offset(g, (g.width, g.height))
+# transforms.offset(g, (g.width, g.height))
 
-io.save_hpgl(g, "test.plt")
-io.view(g)
+#io.save_hpgl(g, "test.plt")
+io.view(plotter)
 
 
 
