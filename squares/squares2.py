@@ -75,7 +75,6 @@ def somewaves(pen,waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], 
 				g.append(l)
 				p1 = p2
 				p2 = getrandompoint(wav, wavtype[w], wavesize[w])
-
 	
 io.view(g)
 
