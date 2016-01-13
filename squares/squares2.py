@@ -80,25 +80,23 @@ def somewaves(pen,waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], 
 
 #somewaves(2,False, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
 
-def wavesdown(pen,freq, offset, min, max):
+def wavesdown(pen,freq, offset, width, min, max):
 	global plotter
 	global g
 	plotter.select_pen(pen)
-	print offset
-	offset = random.randint(100, offset)
-	print offset
+	offset = random.randint(0, width)
 	height = random.randint(min, max)
-	for f in range(freq):
+	for f in range(width):
 		#set height
-		p1 = (f*20 + offset, height)
-		p2 = (f*20 + offset, random.randint(0, max-height))
+		p1 = (f*20 , height)
+		p2 = (f*20 , random.randint(0, max-height))
 		l = shapes.line(p1, p2)
 		g.append(l)
 	plotter.write(g)
-	
 
 
-wavesdown(2,230,2000,203,1000)
+
+wavesdown(2,230,0,50,203,1000)
 
 
 
