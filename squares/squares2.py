@@ -92,10 +92,12 @@ def wavesdown(pen,freq, offset, min, max):
 		#set height
 		p1 = (f + offset, height)
 		p2 = (f + offset, math.randint(0, max-height))
-		
+		l = shapes.line(p1, p2)
+		g.append(l)
+	plotter.write(g)
 
 
-
+wavesdown(2,30,20,23,300)
 
 
 
