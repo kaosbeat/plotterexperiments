@@ -99,7 +99,7 @@ def wavesdown(pen,freq, offset, width, min, max):
 
 
 
-wavesdown(2,30,0,50,303,1000)
+wavesdown(2,10,0,50,303,1000)
 
 
 
