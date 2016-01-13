@@ -112,7 +112,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 					p1 = p2
 					p2 = getrandompoint(wav, wavtype[w], wavesize[w])
 				
-			print( "done" + g)
+			print( g)
 			plotter.write(g)
 
 
