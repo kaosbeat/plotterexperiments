@@ -85,7 +85,7 @@ def wavesdown(pen,freq, offset, min, max):
 	global g
 	plotter.select_pen(pen)
 	print offset
-	offset = random.randint(10, offset)
+	offset = random.randint(100, offset)
 	print offset
 	height = random.randint(min, max)
 	for f in range(freq):
@@ -97,7 +97,7 @@ def wavesdown(pen,freq, offset, min, max):
 	plotter.write(g)
 
 
-wavesdown(2,30,20,23,300)
+wavesdown(2,300,200,203,3000)
 
 
 
