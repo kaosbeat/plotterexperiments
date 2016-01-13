@@ -80,12 +80,13 @@ def somewaves(pen,waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], 
 
 #somewaves(2,False, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
 
-def wavesdown(pen,freq):
+def wavesdown(pen,freq, min, max):
 	global plotter
 	global g
 	plotter.select_pen(pen)
 	for f in range(freq)
-		#
+		#set height
+		
 
 
 
