@@ -83,16 +83,18 @@ def somewaves(pen,waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], 
 def wavesdown(pen,freq, offset, width, min, max):
 	global plotter
 	global g
+	g = shapes.group([])
 	plotter.select_pen(pen)
 	offset = random.randint(0, width)
 	height = random.randint(min, max)
-	
+	g.append(shapes.line((0,height),(0,0)))
 	for f in range(width):
 		#set height
 		p1 = (f*20 , height)
 		p2 = (f*20 , random.randint(0, max-height))
 		l = shapes.line(p1, p2)
 		g.append(l)
+	g.append(shapes.line((freq*width,height),(freq*width,0)))
 	plotter.write(g)
 
 
