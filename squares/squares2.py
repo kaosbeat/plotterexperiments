@@ -98,7 +98,7 @@ def wavesdown(pen,freq, offset, width, min, max):
 	plotter.write(g)
 
 
-for i in range(2):
+for i in range(5):
 	width = 50
 	freq=10
 	wavesdown(i,freq,i*width,width,random.randint(500,1903),random.randint(2300,3000))
