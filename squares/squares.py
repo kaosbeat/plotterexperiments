@@ -120,6 +120,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 def someinterference(preprism, prismlength, preprismsize, wavs = [wav1, wav2, wav3]):
 	#precalc waveshapes
 	#draw for debug
+	g = shapes.group([])
 	for idx,wav in enumerate(wavs):
 		pnts = []		
 		for i in range(rez):
