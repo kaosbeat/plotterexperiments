@@ -92,6 +92,7 @@ def wavesdown(pen,freq, offset, min, max):
 		#set height
 		p1 = (f + offset, height)
 		p2 = (f + offset, math.randint(0, max-height))
+		
 
 
 
