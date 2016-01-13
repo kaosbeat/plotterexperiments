@@ -35,6 +35,7 @@ wav1 = np.linspace(0,2*np.pi,rez)
 wav2 = np.linspace(0,np.pi,rez)
 wav3 = np.linspace(0,8*np.pi,rez)
 randwavesize = size/10
+
 # help(shapes.cross)
 # help(random)
 # print (signal.sawtooth(wav3))
