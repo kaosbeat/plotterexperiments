@@ -76,6 +76,7 @@ def somewaves(pen,waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], 
 				p1 = p2
 				p2 = getrandompoint(wav, wavtype[w], wavesize[w])
 
+somewaves(2,False, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
 	
 io.view(g)
 
