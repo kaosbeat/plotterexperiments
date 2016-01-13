@@ -149,7 +149,7 @@ somewaves(False, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500,
 plotter.write(g)
 plotter.select_pen(3)
 somewaves(False, True, [wav1, wav3, wav1, wav2, wav2], ["sin", "sin", "sin", "cos", "saw"], [1000, 1500, 3500, 3000, 5000], ["rect", "cross", "cross", "rect", "cross"])  
-somewaves(False,True,[wav3,wav2],["sin","saw"],[1000,3000],["cross","cross"])
+# somewaves(False,True,[wav3,wav2],["sin","saw"],[1000,3000],["cross","cross"])
 plotter.write(g)
 
 print "second pass"
