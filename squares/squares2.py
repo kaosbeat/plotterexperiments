@@ -100,7 +100,7 @@ def wavesdown(pen,freq, offset, width, min, max):
 
 for i in range(5):
 	width = 50
-	freq=10
+	freq=20
 	wavesdown(i,freq,i*width,width,random.randint(500,1903),random.randint(2300,3000))
 
 
