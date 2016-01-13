@@ -81,5 +81,6 @@ def somewaves(pen,waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], 
 somewaves(2,False, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
 
 
+
 io.view(plotter)
 
