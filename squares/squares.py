@@ -62,7 +62,7 @@ def somewaves(pen,waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], 
 	global noise
 	global plotter
 	global g
-	
+	plotter.select_pen(pen)
 	for idx, wav in enumerate(wavperiod):
 		
 		# print wav, idx, wavesize[idx]
