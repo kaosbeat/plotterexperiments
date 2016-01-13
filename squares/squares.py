@@ -59,10 +59,9 @@ def getrandompoint(wave, table, Vsize):
 def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], waveshape = []):
 	global noise
 	global plotter
-	
+	g = shapes.group([])
 	for idx, wav in enumerate(wavperiod):
 		plotter.select_pen(idx)
-		g = shapes.group([])
 		# print wav, idx, wavesize[idx]
 		# plotter.select_pen(random.randint(1,3))
 		for i in range(0,rez):
@@ -84,7 +83,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 				transforms.offset(atom, (i*interval, signal.sawtooth(wav[i])*wavesize[idx] )) 
 			if waves:
 				g.append(atom)
-		plotter.write(g)
+		#plotter.write(g)
 
 		# plotter.select_pen(2)
 		# tr = shapes.rectangle(size,np.cos(wav1[i])*size)
@@ -113,7 +112,7 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 					p2 = getrandompoint(wav, wavtype[w], wavesize[w])
 				
 			
-			plotter.write(g)
+	plotter.write(g)
 
 
 
@@ -132,9 +131,7 @@ def someinterference(preprism, prismlength, preprismsize, wavs = [wav1, wav2, wa
 		print("next")
 		g.append(p)
 	plotter.write(g)
-	
-	#
-	#for sl = shapes.line
+
 
 
 #someinterference(100,100,100)
@@ -147,9 +144,9 @@ print "first pass"
 #print g.width, g.height
 noise = 500
 # plotter.select_pen(2)
-somewaves(True, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
+#somewaves(True, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
 # plotter.select_pen(3)
-somewaves(False, True, [wav1, wav3, wav1, wav2, wav2], ["sin", "sin", "sin", "cos", "saw"], [1000, 1500, 3500, 3000, 5000], ["rect", "cross", "cross", "rect", "cross"])  
+#somewaves(False, True, [wav1, wav3, wav1, wav2, wav2], ["sin", "sin", "sin", "cos", "saw"], [1000, 1500, 3500, 3000, 5000], ["rect", "cross", "cross", "rect", "cross"])  
 # somewaves(True,False,[wav3],["saw"],[3000],["cross"])
 print "second pass"
 #print plotter.width, plotter.height
