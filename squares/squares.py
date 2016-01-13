@@ -143,7 +143,7 @@ noise = 100
 print "first pass"
 # print g.width, g.height
 noise = 500
-plotter.select_pen(2)
+#plotter.select_pen(2)
 somewaves(2,False, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
 plotter.write(g)
 
