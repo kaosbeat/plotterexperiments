@@ -86,6 +86,7 @@ def wavesdown(pen,freq, offset, width, min, max):
 	plotter.select_pen(pen)
 	offset = random.randint(0, width)
 	height = random.randint(min, max)
+	
 	for f in range(width):
 		#set height
 		p1 = (f*20 , height)
