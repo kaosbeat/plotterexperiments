@@ -57,10 +57,12 @@ def getrandompoint(wave, table, Vsize):
 		return (randpointer*interval, signal.sawtooth(wave[randpointer])*Vsize)
 
 
-def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], waveshape = []):
+def somewaves(pen,waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], waveshape = []):
+
 	global noise
 	global plotter
 	global g
+	
 	for idx, wav in enumerate(wavperiod):
 		
 		# print wav, idx, wavesize[idx]
@@ -98,7 +100,6 @@ def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], wave
 		# 	g.append(tr)
 
 		if subwaves:
-			# g = shapes.group([])
 			p1 = getrandompoint(wav, wavtype[idx], wavesize[idx])
 			p2 = getrandompoint(wav, wavtype[len(wavtype) - 1], wavesize[len(wavtype) -1])
 			# print p1
@@ -138,16 +139,16 @@ def someinterference(preprism, prismlength, preprismsize, wavs = [wav1, wav2, wa
 
 
 noise = 100
-somewaves(False, True, [wav1, wav2, wav2, wav3, wav1], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
+somewaves(1,False, True, [wav1, wav2, wav2, wav3, wav1], ["sin", "saw", "cos", "sin", "cos"], [5100, 1000, 6500, 4000, 1000], ["rect", "cross", "cross", "rect", "cross"])  
 plotter.write(g)
 print "first pass"
 print g.width, g.height
 noise = 500
 plotter.select_pen(2)
-somewaves(False, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
+somewaves(2,False, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
 plotter.write(g)
-plotter.select_pen(3)
-somewaves(False, True, [wav1, wav3, wav1, wav2, wav2], ["sin", "sin", "sin", "cos", "saw"], [1000, 1500, 3500, 3000, 5000], ["rect", "cross", "cross", "rect", "cross"])  
+
+somewaves(3,False, True, [wav1, wav3, wav1, wav2, wav2], ["sin", "sin", "sin", "cos", "saw"], [1000, 1500, 3500, 3000, 5000], ["rect", "cross", "cross", "rect", "cross"])  
 # somewaves(False,True,[wav3,wav2],["sin","saw"],[1000,3000],["cross","cross"])
 plotter.write(g)
 
