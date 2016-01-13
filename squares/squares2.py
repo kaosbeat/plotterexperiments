@@ -97,7 +97,7 @@ def wavesdown(pen,freq, offset, min, max):
 	plotter.write(g)
 
 
-wavesdown(2,230,2000,203,3000)
+wavesdown(2,230,2000,203,1000)
 
 
 
