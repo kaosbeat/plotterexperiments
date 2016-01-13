@@ -130,7 +130,7 @@ def someinterference(preprism, prismlength, preprismsize, wavs = [wav1, wav2, wa
 			pnts.append(q)
 		p = shapes.path(pnts)
 		print("next")
-		g.append(p)	
+		g.append(p)
 	plotter.write(g)
 	
 	#
