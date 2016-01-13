@@ -86,12 +86,12 @@ def wavesdown(pen,freq, offset, width, min, max):
 	g = shapes.group([])
 	plotter.select_pen(pen)
 	offset = random.randint(0, width)
-	maxheight = random.randint(min, max)
+	# maxheight = random.randint(min, max)
 	g.append(shapes.line((0,max),(0,0)))
 	for f in range(width):
 		#set height
 		p1 = (f*freq , max)
-		p2 = (f*freq , random.randint(min,maxheight))
+		p2 = (f*freq , random.randint(min,max))
 		l = shapes.line(p1, p2)
 		g.append(l)
 	g.append(shapes.line((freq*width,max),(freq*width,0)))
