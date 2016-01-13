@@ -7,7 +7,7 @@ plotter =  instantiate_virtual_plotter(type="DXY1300")
 #    Drawing limits: (left 0; bottom 0; right 16158; top 11040)
 pltmax = [16158, 11040]
 #coords = plotter.margins.soft.all_coordinates
-plotter.select_pen(1)
+# plotter.select_pen(1)
 b = 0
 
 # viewport = (10320,7920)
