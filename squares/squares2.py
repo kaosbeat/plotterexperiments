@@ -63,4 +63,16 @@ def somewaves(pen,waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], 
 	global g
 	plotter.select_pen(pen)
 	for idx, wav in enumerate(wavperiod):
-		
+		p1 = getrandompoint(wav, wavtype[idx], wavesize[idx])
+		p2 = getrandompoint(wav, wavtype[len(wavtype) - 1], wavesize[len(wavtype) -1])
+		# print p1
+		while randpointer < rez-1:
+			print randpointer
+		# for i in range(int(randwavesize)):
+			for w in range(len(wavtype)):
+				l = shapes.line(p1, p2)
+				transforms.noise(l, noise)
+				g.append(l)
+				p1 = p2
+				p2 = getrandompoint(wav, wavtype[w], wavesize[w])
+
