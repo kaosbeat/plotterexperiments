@@ -35,7 +35,6 @@ wav1 = np.linspace(0,2*np.pi,rez)
 wav2 = np.linspace(0,np.pi,rez)
 wav3 = np.linspace(0,8*np.pi,rez)
 randwavesize = size/10
-g = shapes.group([])
 # help(shapes.cross)
 # help(random)
 # print (signal.sawtooth(wav3))
@@ -60,7 +59,7 @@ def getrandompoint(wave, table, Vsize):
 def somewaves(waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], waveshape = []):
 	global noise
 	global plotter
-	
+	g = shapes.group([])
 	for idx, wav in enumerate(wavperiod):
 		plotter.select_pen(idx)
 		# print wav, idx, wavesize[idx]
