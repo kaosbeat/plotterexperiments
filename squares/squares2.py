@@ -95,6 +95,7 @@ def wavesdown(pen,freq, offset, min, max):
 		l = shapes.line(p1, p2)
 		g.append(l)
 	plotter.write(g)
+	
 
 
 wavesdown(2,230,2000,203,1000)
