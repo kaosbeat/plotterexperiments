@@ -85,7 +85,7 @@ def wavesdown(pen,freq):
 	global g
 	plotter.select_pen(pen)
 	for f in range(freq)
-		
+		#
 
 
 
