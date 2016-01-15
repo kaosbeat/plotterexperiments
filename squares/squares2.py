@@ -2,7 +2,7 @@ from chiplotle import *
 from chiplotle.tools.plottertools import instantiate_virtual_plotter
 plotter =  instantiate_virtual_plotter(type="DXY1300")
 # plotter.margins.hard.draw_outline()
-# plotter = instantiate_plotters( )[0]
+#plotter = instantiate_plotters( )[0]
 # real plotter says
 #    Drawing limits: (left 0; bottom 0; right 16158; top 11040)
 pltmax = [16158, 11040]
@@ -80,30 +80,87 @@ def somewaves(pen,waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], 
 
 #somewaves(2,False, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
 
-def wavesdown(pen,freq, offset, width, min, max):
+def wavesdown(pen, freq, offset, width, min, max):
 	global plotter
 	global g
+	density = freq
+	quantity = width
 	g = shapes.group([])
-	plotter.select_pen(pen)
-	offset = random.randint(0, width)
+	plotter.select_pen((pen%2)+1)
+	#offset = random.randint(0, width)
+	offset = density*quantity/5*3*(pen+1) + (pen%2*density/2)
 	# maxheight = random.randint(min, max)
+	#max = random.randint(min + 100,3000)
 	g.append(shapes.line((0+offset,max),(0+offset,0)))
+	
+	#baseblock
 	for f in range(width):
 		#set height
 		p1 = (f*freq + offset , max)
-		p2 = (f*freq + offset, random.randint(min,max))
+		p2 = (f*freq + offset, random.randint(int(min),int(max)))
 		l = shapes.line(p1, p2)
 		g.append(l)
+		#random toppings
+		if (random.randint(0,2) == 1):
+			p1 = (f*freq + offset , max)
+			p2 = (width/2*freq +1000 + offset, max + 500)
+			l = shapes.line(p1, p2)
+			g.append(l)
+		#take it up
+		p1 = (width/2*freq +1000 + offset, max + 500)
+		p2 = (width/2*freq +1000 + offset, max +2000)
+		l = shapes.line(p1, p2)
+		g.append(l)
+
+
 	g.append(shapes.line((freq*width,max),(freq*width,0)))
+	#goffset = density*quantity/5*3*(pen+1) + (pen%2*density/2)
+	#transforms.offset(g, (goffset, 0))
 	plotter.write(g)
 
+def simplelines(pen, freq, height, density, densityscale):
+	global plotter
+	global g
+	g = shapes.group([])
+	plotter.select_pen(pen+1)
+	for f in range(freq):
+		l = shapes.line((f*density,0),(f*(pen+1)*density/densityscale,height))
+		g.append(l)
+	#fitpage(g)
+	plotter.write(g)
 
-for i in range(5):
-	width = 50
-	freq=20
-	wavesdown(i,freq,i*width,width,random.randint(500,1903),random.randint(2300,3000))
+def simplelines2(pen, density, quantity, height):
+	global plotter
+	global g
+	g = shapes.group([])
+	plotter.select_pen(pen+1)
+	for f in range(quantity):
+		l = shapes.line(((2%(pen+1)*density/4)+quantity+f*density,0) , ((2%(pen+1)*density/4)+quantity+f*density,1000))
+		#l = shapes.line((f*density,0),(f*density,height))
+		g.append(l)
+	#fitpage(g)
+	goffset = density*quantity/2*(pen+1) + (pen%2*density/2)
+	transforms.offset(g, (goffset, 0))
+	plotter.write(g)
 
+def fitpage(shape):		
+	if (pltmax[0]/g.width < pltmax[1]/g.height):
+		transforms.scale(shape, (pltmax[0]-100)/shape.width)
+	else:
+		transforms.scale(shape, (pltmax[1]-100)/shape.height)
+	# print g.width, g.height
+	transforms.offset(shape, (shape.width, shape.height))
 
+size = 30
+for i in range(size):
+	# width = random.randint(20,30)
+	width = 30
+	freq= 25
+	# print np.sin((wav3[int(rez/size*i)]))
+	#wavesdown(i,freq,i*width*freq,width,random.randint(500,1903),3000)
+	wavesdown(i+1,freq,i*width*freq,width,random.randint(0,int((np.sin((wav1[int(rez/size*i)])) +1 )*500)),(np.sin((wav1[int(rez/size*i)]))+1)*2000)
+	#simplelines(i, 200, 8000, 50, 5)
+	#simplelines2(i, 20, 10, 1000)
 
 io.view(plotter)
 
