@@ -24,7 +24,7 @@ from scipy import signal
 # 	plot the results using a combination shape
 # first wave
 
-rez = 200 #keep it below 300 unless you know what you do
+rez = 100 #keep it below 300 unless you know what you do
 size = 120
 noise = size*1.5
 interval = 120
@@ -108,15 +108,55 @@ def wavesdown(pen, freq, offset, width, min, max):
 			g.append(l)
 		#take it up
 		p1 = (width/2*freq +1000 + offset, max + 500)
-		p2 = (width/2*freq +1000 + offset, max +2000)
+		p2 = (width/2*freq +1000 + offset, max + 2000)
 		l = shapes.line(p1, p2)
 		g.append(l)
+		#to the other shape
+
+
+
 
 
 	g.append(shapes.line((freq*width,max),(freq*width,0)))
 	#goffset = density*quantity/5*3*(pen+1) + (pen%2*density/2)
 	#transforms.offset(g, (goffset, 0))
 	plotter.write(g)
+
+def wavedecay(wav, rez, height, scale):
+	global plotter
+	global g
+	plotter.select_pen(1)
+	g = shapes.group([])
+	for r in range(rez):
+		#print np.log(r)
+		g.append(shapes.line((np.log(r+1)*scale, -height), (np.log(r+1)*scale,height)))
+		#print((np.log(r+1)*scale, -height), (np.log(r+1)*scale, height))
+		#g.append(shapes.line((0,0),(1000,1000)))
+	# io.view(g)
+	for r in range(rez):
+		#print(int(np.log(r+1)/np.log(rez)*rez))
+		i1 = int(np.log(r+1)/np.log(rez)*rez)-1 
+		i2 = int(np.log(r+2)/np.log(rez)*rez)-1
+		x1 = np.log(r+1)*scale
+		x2 = np.log(r+2)*scale
+		y1 = (np.sin(wav1[i1])*np.sin(wav3[i1]))*height #*signal.sawtooth(wav2[i1])
+		y2 = (np.sin(wav1[i2])*np.sin(wav3[i2]))*height #*signal.sawtooth(wav2[i2])
+		g.append(shapes.line((x1, y1), (x2, y2)))
+		#plot wav1
+	for r in range(rez):
+		i1 = int(np.log(r+1)/np.log(rez)*rez)-1 
+		i2 = int(np.log(r+2)/np.log(rez)*rez)-1
+		x1 = np.log(r+1)*scale
+		x2 = np.log(r+2)*scale
+		y1 = np.sin(wav1[i1])*height
+		y2 = np.sin(wav1[i2])*height
+		g.append(shapes.line((x1, y1), (x2, y2)))
+
+
+	plotter.write(g)
+
+
+
 
 def simplelines(pen, freq, height, density, densityscale):
 	global plotter
@@ -151,6 +191,218 @@ def fitpage(shape):
 	# print g.width, g.height
 	transforms.offset(shape, (shape.width, shape.height))
 
+
+shaperez = 20
+layerarticulation = 4
+def shapelayerrect(layer, pen, x, y, width, height):
+	plotter.select_pen(pen)
+	global plotter
+	global g
+	g = shapes.group([])	
+	for i in range(int(width/shaperez)):
+		x1 = x + i*shaperez + layer*layerarticulation
+		x2 = x1 
+		y1 = y
+		y2 = y + height
+		g.append(shapes.line((x1,y1),(x2,y2))) 
+	plotter.write(g)
+
+
+def length(v):
+  return math.sqrt(np.dot(v, v))
+
+def angle(v1, v2):
+  return math.acos(np.dot(v1, v2) / (length(v1) * length(v2)))
+def unit_vector(vector):
+    """ Returns the unit vector of the vector.  """
+    return vector / np.linalg.norm(vector)
+
+def angle_between(v1, v2):
+    """ Returns the angle in radians between vectors 'v1' and 'v2'::
+
+            angle_between((1, 0, 0), (0, 1, 0))
+            1.5707963267948966
+            angle_between((1, 0, 0), (1, 0, 0))
+            0.0
+            angle_between((1, 0, 0), (-1, 0, 0))
+            3.141592653589793
+    """
+    v1_u = unit_vector(v1)
+    v2_u = unit_vector(v2)
+    angle = np.arccos(np.dot(v1_u, v2_u))
+    if np.isnan(angle):
+        if (v1_u == v2_u).all():
+            return 0.0
+        else:
+            return np.pi
+    return angle
+
+
+
+#(0,0) ,(100,100), (200,0) (0,0), (50,50,) (200,0)
+def polygonlayer(layer, pen, x, y, toppoints = [], bottompoints = []):
+	#toppoints/bottompoints must have same start/end
+	plotter.select_pen(pen)
+	global plotter
+	global g
+	g = shapes.group([])
+	#calculatetoprowheights
+	# for point in toppoints:
+		#calculate angle to next stop
+		# if point < len(toppoints):
+	# print(ange((1,1),(10,10)))
+
+def dotproduct(a,b):
+	return sum([a[i]*b[i] for i in range(len(a))])
+
+from math import acos
+
+#Calculates the size of a vector
+def veclength(a):
+	return sum([a[i] for i in range(len(a))])**.5
+
+#Calculates the angle between two vector
+def ange(a,b):
+	dp=dotproduct(a,b)
+	la=veclength(a)
+	lb=veclength(b)
+	costheta=dp/(la*lb)
+	print(costheta)
+	return np.arccos(costheta)
+
+x = np.array([2,2])
+y = np.array([2,3])
+np.dot(x,y)
+dot = np.dot(x,y)
+x_modulus = np.sqrt((x*x).sum())
+y_modulus = np.sqrt((y*y).sum())
+cos_angle = dot / x_modulus / y_modulus # cosine of angle between x and y
+angle = np.arccos(cos_angle)
+# angle * 360 / 2 / np.pi # angle in degrees
+print math.degrees(angle)
+
+polygonlayer(1,1,1,1)
+#print(np.dot((2,3,4) , (2,1,1)))
+#print(length((100,100)))
+
+def roundup(x,ceiling):
+    return int(math.ceil(x / ceiling)) * ceiling
+
+def rounddown(x,flooring):
+    return int(math.floor(x / flooring)) * flooring
+
+
+def getspace(p1,p2,interval):
+	bottomX = roundup(p1[0], interval)
+	topX = roundup(p2[0], interval)
+	# bottomY = roundup(p1[1])
+	# topY = roundup(p2[1], interval)
+	ydiff = topX - bottomX
+	spaceX = np.linspace(bottomX+interval ,topX , abs(ydiff)/interval  )
+	spaceY = np.linspace(p1[1] ,p2[1], len(spaceX))
+	#print "spaceX=" ,spaceX
+	#print "spaceY=" ,spaceY
+	space = []
+	for v in range(len(spaceX)):
+		space.append((spaceX[v],spaceY[v]))
+	return space
+
+def constructshape(spacearraytop, spacearraybottom, layer):
+	# top = [spacearraytop[0][0]]
+	layeroffset = interspace/layermax*layer
+	top =[]
+	print "TOP", top
+	bottom = []
+	# bottom = [spacearraybottom[0][0]]
+	for space in spacearraytop:
+		#print "printing space" , space
+		#space.remove[0]
+		top.append(space)
+	for space in spacearraybottom:
+		#space.remove[0]
+		bottom.append(space)
+		#bottom = bottom + [space]
+	print "top = " , len(top) , " bottom = " , len(bottom)
+	plotter.select_pen(1)
+	global plotter
+	global g
+	g = shapes.group([])
+	for i in range(len(top)):
+		# print("TOPTOP" ,top[i])
+		g.append(shapes.line((top[i][0]+layeroffset, top[i][1]),(bottom[i][0]+layeroffset, bottom[i][1])))
+	plotter.select_pen(1)
+	plotter.write(g)
+
+	#draw it
+
+interspace = 20
+layermax = interspace/4
+# print "GETTINGSPACE"
+# print(getspace((0,0),(100,100), interspace))
+
+#print "CONSTRUCTION"
+#print [getspace((0,0),(3000,84), interspace),getspace((3000,84),(5000,3000), interspace),getspace((5000,3000),(6000,2000), interspace)]
+#constructshape([(20.0, 0.0), (40.0, 25.0), (60.0, 50.0), (80.0, 75.0), (100.0, 100.0)],[(20.0, 0.0), (40.0, 5.0), (60.0, 5.0), (80.0, 7.0), (100.0, 100.0)],3)
+#constructshape([getspace((0,0),(3000,84), interspace),getspace((3000,84),(5000,3000), interspace),getspace((5000,3000),(6000,2000), interspace)], 
+#			   [getspace((0,0),(3000,84), interspace),getspace((0,84),(5000,3000), interspace),getspace((2000,3000),(6000,2000), interspace)] )
+
+# constructshape([getspace((0,0),(1000,1000), interspace) + getspace((1000,1000),(2000,1000), interspace)],
+#  			   [getspace((0,0),(1000,500), interspace) + getspace((1000,500), (1500,200),  interspace) +  getspace((1500,200),(2000,1000), interspace)],
+#  			   10)
+
+def gentop(start,stop,min,max,steps,layer): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
+	gtop = []
+	gbottom = []
+	baseX = stop[0] - start[0]
+	baseY = stop[1] - start[1]
+	basestepTop = baseX/(steps[0]+1)
+	print(basestepTop)
+	basestepBottom = baseX/(steps[1]+1)
+	gtop.append(start)
+	gbottom.append(start)
+	for i in range(steps[0]):
+		gtop.append((basestepTop*1*(i+1), random.randint(max[0],max[1])))		
+	for i in range(steps[1]):
+		gbottom.append((basestepBottom*1*(i+1), random.randint(max[0],max[1])))
+	gtop.append(stop)
+	gbottom.append(stop)
+	print "printing gbottom"
+	print gbottom
+	print "printing gtop"
+	print gtop
+	totaltop = []
+	totalbottom = []
+	for t in range(len(gtop)-1):
+		print "length gtop", len(gtop)
+		totaltop = totaltop + getspace(gtop[t], gtop[t+1], interspace)
+		# print totaltop , "iteration ",gtop[t+1], "and gtop t" , getspace(gtop[t], gtop[t+1], interspace)
+	for t in range(len(gbottom)-1):
+		print "length gbottom", len(gbottom)
+		totalbottom = totalbottom + getspace(gbottom[t], gbottom[t+1], interspace)
+	# print "PRINTING TOTALTOP"
+	# print totaltop
+	#plotter.select_pen(2)
+	# print "totalbottom", totalbottom
+	# print "totaltop", totaltop
+	constructshape(totaltop,totalbottom,layer)
+
+gentop((0,0),(1000,100),(0,2000),(1000,5000),(4,4),3)
+
+
+for i in range(3):
+	length = random.randint(3,8)
+	gentop((random.randint(0,2000),random.randint(0, 2000)),(random.randint(2000,4000),random.randint(2000,4000)),(0,0),(2500,4000),(length, length),i*2) 
+
+# print getspace((0,37),(300,84), 5)
+# print getspace((300,84),(500,115), 5)
+# print"blah"
+# print(np.interp(0.2,[0,1], [0,2]))
+# x = np.linspace(0, 2*np.pi, 10)
+# print x
+# y = np.sin(x)
+# print y
+# xvals = np.linspace(0, 2*np.pi, 50)
+
 size = 30
 for i in range(size):
 	# width = random.randint(20,30)
@@ -158,9 +410,22 @@ for i in range(size):
 	freq= 25
 	# print np.sin((wav3[int(rez/size*i)]))
 	#wavesdown(i,freq,i*width*freq,width,random.randint(500,1903),3000)
-	wavesdown(i+1,freq,i*width*freq,width,random.randint(0,int((np.sin((wav1[int(rez/size*i)])) +1 )*500)),(np.sin((wav1[int(rez/size*i)]))+1)*2000)
+	#wavesdown(i+1,freq,i*width*freq,width,random.randint(0,int((np.sin((wav1[int(rez/size*i)])) +1 )*500)),(np.sin((wav1[int(rez/size*i)]))+1)*2000)
 	#simplelines(i, 200, 8000, 50, 5)
 	#simplelines2(i, 20, 10, 1000)
+
+#shapelayerrect(0, 1, 0, 0, 5000, 5000)
+shapelayerrect(1, 1, 2000, 2000, 1000, 1000)
+#shapelayerrect(1, 1, 4000, 3000, 1000, 5000)
+
+# for i in range(5):
+# 	shapelayerrect(i,1, random.randint(200*i,500*i), random.randint(500*i,1000*i), random.randint(500,1000), random.randint(500,1000))
+# for i in range(5):
+# 	shapelayerrect(i,1, random.randint(0*i,2000*i), random.randint(0*i,2000*i), random.randint(200,1000), random.randint(200,1000))
+
+
+
+#wavedecay(wav3, rez/1, 1000,1000)
 
 io.view(plotter)
 
