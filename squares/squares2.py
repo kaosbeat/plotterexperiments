@@ -122,7 +122,7 @@ def wavesdown(pen, freq, offset, width, min, max):
 	#transforms.offset(g, (goffset, 0))
 	plotter.write(g)
 
-def wavedecay(wav, rez, height, scale):
+def wavedecay(wav, rez, height, scale, x, y):
 	global plotter
 	global g
 	plotter.select_pen(1)
@@ -151,7 +151,7 @@ def wavedecay(wav, rez, height, scale):
 		y1 = np.sin(wav1[i1])*height
 		y2 = np.sin(wav1[i2])*height
 		g.append(shapes.line((x1, y1), (x2, y2)))
-
+	transforms.offset(g,(x,y))
 
 	plotter.write(g)
 
@@ -310,8 +310,9 @@ def getspace(p1,p2,interval):
 def constructshape(spacearraytop, spacearraybottom, layer):
 	# top = [spacearraytop[0][0]]
 	layeroffset = interspace/layermax*layer
+	print "layeroffset" , layeroffset
 	top =[]
-	print "TOP", top
+	# print "TOP", top
 	bottom = []
 	# bottom = [spacearraybottom[0][0]]
 	for space in spacearraytop:
@@ -323,14 +324,14 @@ def constructshape(spacearraytop, spacearraybottom, layer):
 		bottom.append(space)
 		#bottom = bottom + [space]
 	print "top = " , len(top) , " bottom = " , len(bottom)
-	plotter.select_pen(1)
+	#plotter.select_pen(1)
 	global plotter
 	global g
 	g = shapes.group([])
 	for i in range(len(top)):
 		# print("TOPTOP" ,top[i])
 		g.append(shapes.line((top[i][0]+layeroffset, top[i][1]),(bottom[i][0]+layeroffset, bottom[i][1])))
-	plotter.select_pen(1)
+	# plotter.select_pen(1)
 	plotter.write(g)
 
 	#draw it
@@ -366,10 +367,10 @@ def gentop(start,stop,min,max,steps,layer): #(0,0),(10000,1000),(0,2000),(2500,5
 		gbottom.append((basestepBottom*1*(i+1), random.randint(max[0],max[1])))
 	gtop.append(stop)
 	gbottom.append(stop)
-	print "printing gbottom"
-	print gbottom
-	print "printing gtop"
-	print gtop
+	# print "printing gbottom"
+	# print gbottom
+	# print "printing gtop"
+	# print gtop
 	totaltop = []
 	totalbottom = []
 	for t in range(len(gtop)-1):
@@ -386,13 +387,18 @@ def gentop(start,stop,min,max,steps,layer): #(0,0),(10000,1000),(0,2000),(2500,5
 	# print "totaltop", totaltop
 	constructshape(totaltop,totalbottom,layer)
 
-gentop((0,0),(1000,100),(0,2000),(1000,5000),(4,4),3)
+#gentop((0,0),(1000,100),(0,2000),(1000,5000),(4,4),3)
 
 
-for i in range(3):
-	length = random.randint(3,8)
-	gentop((random.randint(0,2000),random.randint(0, 2000)),(random.randint(2000,4000),random.randint(2000,4000)),(0,0),(2500,4000),(length, length),i*2) 
-
+#for i in range(3):
+#	length = random.randint(3,8)
+#	gentop((random.randint(0,2000),random.randint(0, 2000)),(random.randint(2000,4000),random.randint(2000,4000)),(0,0),(2500,4000),(length, length),i*2) 
+plotter.select_pen(2)
+gentop((0,1500),(5000,1500),(0,1500),(1500,3500),(3,7),9)
+plotter.select_pen(2)
+gentop((0,1700),(5000,1700),(0,1500),(1500,3500),(3,7),5)
+plotter.select_pen(2)
+gentop((0,1900),(5000,1900),(0,1500),(1500,3500),(3,7),1)
 # print getspace((0,37),(300,84), 5)
 # print getspace((300,84),(500,115), 5)
 # print"blah"
@@ -415,7 +421,7 @@ for i in range(size):
 	#simplelines2(i, 20, 10, 1000)
 
 #shapelayerrect(0, 1, 0, 0, 5000, 5000)
-shapelayerrect(1, 1, 2000, 2000, 1000, 1000)
+#shapelayerrect(1, 1, 2000, 2000, 1000, 1000)
 #shapelayerrect(1, 1, 4000, 3000, 1000, 5000)
 
 # for i in range(5):
@@ -425,7 +431,7 @@ shapelayerrect(1, 1, 2000, 2000, 1000, 1000)
 
 
 
-#wavedecay(wav3, rez/1, 1000,1000)
+wavedecay(wav3, rez/1, 1500,1100,0, 2500)
 
 io.view(plotter)
 
