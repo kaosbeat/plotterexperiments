@@ -308,7 +308,7 @@ def getspace(p1,p2,interval):
 		space.append((spaceX[v],spaceY[v]))
 	return space
 
-def constructshape(spacearraytop, spacearraybottom, layer):
+def constructshape(spacearraytop, spacearraybottom, layer, xpos, ypos):
 	# top = [spacearraytop[0][0]]
 	layeroffset = interspace/layermax*layer
 	print "layeroffset" , layeroffset
@@ -333,6 +333,7 @@ def constructshape(spacearraytop, spacearraybottom, layer):
 		# print("TOPTOP" ,top[i])
 		g.append(shapes.line((top[i][0]+layeroffset, top[i][1]),(bottom[i][0]+layeroffset, bottom[i][1])))
 	# plotter.select_pen(1)
+	transforms.offset(g, (xpos,ypos))
 	plotter.write(g)
 
 	#draw it
@@ -352,7 +353,7 @@ layermax = interspace/4
 #  			   [getspace((0,0),(1000,500), interspace) + getspace((1000,500), (1500,200),  interspace) +  getspace((1500,200),(2000,1000), interspace)],
 #  			   10)
 
-def gentop(start,stop,min,max,steps,layer): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
+def gentop(start,stop,min,max,steps,layer,xpos,ypos): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
 	gtop = []
 	gbottom = []
 	baseX = stop[0] - start[0]
@@ -386,52 +387,53 @@ def gentop(start,stop,min,max,steps,layer): #(0,0),(10000,1000),(0,2000),(2500,5
 	#plotter.select_pen(2)
 	# print "totalbottom", totalbottom
 	# print "totaltop", totaltop
-	constructshape(totaltop,totalbottom,layer)
+	constructshape(totaltop,totalbottom,layer,xpos,ypos)
 
 #gentop((0,0),(1000,100),(0,2000),(1000,5000),(4,4),3)
 
 
-def dobox(pen,xpos,ypos,width,height,subdiv1,subdiv2):
+def dobox(pen,xpos,ypos,width,height,subdiv1,subdiv2,globalx, globaly):
 	global plotter
 	global g
 	g = shapes.group([])
 	plotter.select_pen(pen)
-	g.append(shapes.rectangle(width,height))
-	transforms.offset(g, (width/2,height/2))
-	for i in range(subdiv1):
-		y1 = random.randint(0,height)
-		y2 = random.randint(0,height/2)
-		# g.append(shapes.line((x1,y1),(x2,y2))) 
-		g.append(shapes.line((0,height/subdiv1*i),(width, y2)))
-	transforms.offset(g, (xpos,ypos))
+	g.append(shapes.rectangle(abs(width),height))
+	transforms.offset(g, (abs(width)/2,height/2))
+	if (width > 0):
+		for i in range(subdiv1):
+			y1 = random.randint(0,height)
+			y2 = random.randint(0,height/2)
+			# g.append(shapes.line((x1,y1),(x2,y2))) 
+			g.append(shapes.line((0,height/subdiv1*i),(width, y2)))
+	transforms.offset(g, (xpos+globalx,ypos+globaly))
 	plotter.write(g)
 
 # for i in range(5):
 # 	dobox(2,i*1000,random.randint(0,2000),1000,2000,20,20)
 #from fractions import Fraction
-def rhythmboxes(pen,rhythm, width16, height16):
+def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 	print len(rhythm)
 	cursor = 0
 	for i in range(len(rhythm)):
-		cursor = cursor + rhythm[i]
 		print ("doing " , rhythm[i], "cursor = ", cursor ) #, "looks like ", Fraction(rhythm[i])
 		#dobox(pen,i*width16*Fraction(rhythm[i]),random.randint(0,height16),width16*Fraction(rhythm[i]),height16,20,20)
-		dobox(pen, width16*cursor, random.randint(0,height16) ,width16*rhythm[i],height16,20,20)
-
+		dobox(pen, width16*cursor, random.randint(0,height16) ,width16*rhythm[i],height16,int(4/rhythm[i]),20, xpos,ypos)
+		cursor = cursor + abs(rhythm[i])
 
 #rhythmboxes(2,["1/1", "3/16", "1/16", "1/8", "1/8", "1/8", "1/8", "3/16", "1/16"],500,2000)
 
-rhythmboxes(2,[1/1, 3/16, 1/16, 1/8, 1/8, 1/8, 1/8, 3/16, 1/16],5000,2000)
+rhythmboxes(2,[1/1, 3/16, 1/16, 1/8, 1/8, 1/8, 1/8, 3/16, 1/16],5000,2000,0,0)
+rhythmboxes(1,[2/12,2/12,2/12, 3/16, 1/16, 3/16, 1/16, 3/16, 1/16, -1/4, 1/16, 1/16, 1/16, 1/16],5000,2000,0,6000)
 
 #for i in range(3):
 #	length = random.randint(3,8)
 #	gentop((random.randint(0,2000),random.randint(0, 2000)),(random.randint(2000,4000),random.randint(2000,4000)),(0,0),(2500,4000),(length, length),i*2) 
+plotter.select_pen(1)
+gentop((0,1500),(10000,1500),(0,1500),(1500,3500),(3,7),9, 0, 2500)
+plotter.select_pen(1)
+gentop((0,1700),(10000,1700),(0,1500),(1500,3500),(3,7),5, 0, 2500)
 plotter.select_pen(2)
-# gentop((0,1500),(15000,1500),(0,1500),(1500,3500),(3,7),9)
-# plotter.select_pen(1)
-# gentop((0,1700),(15000,1700),(0,1500),(1500,3500),(3,7),5)
-# plotter.select_pen(3)
-# gentop((0,1900),(15000,1900),(0,1500),(1500,3500),(3,7),1)
+gentop((0,1900),(10000,1900),(0,1500),(1500,3500),(3,7),1, 0, 2500)
 
 
 # print getspace((0,37),(300,84), 5)
