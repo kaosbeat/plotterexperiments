@@ -5,6 +5,18 @@ from chiplotle.tools.plottertools import instantiate_virtual_plotter
 plotter =  instantiate_virtual_plotter(type="DXY1300")
 plotter.margins.hard.draw_outline()
 plotter.select_pen(2)
+
+
+import freetype
+face = freetype.Face("poir.ttf")
+face.set_char_size( 48*64 )
+face.load_char('S')
+bitmap = face.glyph.bitmap
+print bitmap.buffer
+
+
+
+
 b = 0
 # while b < 10:
 #   a = b * 100
@@ -158,7 +170,7 @@ for r in range (10, 100, 1):
   g.append(l)
   l = shapes.line( (r*rlist[r/10]*10, 1000), (r,2000) )
   g.append(l)
-io.view(g)
+# io.view(g)
 # io.view(plotter)
 
 # help(shapes.path)
