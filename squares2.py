@@ -526,7 +526,7 @@ writeword("B1", 10, "USSR.ttf", 12500, 5900)
 writeword("environ", 10, "USSR.ttf", 17500, 5900)
 
 writeword("B2", 10, "USSR.ttf", 12500, 6900)
-writeword("massInversion", 10, "USSR.ttf", 17500, 1900)
+writeword("massInversion", 10, "USSR.ttf", 17500, 6900)
 
 
 
