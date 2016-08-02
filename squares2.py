@@ -352,7 +352,7 @@ angle = np.arccos(cos_angle)
 # angle * 360 / 2 / np.pi # angle in degrees
 print math.degrees(angle)
 
-polygonlayer(1,1,1,1)
+#polygonlayer(1,1,1,1)
 #print(np.dot((2,3,4) , (2,1,1)))
 #print(length((100,100)))
 
