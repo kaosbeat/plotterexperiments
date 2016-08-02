@@ -505,6 +505,7 @@ plotter.select_pen(2)
 gentop((0,1700),(10000,1700),(0,1500),(1500,3500),(3,7),5, 0, 2500)
 plotter.select_pen(3)
 gentop((0,1900),(10000,1900),(0,1500),(1500,3500),(3,7),1, 0, 2500)
+plotter.select_pen(1)
 writeword("TriangelYur", 12, "rus.ttf", 200,1700)
 
 # print getspace((0,37),(300,84), 5)
