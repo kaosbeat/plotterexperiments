@@ -513,7 +513,7 @@ writeword("Yur", 12, "rus.ttf", 200,700)
 writeword("A1", 12, "USSR.ttf", 12500, 900)
 writeword("cluster89", 12, "USSR.ttf", 17500, 900)
 
-writeword("A2", 12, "USSR.ttf", 12500, 1900)
+writeword("A2", 10, "USSR.ttf", 12500, 1900)
 writeword("lowEntropy", 12, "USSR.ttf", 17500, 1900)
 # print getspace((0,37),(300,84), 5)
 # print getspace((300,84),(500,115), 5)
