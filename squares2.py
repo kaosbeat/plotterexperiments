@@ -499,7 +499,7 @@ rhythmboxes(1,[2/12,2/12,2/12, 3/16, 1/16, 3/16, 1/16, 3/16, 1/16, -1/4, 1/16, 1
 #for i in range(3):
 #	length = random.randint(3,8)
 #	gentop((random.randint(0,2000),random.randint(0, 2000)),(random.randint(2000,4000),random.randint(2000,4000)),(0,0),(2500,4000),(length, length),i*2) 
-plotter.select_pen(1)
+plotter.select_pen(4)
 gentop((0,1500),(10000,1500),(0,1500),(1500,3500),(3,7),9, 0, 2500)
 plotter.select_pen(2)
 gentop((0,1700),(10000,1700),(0,1500),(1500,3500),(3,7),5, 0, 2500)
