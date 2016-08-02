@@ -520,7 +520,7 @@ gentop((0,5500),(10000,1500),(0,3500),(500,10000),(88,88),1, 0, 0)
 writeword("Sondervan", 16, "USSR.ttf", 12500,9000)
 plotter.select_pen(4)
 writeword("Triangel", 12, "rus.ttf", 17000,9000)
-writeword("Yur", 12, "rus.ttf", 17000,8600)
+writeword("Yur", 12, "rus.ttf", 17000,8200)
 
 writeword("A1", 10, "USSR.ttf", 12500, 900)
 writeword("cluster89", 10, "USSR.ttf", 17500, 900)
