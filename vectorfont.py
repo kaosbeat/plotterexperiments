@@ -70,22 +70,26 @@ if __name__ == '__main__':
         start = end+1
 
 
-    # Draw glyph lines
-    path = Path(VERTS, CODES)
-    glyph = patches.PathPatch(path, facecolor='.75', lw=1)
 
-    # Draw "control" lines
-    for i, code in enumerate(CODES):
-        if code == Path.CURVE3:
-            CODES[i] = Path.LINETO
-    path = Path(VERTS, CODES)
-    patch = patches.PathPatch(path, ec='.5', fill=False, ls='dashed', lw=1 )
+    print VERTS
 
-    axis.add_patch(patch)
-    axis.add_patch(glyph)
+    
+    # # Draw glyph lines
+    # path = Path(VERTS, CODES)
+    # glyph = patches.PathPatch(path, facecolor='.75', lw=1)
 
-    axis.set_xlim(x.min()-100, x.max()+100)
-    plt.xticks([])
-    axis.set_ylim(y.min()-100, y.max()+100)
-    plt.yticks([])
-    plt.show()
+    # # Draw "control" lines
+    # for i, code in enumerate(CODES):
+    #     if code == Path.CURVE3:
+    #         CODES[i] = Path.LINETO
+    # path = Path(VERTS, CODES)
+    # patch = patches.PathPatch(path, ec='.5', fill=False, ls='dashed', lw=1 )
+
+    # axis.add_patch(patch)
+    # axis.add_patch(glyph)
+
+    # axis.set_xlim(x.min()-100, x.max()+100)
+    # plt.xticks([])
+    # axis.set_ylim(y.min()-100, y.max()+100)
+    # plt.yticks([])
+    # plt.show()
