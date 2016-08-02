@@ -510,8 +510,8 @@ plotter.select_pen(1)
 writeword("Triangel", 12, "rus.ttf", 200,1700)
 writeword("Yur", 12, "rus.ttf", 200,700)
 
-writeword("A1", 12, "USSR.ttf", 12500, 900)
-writeword("cluster89", 12, "USSR.ttf", 17500, 900)
+writeword("A1", 10, "USSR.ttf", 12500, 900)
+writeword("cluster89", 10, "USSR.ttf", 17500, 900)
 
 writeword("A2", 10, "USSR.ttf", 12500, 1900)
 writeword("lowEntropy", 10, "USSR.ttf", 17500, 1900)
@@ -522,10 +522,10 @@ writeword("automatic3CC", 10, "USSR.ttf", 17500, 2900)
 rhythmboxes(2,[1/2, 1/4],5000,2000,13500,0)
 
 rhythmboxes(5,[1/4, 1/4, 1/4],5000,2000,13500,4000)
-writeword("B1", 12, "USSR.ttf", 12500, 5900)
-writeword("environ", 12, "USSR.ttf", 17500, 900)
+writeword("B1", 10, "USSR.ttf", 12500, 5900)
+writeword("environ", 10, "USSR.ttf", 17500, 900)
 
-writeword("B2", 10, "USSR.ttf", 12500, 1900)
+writeword("B2", 10, "USSR.ttf", 12500, 6900)
 writeword("massInversion", 10, "USSR.ttf", 17500, 1900)
 
 
