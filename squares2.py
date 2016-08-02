@@ -511,7 +511,7 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 
 ###probeersel
 gentop((0,7500),(10000,500),(0,1500),(1500,7500),(3,199),9, 0, 2500)
-
+gentop((3000,7500),(10000,500),(0,1500),(1500,7500),(3,199),9, 0, 2500)
 
 
 writeword("Sondervan", 18, "USSR.ttf", 200,2700)
