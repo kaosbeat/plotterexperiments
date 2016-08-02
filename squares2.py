@@ -510,9 +510,12 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 
 
 ###probeersel
+plotter.select_pen(5)
 gentop((0,7500),(10000,500),(0,1500),(1500,7500),(3,199),9, 0, 2500)
+plotter.select_pen(3)
 gentop((0,500),(10000,2500),(0,1500),(1500,7500),(3,5),9, 1, 2500)
-
+plotter.select_pen(3)
+gentop((0,5500),(10000,1500),(0,3500),(500,7500),(3,7),9, 1, 2500)
 
 writeword("Sondervan", 18, "USSR.ttf", 200,2700)
 plotter.select_pen(1)
