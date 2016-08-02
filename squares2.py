@@ -509,8 +509,8 @@ plotter.select_pen(1)
 writeword("Triangel", 12, "rus.ttf", 200,1700)
 writeword("Yur", 12, "rus.ttf", 200,700)
 
-writeword("A1", 12, "rus.ttf", 12500, 900)
-writeword("cluster89", 12, "rus.ttf", 17500, 900)
+writeword("A1", 12, "USSR.ttf", 12500, 900)
+writeword("cluster89", 12, "USSR.ttf", 17500, 900)
 # print getspace((0,37),(300,84), 5)
 # print getspace((300,84),(500,115), 5)
 # print"blah"
