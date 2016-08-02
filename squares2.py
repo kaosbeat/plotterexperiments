@@ -521,7 +521,7 @@ writeword("automatic3CC", 10, "USSR.ttf", 17500, 2900)
 
 rhythmboxes(2,[1/2, 1/4],5000,2000,13500,0)
 
-rhythmboxes(1,[1/4, 1/4, 1/4],5000,2000,13500,4000)
+rhythmboxes(,[1/4, 1/4, 1/4],5000,2000,13500,4000)
 
 # print getspace((0,37),(300,84), 5)
 # print getspace((300,84),(500,115), 5)
