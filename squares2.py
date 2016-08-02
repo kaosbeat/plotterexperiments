@@ -511,16 +511,16 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 
 ###probeersel
 plotter.select_pen(4)
-gentop((0,7500),(10000,500),(0,1500),(500,7500),(20,20),9, 0, 2500)
+gentop((0,10000),(10000,500),(0,1500),(500,9500),(20,20),9, 0, 0)
 plotter.select_pen(1)
-gentop((0,500),(10000,2500),(0,1500),(500,7500),(7,5),5, 0, 2500)
+gentop((0,500),(10000,2500),(0,1500),(500,10000),(7,5),5, 0, 0)
 plotter.select_pen(2)
-gentop((0,5500),(10000,1500),(0,3500),(500,7500),(88,88),1, 0, 2500)
+gentop((0,5500),(10000,1500),(0,3500),(500,10000),(88,88),1, 0, 0)
 
 writeword("Sondervan", 18, "USSR.ttf", 12500,9000)
 plotter.select_pen(4)
-writeword("Triangel", 12, "rus.ttf", 16700,9000)
-writeword("Yur", 12, "rus.ttf", 16700,8600)
+writeword("Triangel", 12, "rus.ttf", 17000,9000)
+writeword("Yur", 12, "rus.ttf", 17000,8600)
 
 writeword("A1", 10, "USSR.ttf", 12500, 900)
 writeword("cluster89", 10, "USSR.ttf", 17500, 900)
