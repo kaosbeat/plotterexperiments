@@ -519,7 +519,7 @@ writeword("lowEntropy", 10, "USSR.ttf", 17500, 1900)
 writeword("A3", 10, "USSR.ttf", 12500, 2900)
 writeword("automatic3CC", 10, "USSR.ttf", 17500, 2900)
 
-rhythmboxes(2,[1/1],15000,2000,0,0)
+rhythmboxes(2,[1/1],5000,2000,15000,0)
 
 
 # print getspace((0,37),(300,84), 5)
