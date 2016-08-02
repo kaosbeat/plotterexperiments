@@ -508,6 +508,9 @@ gentop((0,1900),(10000,1900),(0,1500),(1500,3500),(3,7),1, 0, 2500)
 plotter.select_pen(1)
 writeword("Triangel", 12, "rus.ttf", 200,1700)
 writeword("Yur", 12, "rus.ttf", 200,700)
+
+writeword("A1", 12, "rus.ttf", 12500, 900)
+writeword("cluster89", 12, "rus.ttf", 22500, 900)
 # print getspace((0,37),(300,84), 5)
 # print getspace((300,84),(500,115), 5)
 # print"blah"
