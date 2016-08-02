@@ -518,7 +518,7 @@ plotter.select_pen(2)
 gentop((0,5500),(10000,1500),(0,3500),(500,7500),(3,7),9, 1, 2500)
 
 writeword("Sondervan", 18, "USSR.ttf", 200,2700)
-plotter.select_pen(1)
+plotter.select_pen(4)
 writeword("Triangel", 12, "rus.ttf", 200,1700)
 writeword("Yur", 12, "rus.ttf", 200,700)
 
@@ -533,7 +533,9 @@ writeword("automatic3CC", 10, "USSR.ttf", 17500, 2900)
 
 rhythmboxes(2,[1/2, 1/4],5000,2000,13500,0)
 
-rhythmboxes(3,[1/4, 1/4, 1/4],5000,2000,13500,4000)
+rhythmboxes(4,[1/4, 1/4, 1/4],5000,2000,13500,4000)
+plotter.select_pen(2)
+
 writeword("B1", 10, "USSR.ttf", 12500, 5900)
 writeword("environ", 10, "USSR.ttf", 17500, 5900)
 
