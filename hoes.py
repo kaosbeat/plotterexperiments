@@ -543,6 +543,22 @@ writeword("B2", 10, "USSR.ttf", 12500, 6900)
 writeword("massInversion", 10, "USSR.ttf", 17500, 6900)
 
 
+# Kant A :
+# Goto Loopit
+# SeaClone
+# ThreeMoleculesOne
+# Cluster89
+ 
+# B
+
+# Mass Inversion
+
+# Triangle Yur
+
+# Automatic3cc
+
+
+
 
 # print getspace((0,37),(300,84), 5)
 # print getspace((300,84),(500,115), 5)
