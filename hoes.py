@@ -533,7 +533,7 @@ writeword("A3", 10, "USSR.ttf", 12500, 2900)
 writeword("ThreeMoleculesOne", 10, "USSR.ttf", 17500, 2900)
 
 writeword("A4", 10, "USSR.ttf", 12500, 3900)
-writeword("ThreeMoleculesOne", 10, "USSR.ttf", 17500, 3900)
+writeword("Cluster89", 10, "USSR.ttf", 17500, 3900)
 
 rhythmboxes(2,[1/2, 1/4],5000,2000,13500,0)
 
@@ -547,7 +547,7 @@ writeword("B2", 10, "USSR.ttf", 12500, 6900)
 writeword("Triangle_Yur", 10, "USSR.ttf", 17500, 6900)
 
 writeword("B2", 10, "USSR.ttf", 12500, 6900)
-writeword("Automatic3cc", 10, "USSR.ttf", 17500, 6900)
+writeword("Automatic3cc", 10, "USSR.ttf", 17500, 7900)
 
 # Kant A :
 # Goto Loopit
