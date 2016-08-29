@@ -33,7 +33,8 @@ size = 200
 noise = size*1.5
 interval = 120
 randpointer = 30
-randpointerjump = 32
+randpointerjump = 3somewaves(False, True, [wav1, wav2, wav2, wav1], ["sin", "cos", "cos", "sin"], [5100, 1000, 6500, 1000], ["rect", "cross", "cross", "cross"])  
+2
 randpointerbackrange = 0.99 #(number between 0.50-0.99)
 wav1 = np.linspace(0,2*np.pi,rez)
 wav2 = np.linspace(0,np.pi,rez)
