@@ -511,7 +511,8 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 # gentop((0,1900),(10000,1900),(0,1500),(1500,3500),(3,7),1, 0, 2500)
 
 
-###probeersel
+###probeersel  gentop(start,stop,min,max,steps,layer,xpos,ypos):
+
 plotter.select_pen(4)
 gentop((0,10000),(10000,500),(0,1500),(2500,9500),(3,2),9, 0, 0)
 plotter.select_pen(1)
