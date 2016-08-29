@@ -438,7 +438,7 @@ def gentop(start,stop,min,max,steps,layer,xpos,ypos): #(0,0),(10000,1000),(0,200
 	for i in range(steps[0]):
 		gtop.append((basestepTop*1*(i+1), random.randint(max[0],max[1])))		
 	for i in range(steps[1]):
-		gbottom.append((basestepBottom*1*(i+1), random.randint(max[0],max[1])))
+		gbottom.append((basestepBottom*1*(i+1), random.randint(min[0],min[1])))
 	gtop.append(stop)
 	gbottom.append(stop)
 	# print "printing gbottom"
