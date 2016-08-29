@@ -493,7 +493,7 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 		dobox(pen, width16*cursor, random.randint(0,height16) ,width16*rhythm[i],height16,int(4/rhythm[i]),20, xpos,ypos)
 		cursor = cursor + abs(rhythm[i])
 
-#rhythmboxes(2,["1/1", "3/16", "1/16", "1/8", "1/8", "1/8", "1/8", "3/16", "1/16"],500,2000)
+rhythmboxes(2,["1/1", "3/16", "1/16", "1/8", "1/8", "1/8", "1/8", "3/16", "1/16"],500,2000)
 
 ###vorige versie
 
