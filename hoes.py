@@ -228,7 +228,7 @@ def wavedecay(wav, rez, height, scale, x, y):
 
 	plotter.write(g)
 
-wavedecay("wav1", rez, 1000, 1000, 0, 0)
+#wavedecay("wav1", rez, 1000, 1000, 0, 0)
 
 
 def simplelines(pen, freq, height, density, densityscale):
