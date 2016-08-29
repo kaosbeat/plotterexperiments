@@ -511,45 +511,45 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 # gentop((0,1900),(10000,1900),(0,1500),(1500,3500),(3,7),1, 0, 2500)
 
 
-# ###probeersel
-# plotter.select_pen(4)
-# gentop((0,10000),(10000,500),(0,1500),(2500,9500),(5,2),9, 0, 0)
-# plotter.select_pen(1)
-# gentop((0,500),(10000,2500),(0,1500),(500,10000),(7,5),5, 0, 0)
-# plotter.select_pen(2)
-# gentop((0,5500),(10000,1500),(0,3500),(500,10000),(88,88),1, 0, 0)
-
-writeword("Sondervan", 16, "USSR.ttf", 12500,9000)
+###probeersel
 plotter.select_pen(4)
-writeword("Triangel", 12, "rus.ttf", 17000,9000)
-writeword("Yur", 12, "rus.ttf", 17000,8200)
-plotter.select_pen(3)
-
-writeword("A1", 10, "USSR.ttf", 12500, 900)
-writeword("Goto_Loopit", 10, "USSR.ttf", 17500, 900)
-
-writeword("A2", 10, "USSR.ttf", 12500, 1900)
-writeword("SeaClone", 10, "USSR.ttf", 17500, 1900)
-
-writeword("A3", 10, "USSR.ttf", 12500, 2900)
-writeword("ThreeMoleculesOne", 10, "USSR.ttf", 17500, 2900)
-
-writeword("A4", 10, "USSR.ttf", 12500, 3900)
-writeword("Cluster89", 10, "USSR.ttf", 17500, 3900)
-
-rhythmboxes(2,[1/2, 1/4],5000,2000,13500,0)
-
-rhythmboxes(4,[1/4, 1/4, 1/4],5000,2000,13500,4000)
+gentop((0,10000),(10000,500),(0,1500),(2500,9500),(5,2),9, 0, 0)
+plotter.select_pen(1)
+gentop((0,500),(10000,2500),(0,1500),(500,10000),(7,5),5, 0, 0)
 plotter.select_pen(2)
+gentop((0,5500),(10000,1500),(0,3500),(500,10000),(88,88),1, 0, 0)
 
-writeword("B1", 10, "USSR.ttf", 12500, 5900)
-writeword("Mass_Inversion", 10, "USSR.ttf", 17500, 5900)
+# writeword("Sondervan", 16, "USSR.ttf", 12500,9000)
+# plotter.select_pen(4)
+# writeword("Triangel", 12, "rus.ttf", 17000,9000)
+# writeword("Yur", 12, "rus.ttf", 17000,8200)
+# plotter.select_pen(3)
 
-writeword("B2", 10, "USSR.ttf", 12500, 6900)
-writeword("Triangle_Yur", 10, "USSR.ttf", 17500, 6900)
+# writeword("A1", 10, "USSR.ttf", 12500, 900)
+# writeword("Goto_Loopit", 10, "USSR.ttf", 17500, 900)
 
-writeword("B2", 10, "USSR.ttf", 12500, 6900)
-writeword("Automatic3cc", 10, "USSR.ttf", 17500, 7900)
+# writeword("A2", 10, "USSR.ttf", 12500, 1900)
+# writeword("SeaClone", 10, "USSR.ttf", 17500, 1900)
+
+# writeword("A3", 10, "USSR.ttf", 12500, 2900)
+# writeword("ThreeMoleculesOne", 10, "USSR.ttf", 17500, 2900)
+
+# writeword("A4", 10, "USSR.ttf", 12500, 3900)
+# writeword("Cluster89", 10, "USSR.ttf", 17500, 3900)
+
+# rhythmboxes(2,[1/2, 1/4],5000,2000,13500,0)
+
+# rhythmboxes(4,[1/4, 1/4, 1/4],5000,2000,13500,4000)
+# plotter.select_pen(2)
+
+# writeword("B1", 10, "USSR.ttf", 12500, 5900)
+# writeword("Mass_Inversion", 10, "USSR.ttf", 17500, 5900)
+
+# writeword("B2", 10, "USSR.ttf", 12500, 6900)
+# writeword("Triangle_Yur", 10, "USSR.ttf", 17500, 6900)
+
+# writeword("B2", 10, "USSR.ttf", 12500, 6900)
+# writeword("Automatic3cc", 10, "USSR.ttf", 17500, 7900)
 
 
 
