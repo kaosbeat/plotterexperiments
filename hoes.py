@@ -549,6 +549,10 @@ writeword("Triangle_Yur", 10, "USSR.ttf", 17500, 6900)
 writeword("B2", 10, "USSR.ttf", 12500, 6900)
 writeword("Automatic3cc", 10, "USSR.ttf", 17500, 7900)
 
+
+
+
+
 # Kant A :
 # Goto Loopit
 # SeaClone
