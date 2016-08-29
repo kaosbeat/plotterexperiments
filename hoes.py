@@ -552,9 +552,9 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 # writeword("B2", 10, "USSR.ttf", 12500, 6900)
 # writeword("Automatic3cc", 10, "USSR.ttf", 17500, 7900)
 
-# writeword("B2", 10, "USSR.ttf", 12500, 6900)
-# writeword("Automatic3cc", 10, "USSR.ttf", 17500, 7900)
-
+writeword("cover coded by", 10, "USSR.ttf", 12500, 6900)
+writeword("kaosbeat", 10, "USSR.ttf", 17500, 7900)
+writeword("KaOSbEat", 12, "rus.ttf", 17000,8200)
 
 
 
