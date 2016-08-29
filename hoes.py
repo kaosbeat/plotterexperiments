@@ -29,10 +29,10 @@ import freetype
 # first wave
 
 rez = 200 #keep it below 300 unless you know what you do
-size = 120
+size = 200
 noise = size*1.5
 interval = 120
-randpointer = 300
+randpointer = 30
 randpointerjump = 2
 randpointerbackrange = 0.99 #(number between 0.50-0.99)
 wav1 = np.linspace(0,2*np.pi,rez)
