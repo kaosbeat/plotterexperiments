@@ -29,7 +29,7 @@ import freetype
 # first wave
 
 rez = 200 #keep it below 300 unless you know what you do
-size = 20
+size = 200
 noise = size*1.5
 interval = 120
 randpointer = 30
