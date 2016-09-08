@@ -93,7 +93,7 @@ def plotchar(char, size, font, xpos, ypos):
   g = shapes.group([])
   g.append(shapes.path(VERTS))
   transforms.offset(g, (xpos, ypos))
-  print "size is ", g.width
+  #print "size is ", g.width
   plotter.write(g)
   return g.width
 
