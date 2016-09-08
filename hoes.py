@@ -268,6 +268,7 @@ def fitpage(shape):
 
 shaperez = 20
 layerarticulation = 4
+
 def shapelayerrect(layer, pen, x, y, width, height):
 	plotter.select_pen(pen)
 	global plotter
