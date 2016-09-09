@@ -429,7 +429,7 @@ layermax = interspace/4
 #  			   [getspace((0,0),(1000,500), interspace) + getspace((1000,500), (1500,200),  interspace) +  getspace((1500,200),(2000,1000), interspace)],
 #  			   10)
 
-def gentop(start,stop,min,max,steps,layer,xpos,ypos): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
+def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
 	gtop = []
 	gbottom = []
 	baseX = stop[0] - start[0]
@@ -532,7 +532,7 @@ frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
 #marginsback = [10,10,10,10]
 
 plotter.select_pen(4)
-gentop((0-(plotsize[0]),1000-(plotsize[1])),(10000-(plotsize[0]),500-(plotsize[1])),(0,1500),(2500,9500),(5,2),9, 0, 0)
+gentop((0,1000),(10000,500),(0,1500),(2500,9500),(5,2),9, 0, 0)
 plotter.select_pen(1)
 gentop((0,500),(10000,2500),(0,1500),(500,10000),(7,5),5, 0, 0)
 plotter.select_pen(2)
