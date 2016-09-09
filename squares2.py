@@ -525,7 +525,7 @@ def plotcover(start, end):
 	#zero = shapes.rectangle(100,10)
 	#plotter.write(zero)
 	#chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
-	t = shapes.label(str(start) + " / " + end, 0.5, 0.5)
+	t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
 	transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 	plotter.write(t)
 
