@@ -525,7 +525,7 @@ zero = shapes.rectangle(100,10)
 plotter.write(zero)
 #chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
 t = shapes.label("195/300", 0.5, 0.5)
-transforms.offset(t,(-2500, -plotsize[1]+200))
+transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 plotter.write(t)
 
 #margins
