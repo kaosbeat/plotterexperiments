@@ -579,6 +579,7 @@ def plotcover(start, end):
 	writeword("massInversion", 10, "USSR.ttf", 17500+wordsoffset[0], 6900+wordsoffset[1])
 	io.view(plotter)
 
+print('startnumber/stopnumber will be plotted')
 startnumber = input('enter startnumber: ')
 stopnumber = input('enter stopnumber: ')
 #plotcover(startnumber, stopnumber)
