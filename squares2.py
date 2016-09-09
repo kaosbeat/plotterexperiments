@@ -548,34 +548,34 @@ plotter.select_pen(2)
 gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXsize,0.3*gentopYsize),(0,1*gentopYsize),(0*gentopYsize,gentopYsize),(88,88),1, 0, 0, gentopoffset)
 
 
-marginsback = [10,10,10,10] #mm [top,bottom,left,right]
+marginsback = [10,10,10,10] #mm [top,bottom,left,right] in this case, bottom and right are not taken into account
 wordsoffset=(-plotsize[0] + marginsback[2]/plotunit , -plotsize[1]/2 - marginsback[0]/plotunit)
 
 
 writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
 plotter.select_pen(4)
-writeword("Triangle", 12, "rus.ttf", 17000,9000)
-writeword("Yur", 12, "rus.ttf", 17000,8200)
+writeword("Triangle", 12, "rus.ttf", 17000+wordsoffset[0],9000+wordsoffset[1])
+writeword("Yur", 12, "rus.ttf", 17000+wordsoffset[0],8200+wordsoffset[1])
 
-writeword("A1", 10, "USSR.ttf", 12500, 900)
-writeword("cluster89", 10, "USSR.ttf", 17500, 900)
+writeword("A1", 10, "USSR.ttf", 12500+wordsoffset[0], 900+wordsoffset[1])
+writeword("cluster89", 10, "USSR.ttf", 17500+wordsoffset[0], 900+wordsoffset[1])
 
-writeword("A2", 10, "USSR.ttf", 12500, 1900)
-writeword("lowEntropy", 10, "USSR.ttf", 17500, 1900)
+writeword("A2", 10, "USSR.ttf", 12500+wordsoffset[0], 1900+wordsoffset[1])
+writeword("lowEntropy", 10, "USSR.ttf", 17500+wordsoffset[0], 1900+wordsoffset[1])
 
-writeword("A3", 10, "USSR.ttf", 12500, 2900)
-writeword("automatic3CC", 10, "USSR.ttf", 17500, 2900)
+writeword("A3", 10, "USSR.ttf", 12500+wordsoffset[0], 2900+wordsoffset[1])
+writeword("automatic3CC", 10, "USSR.ttf", 17500+wordsoffset[0], 2900+wordsoffset[1])
 
-rhythmboxes(2,[1/2, 1/4],5000,2000,13500,0)
+rhythmboxes(2,[1/2, 1/4],5000,2000,13500+wordsoffset[0],0+wordsoffset[1])
 
-rhythmboxes(4,[1/4, 1/4, 1/4],5000,2000,13500,4000)
+rhythmboxes(4,[1/4, 1/4, 1/4],5000,2000,13500+wordsoffset[0],4000+wordsoffset[1])
 plotter.select_pen(2)
 
-writeword("B1", 10, "USSR.ttf", 12500, 5900)
-writeword("environ", 10, "USSR.ttf", 17500, 5900)
+writeword("B1", 10, "USSR.ttf", 12500+wordsoffset[0], 5900+wordsoffset[1])
+writeword("environ", 10, "USSR.ttf", 17500+wordsoffset[0], 5900+wordsoffset[1])
 
-writeword("B2", 10, "USSR.ttf", 12500, 6900)
-writeword("massInversion", 10, "USSR.ttf", 17500, 6900)
+writeword("B2", 10, "USSR.ttf", 12500+wordsoffset[0], 6900+wordsoffset[1])
+writeword("massInversion", 10, "USSR.ttf", 17500+wordsoffset[0], 6900+wordsoffset[1])
 
 
 
