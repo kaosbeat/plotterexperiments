@@ -429,7 +429,7 @@ layermax = interspace/4
 #  			   [getspace((0,0),(1000,500), interspace) + getspace((1000,500), (1500,200),  interspace) +  getspace((1500,200),(2000,1000), interspace)],
 #  			   10)
 
-def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
+def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset=(0,0)): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
 	gtop = []
 	gbottom = []
 	baseX = stop[0] - start[0]
@@ -463,7 +463,7 @@ def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset): #(0,0),(10000,1000)
 	#plotter.select_pen(2)
 	# print "totalbottom", totalbottom
 	# print "totaltop", totaltop
-	constructshape(totaltop,totalbottom,layer,xpos,ypos)
+	constructshape(totaltop,totalbottom,layer,xpos-offset[0],ypos-offset[0])
 
 #gentop((0,0),(1000,100),(0,2000),(1000,5000),(4,4),3)
 
