@@ -542,7 +542,7 @@ print(gentopXbounds,gentopYbounds, gentopYsize)
 
 plotter.select_pen(4)
 ###def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset=(0,0)): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
-gentop((gentopXbounds[0], 0.8*gentopYsize),(gentopXsize,0.2*gentopYsize),(0,0.3*gentopYsize),(0.8*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
+gentop((gentopXbounds[0], 0.8*gentopYsize),(gentopXsize,0.2*gentopYsize),(0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
 plotter.select_pen(1)
 gentop((gentopXbounds[0], 0.5*gentopYsize),(gentopXsize,0.5*gentopYsize),(0,0.5*gentopYsize),(0.3*gentopYsize,gentopYsize),(7,5),5, 0, 0, gentopoffset)
 plotter.select_pen(2)
