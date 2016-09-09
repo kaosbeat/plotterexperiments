@@ -516,7 +516,7 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 
 ###probeersel
 plotter.select_pen(0)
-bounds = shapes.rectangle(plotsize[0], plotsize[1])
+bounds = shapes.rectangle(plotsize[0], plotsize [1])
 plotter.write(bounds)
 plotter.select_pen(4)
 gentop((0,10000),(10000,500),(0,1500),(2500,9500),(5,2),9, 0, 0)
