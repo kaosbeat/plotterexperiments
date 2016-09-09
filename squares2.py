@@ -522,7 +522,7 @@ transforms.offset(bounds,(-plotsize[0]/2, -plotsize[1]/2) )
 plotter.write(bounds)
 
 #chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
-t = chiplotle.geometry.shapes.label("blahhh", 3, 3)
+t = shapes.label("blahhh", 3, 3)
 plotter.write(t)
 #margins
 marginsfront = [10,10,10,10] #mm [top,bottom,left,right]
