@@ -586,7 +586,7 @@ for x in xrange(startnumber,stopnumber):
 	ready = input('is record ready? (y/n) :')
 	if(ready == y):
 		plotcover(x, stopnumber)
-	else: 
+	else 
 		return
 
 
