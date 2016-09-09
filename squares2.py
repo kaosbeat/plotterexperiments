@@ -536,14 +536,16 @@ frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
 gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[1]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400) 
 gentopYbounds = (marginsfront[0]/plotunit, plotsize[1] - marginsfront[2]/plotunit)
 gentopYsize = gentopYbounds[1] - gentopYbounds[0]
+genttopoffset = (0, -plotsize[1]/2)
 print(gentopXbounds,gentopYbounds, gentopYsize)
+
 plotter.select_pen(4)
 ###def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset=(0,0)): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
-gentop((gentopXbounds[0], 0.8*gentopYsize),(gentopXbounds[1],0.2*gentopYsize),(0,0.2*gentopYsize),(0.5*gentopYsize,gentopYsize),(5,2),9, 0, 0, (0, -plotsize[1]/2))
+gentop((gentopXbounds[0], 0.8*gentopYsize),(gentopXbounds[1],0.2*gentopYsize),(0,0.2*gentopYsize),(0.5*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
 plotter.select_pen(1)
-gentop((gentopXbounds[0], 0.5*gentopYsize),(gentopXbounds[1],0.5*gentopYsize),(0,0.5*gentopYsize),(0.3*gentopYsize,gentopYsize),(7,5),5, 0, 0, (0, -plotsize[1]/2))
+gentop((gentopXbounds[0], 0.5*gentopYsize),(gentopXbounds[1],0.5*gentopYsize),(0,0.5*gentopYsize),(0.3*gentopYsize,gentopYsize),(7,5),5, 0, 0, gentopoffset)
 plotter.select_pen(2)
-gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXbounds[1],0.8*gentopYsize),(0,0.1*gentopYsize),(0.8*gentopYsize,gentopYsize),(88,88),1, 0, 0, (0, -plotsize[1]/2))
+gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXbounds[1],0.8*gentopYsize),(0,0.1*gentopYsize),(0.8*gentopYsize,gentopYsize),(88,88),1, 0, 0, gentopoffset)
 
 writeword("Sondervan", 16, "USSR.ttf", 12500,9000)
 plotter.select_pen(4)
