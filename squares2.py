@@ -533,8 +533,8 @@ marginsfront = [30,70,10,10] #mm [top,bottom,left,right]
 frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
 #marginsback = [10,10,10,10]
 #gentopbounds
-gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[1]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400) 
-gentopYbounds = (marginsfront[0]/plotunit, plotsize[1] - marginsfront[2]/plotunit)
+gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[3]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400) 
+gentopYbounds = (marginsfront[0]/plotunit, plotsize[1] - marginsfront[1]/plotunit)
 gentopYsize = gentopYbounds[1] - gentopYbounds[0]
 gentopoffset = (0, -plotsize[1]/2 + (plotsize[1]-gentopYsize)/2 )
 print(gentopXbounds,gentopYbounds, gentopYsize)
