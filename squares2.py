@@ -583,7 +583,10 @@ startnumber = input('enter startnumber: ')
 stopnumber = input('enter stopnumber: ')
 
 for x in xrange(startnumber,stopnumber):
+	ready = input('is record ready? (y/n) :')
+	
 	plotcover(x, stopnumber)
+
 
 
 # print getspace((0,37),(300,84), 5)
