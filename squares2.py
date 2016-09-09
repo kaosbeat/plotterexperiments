@@ -515,67 +515,70 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 # gentop((0,1900),(10000,1900),(0,1500),(1500,3500),(3,7),1, 0, 2500)
 
 
-###probeersel
-plotter.select_pen(1)
-bounds = shapes.rectangle(plotsize[0], plotsize[1])
-#transforms.offset(bounds,(-plotsize[0]/2, -plotsize[1]/2) )
-plotter.write(bounds)
+def plotcover(start, end):
+		
 
-#zero = shapes.rectangle(100,10)
-#plotter.write(zero)
-#chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
-t = shapes.label("195/300", 0.5, 0.5)
-transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
-plotter.write(t)
+	###probeersel
+	plotter.select_pen(1)
+	bounds = shapes.rectangle(plotsize[0], plotsize[1])
+	#transforms.offset(bounds,(-plotsize[0]/2, -plotsize[1]/2) )
+	plotter.write(bounds)
 
-#margins
-marginsfront = [10,10,10,10] #mm [top,bottom,left,right]
-frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
-#gentopbounds
-gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[3]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400) 
-gentopYbounds = (marginsfront[0]/plotunit, plotsize[1] - marginsfront[1]/plotunit)
-gentopXsize = gentopXbounds[1] - gentopXbounds[0]
-gentopYsize = gentopYbounds[1] - gentopYbounds[0]
-gentopoffset = (gentopXbounds[0], -plotsize[1]/2 + gentopYbounds[0]) #  + (plotsize[1]-gentopYsize)/2 )
-print(gentopXbounds,gentopYbounds, gentopYsize)
+	#zero = shapes.rectangle(100,10)
+	#plotter.write(zero)
+	#chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
+	t = shapes.label("195/300", 0.5, 0.5)
+	transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
+	plotter.write(t)
 
-plotter.select_pen(4)
-###def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset=(0,0)): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
-gentop((gentopXbounds[0], 0.8*gentopYsize),(gentopXsize,0.2*gentopYsize),(0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
-plotter.select_pen(1)
-gentop((gentopXbounds[0], 0.5*gentopYsize),(gentopXsize,0.5*gentopYsize),(0,0.5*gentopYsize),(0.3*gentopYsize,gentopYsize),(7,5),5, 0, 0, gentopoffset)
-plotter.select_pen(2)
-gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXsize,0.3*gentopYsize),(0,1*gentopYsize),(0*gentopYsize,gentopYsize),(88,88),1, 0, 0, gentopoffset)
+	#margins
+	marginsfront = [10,10,10,10] #mm [top,bottom,left,right]
+	frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
+	#gentopbounds
+	gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[3]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400) 
+	gentopYbounds = (marginsfront[0]/plotunit, plotsize[1] - marginsfront[1]/plotunit)
+	gentopXsize = gentopXbounds[1] - gentopXbounds[0]
+	gentopYsize = gentopYbounds[1] - gentopYbounds[0]
+	gentopoffset = (gentopXbounds[0], -plotsize[1]/2 + gentopYbounds[0]) #  + (plotsize[1]-gentopYsize)/2 )
+	print(gentopXbounds,gentopYbounds, gentopYsize)
+
+	plotter.select_pen(4)
+	###def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset=(0,0)): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
+	gentop((gentopXbounds[0], 0.8*gentopYsize),(gentopXsize,0.2*gentopYsize),(0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
+	plotter.select_pen(1)
+	gentop((gentopXbounds[0], 0.5*gentopYsize),(gentopXsize,0.5*gentopYsize),(0,0.5*gentopYsize),(0.3*gentopYsize,gentopYsize),(7,5),5, 0, 0, gentopoffset)
+	plotter.select_pen(2)
+	gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXsize,0.3*gentopYsize),(0,1*gentopYsize),(0*gentopYsize,gentopYsize),(88,88),1, 0, 0, gentopoffset)
 
 
-marginsback = [-30,10,30,10] #mm [top,bottom,left,right] in this case, bottom and right are not taken into account
-wordsoffset=(-plotsize[0] + marginsback[2]/plotunit , -plotsize[1]/2 - marginsback[0]/plotunit)
+	marginsback = [-30,10,30,10] #mm [top,bottom,left,right] in this case, bottom and right are not taken into account
+	wordsoffset=(-plotsize[0] + marginsback[2]/plotunit , -plotsize[1]/2 - marginsback[0]/plotunit)
 
 
-writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
-plotter.select_pen(4)
-writeword("Triangle", 12, "rus.ttf", 17000+wordsoffset[0],9000+wordsoffset[1])
-writeword("Yur", 12, "rus.ttf", 17000+wordsoffset[0],8200+wordsoffset[1])
+	writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
+	plotter.select_pen(4)
+	writeword("Triangle", 12, "rus.ttf", 17000+wordsoffset[0],9000+wordsoffset[1])
+	writeword("Yur", 12, "rus.ttf", 17000+wordsoffset[0],8200+wordsoffset[1])
 
-writeword("A1", 10, "USSR.ttf", 12500+wordsoffset[0], 900+wordsoffset[1])
-writeword("cluster89", 10, "USSR.ttf", 17500+wordsoffset[0], 900+wordsoffset[1])
+	writeword("A1", 10, "USSR.ttf", 12500+wordsoffset[0], 900+wordsoffset[1])
+	writeword("cluster89", 10, "USSR.ttf", 17500+wordsoffset[0], 900+wordsoffset[1])
 
-writeword("A2", 10, "USSR.ttf", 12500+wordsoffset[0], 1900+wordsoffset[1])
-writeword("lowEntropy", 10, "USSR.ttf", 17500+wordsoffset[0], 1900+wordsoffset[1])
+	writeword("A2", 10, "USSR.ttf", 12500+wordsoffset[0], 1900+wordsoffset[1])
+	writeword("lowEntropy", 10, "USSR.ttf", 17500+wordsoffset[0], 1900+wordsoffset[1])
 
-writeword("A3", 10, "USSR.ttf", 12500+wordsoffset[0], 2900+wordsoffset[1])
-writeword("automatic3CC", 10, "USSR.ttf", 17500+wordsoffset[0], 2900+wordsoffset[1])
+	writeword("A3", 10, "USSR.ttf", 12500+wordsoffset[0], 2900+wordsoffset[1])
+	writeword("automatic3CC", 10, "USSR.ttf", 17500+wordsoffset[0], 2900+wordsoffset[1])
 
-rhythmboxes(2,[1/2, 1/4],5000,2000,13500+wordsoffset[0],0+wordsoffset[1])
+	rhythmboxes(2,[1/2, 1/4],5000,2000,13500+wordsoffset[0],0+wordsoffset[1])
 
-rhythmboxes(4,[1/4, 1/4, 1/4],5000,2000,13500+wordsoffset[0],4000+wordsoffset[1])
-plotter.select_pen(2)
+	rhythmboxes(4,[1/4, 1/4, 1/4],5000,2000,13500+wordsoffset[0],4000+wordsoffset[1])
+	plotter.select_pen(2)
 
-writeword("B1", 10, "USSR.ttf", 12500+wordsoffset[0], 5900+wordsoffset[1])
-writeword("environ", 10, "USSR.ttf", 17500+wordsoffset[0], 5900+wordsoffset[1])
+	writeword("B1", 10, "USSR.ttf", 12500+wordsoffset[0], 5900+wordsoffset[1])
+	writeword("environ", 10, "USSR.ttf", 17500+wordsoffset[0], 5900+wordsoffset[1])
 
-writeword("B2", 10, "USSR.ttf", 12500+wordsoffset[0], 6900+wordsoffset[1])
-writeword("massInversion", 10, "USSR.ttf", 17500+wordsoffset[0], 6900+wordsoffset[1])
+	writeword("B2", 10, "USSR.ttf", 12500+wordsoffset[0], 6900+wordsoffset[1])
+	writeword("massInversion", 10, "USSR.ttf", 17500+wordsoffset[0], 6900+wordsoffset[1])
 
 
 
