@@ -463,7 +463,7 @@ def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset=(10000,0)): #(0,0),(1
 	#plotter.select_pen(2)
 	# print "totalbottom", totalbottom
 	# print "totaltop", totaltop
-	constructshape(totaltop,totalbottom,layer,xpos-offset[0],ypos-offset[0])
+	constructshape(totaltop,totalbottom,layer,xpos-offset[0],ypos-offset[1])
 
 #gentop((0,0),(1000,100),(0,2000),(1000,5000),(4,4),3)
 
