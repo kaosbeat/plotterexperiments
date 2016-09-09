@@ -583,7 +583,7 @@ startnumber = input('enter startnumber: ')
 stopnumber = input('enter stopnumber: ')
 
 for x in xrange(startnumber,stopnumber):
-	plotcover(x, stopnumber)
+	plotcover(x, stopnumber1)
 
 
 # print getspace((0,37),(300,84), 5)
