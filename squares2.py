@@ -543,7 +543,7 @@ plotter.select_pen(4)
 plotter.select_pen(1)
 gentop((gentopXbounds[0], 0.5*gentopYsize),(gentopXbounds[1],0.5*gentopYsize),(0,1500),(500,10000),(7,5),5, 0, 0, (0, -plotsize[1]/2))
 plotter.select_pen(2)
-gentop((0,5500),(10000,1500),(0,3500),(500,10000),(88,88),1, 0, 0, (0, plotsize[1]/2))
+gentop((gentopXbounds[0], 0.5*gentopYsize),(gentopXbounds[1],0.5*gentopYsize),(0,3500),(500,10000),(88,88),1, 0, 0, (0, plotsize[1]/2))
 
 writeword("Sondervan", 16, "USSR.ttf", 12500,9000)
 plotter.select_pen(4)
