@@ -549,7 +549,7 @@ gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXsize,0.3*gentopYsize),(0,1*ge
 
 
 marginsback = [10,10,10,10] #mm [top,bottom,left,right]
-wordsoffset=(-plotsize[0] + marginsback[2] , -plotsize[1]/2 + marginsback[0])
+wordsoffset=(-plotsize[0] + marginsback[2]/plotunit , -plotsize[1]/2 + marginsback[0]/plotunit)
 
 
 writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
