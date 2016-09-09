@@ -517,6 +517,7 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 
 ###probeersel
 plotter.select_pen(1)
+
 bounds = shapes.rectangle(plotsize[0], plotsize[1])
 transforms.offset(bounds,(-plotsize[0]/2, -plotsize[1]/2) )
 plotter.write(bounds)
