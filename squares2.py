@@ -11,8 +11,8 @@ plotter =  instantiate_virtual_plotter(type="DXY1300")
 pltmax = [16158, 11040]
 plotlimits = [-17300,-11880,16340, 11880]  #dagos A1-plotter says (left: -17300, bottom: -11880, right: 16340, top: 11880) 84lmrn X 594mm
 plotleftbottom = [-17300,-11880]  # 1 coordinate unit per plotter = 0.025 mm
-plotsize = [626,309] #in mm breedte x hoogte
-
+plotsizemm = [626,309] #in mm breedte x hoogte
+plotsize = [plotsizemm[0]/0.025,plotsizemm[1]/0.025]
 #coords = plotter.margins.soft.all_coordinates
 # plotter.select_pen(1)
 b = 0
@@ -516,7 +516,8 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 
 ###probeersel
 plotter.select_pen(0)
-bounds = shapes.rectangle(500, 1000)
+bounds = shapes.rectangle(plotsize[0], plotsize[1])
+plotter.write(bounds)
 plotter.select_pen(4)
 gentop((0,10000),(10000,500),(0,1500),(2500,9500),(5,2),9, 0, 0)
 plotter.select_pen(1)
