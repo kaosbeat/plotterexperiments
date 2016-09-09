@@ -534,7 +534,7 @@ frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
 #marginsback = [10,10,10,10]
 gentopstart = (marginsfront[2]/plotunit, marginsfront[1]/plotunit)
 gentopstop = (plotsize[1] - marginsfront[3]/plotunit , plotsize[1] - marginsfront[3]/plotunit )
-
+print(gentopstart,gentopstop)
 plotter.select_pen(4)
 ###def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset=(0,0)): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
 #gentop( (gentopstart[0],gentopstart[1]) ,(10, 500),(0,1500),(2500,9500),(5,2),9, 0, 0, (plotsize[0]/2, plotsize[1]))
