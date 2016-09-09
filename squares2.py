@@ -10,7 +10,7 @@ plotter =  instantiate_virtual_plotter(type="DXY1300")
 #dagos A1-plotter says (left: -17300, bottom: -11880, right: 16340, top: 11880) 84lmrn X 594mm
 pltmax = [16158, 11040]
 plotlimits = [-17300,-11880,16340, 11880]  #dagos A1-plotter says (left: -17300, bottom: -11880, right: 16340, top: 11880) 84lmrn X 594mm
-plotleftbottom = [-17300,-11880]
+plotleftbottom = [-17300,-11880]  # 1 coordinate unit per plotter = 0.025 mm
 plotsize = 
 #coords = plotter.margins.soft.all_coordinates
 # plotter.select_pen(1)
