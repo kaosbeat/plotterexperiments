@@ -535,12 +535,13 @@ frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
 #gentopbounds
 gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[1]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400) 
 gentopYbounds = (marginsfront[0]/plotunit, plotsize[1] - marginsfront[2]/plotunit)
-print(gentopXbounds,gentopYbounds)
+gentopYsize = gentopYbounds[1] - gentopYbounds[0]
+print(gentopXbounds,gentopYbounds, gentopYsize)
 plotter.select_pen(4)
 ###def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset=(0,0)): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
 #gentop( (gentopstart[0],gentopstart[1]) ,(10, 500),(0,1500),(2500,9500),(5,2),9, 0, 0, (plotsize[0]/2, plotsize[1]))
 plotter.select_pen(1)
-gentop((gentopXbounds[0],gentopXbounds[0]),(gentopXbounds[0],gentopXbounds[0]),(0,1500),(500,10000),(7,5),5, 0, 0, (0, -plotsize[1]/2))
+gentop((gentopXbounds[0], 0.5*gentopYsize),(gentopXbounds[1],0.5*gentopYsize),(0,1500),(500,10000),(7,5),5, 0, 0, (0, -plotsize[1]/2))
 plotter.select_pen(2)
 gentop((0,5500),(10000,1500),(0,3500),(500,10000),(88,88),1, 0, 0, (0, plotsize[1]/2))
 
