@@ -531,7 +531,6 @@ plotter.write(t)
 #margins
 marginsfront = [10,10,10,10] #mm [top,bottom,left,right]
 frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
-#marginsback = [10,10,10,10]
 #gentopbounds
 gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[3]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400) 
 gentopYbounds = (marginsfront[0]/plotunit, plotsize[1] - marginsfront[1]/plotunit)
@@ -549,8 +548,9 @@ plotter.select_pen(2)
 gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXsize,0.3*gentopYsize),(0,1*gentopYsize),(0*gentopYsize,gentopYsize),(88,88),1, 0, 0, gentopoffset)
 
 
+marginsback = [10,10,10,10] #mm [top,bottom,left,right]
+wordsoffset=(-plotsize[0] + marginsback[0] , -plotsize[1]/2)
 
-wordsoffset=(-plotsize[0], -plotsize[1]/2)
 
 writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
 plotter.select_pen(4)
