@@ -548,6 +548,10 @@ gentop((gentopXbounds[0], 0.5*gentopYsize),(gentopXsize,0.5*gentopYsize),(0,0.5*
 plotter.select_pen(2)
 gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXsize,0.3*gentopYsize),(0,1*gentopYsize),(0*gentopYsize,gentopYsize),(88,88),1, 0, 0, gentopoffset)
 
+
+
+
+
 writeword("Sondervan", 16, "USSR.ttf", 12500,9000)
 plotter.select_pen(4)
 writeword("Triangle", 12, "rus.ttf", 17000,9000)
