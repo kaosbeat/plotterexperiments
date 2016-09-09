@@ -538,9 +538,9 @@ gentopstop = (plotsize[1] - marginsfront[3]/plotunit, plotsize[1] - marginsfront
 plotter.select_pen(4)
 #gentop( (gentopstart[0],gentopstart[1]) ,(10, 500),(0,1500),(2500,9500),(5,2),9, 0, 0, (plotsize[0]/2, plotsize[1]))
 plotter.select_pen(1)
-gentop((0,500),(10000,2500),(0,1500),(500,10000),(7,5),5, 0, 0, (plotsize[0]/2, plotsize[1]))
+gentop((0,500),(10000,2500),(0,1500),(500,10000),(7,5),5, 0, 0, (plotsize[0]/2, plotsize[1]/2))
 plotter.select_pen(2)
-gentop((0,5500),(10000,1500),(0,3500),(500,10000),(88,88),1, 0, 0, (plotsize[0]/2, plotsize[1]))
+gentop((0,5500),(10000,1500),(0,3500),(500,10000),(88,88),1, 0, 0, (plotsize[0]/2, plotsize[1]/2))
 
 writeword("Sondervan", 16, "USSR.ttf", 12500,9000)
 plotter.select_pen(4)
