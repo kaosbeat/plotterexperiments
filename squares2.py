@@ -585,7 +585,7 @@ stopnumber = input('enter stopnumber: ')
 for x in xrange(startnumber,stopnumber):
 	ready = input('is record ready? (y/n) :')
 	print x
-	if(ready == y):
+	if(ready == 'y'):
 		plotcover(x, stopnumber)
 	else:
 		print('press CTRL-C')
