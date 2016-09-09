@@ -516,8 +516,6 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 
 
 def plotcover(start, end):
-		
-
 	###probeersel
 	plotter.select_pen(1)
 	bounds = shapes.rectangle(plotsize[0], plotsize[1])
@@ -579,7 +577,13 @@ def plotcover(start, end):
 
 	writeword("B2", 10, "USSR.ttf", 12500+wordsoffset[0], 6900+wordsoffset[1])
 	writeword("massInversion", 10, "USSR.ttf", 17500+wordsoffset[0], 6900+wordsoffset[1])
+	io.view(plotter)
 
+startnumber = input('enter startnumber: ')
+stopnumber = input('enter stopnumber: ')
+
+for x in xrange(startnumber,stopnumber):
+	plotcover(x, end)
 
 
 # print getspace((0,37),(300,84), 5)
@@ -592,11 +596,11 @@ def plotcover(start, end):
 # print y
 # xvals = np.linspace(0, 2*np.pi, 50)
 
-size = 30
-for i in range(size):
-	# width = random.randint(20,30)
-	width = 30
-	freq= 25
+# size = 30
+# for i in range(size):
+# 	# width = random.randint(20,30)
+# 	width = 30
+# 	freq= 25
 	# print np.sin((wav3[int(rez/size*i)]))
 	#wavesdown(i,freq,i*width*freq,width,random.randint(500,1903),3000)
 	#wavesdown(i+1,freq,i*width*freq,width,random.randint(0,int((np.sin((wav1[int(rez/size*i)])) +1 )*500)),(np.sin((wav1[int(rez/size*i)]))+1)*2000)
@@ -617,5 +621,5 @@ for i in range(size):
 #wavedecay(wav3, rez/1, 1500,1100,0, 2500)
 
 
-io.view(plotter)
+
 
