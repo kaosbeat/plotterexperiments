@@ -521,7 +521,7 @@ bounds = shapes.rectangle(plotsize[0], plotsize[1])
 transforms.offset(bounds,(-plotsize[0]/2, -plotsize[1]/2) )
 plotter.write(bounds)
 
-zero = shapes.rectangle(10,10)
+zero = shapes.rectangle(100,10)
 plotter.write(zero)
 #chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
 t = shapes.label("195/300", 0.5, 0.5)
