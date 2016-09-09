@@ -587,7 +587,7 @@ for x in xrange(startnumber,stopnumber):
 	print x
 	if(ready == y):
 		plotcover(x, stopnumber)
-	else
+	else:
 		print('press CTRL-C')
 
 
