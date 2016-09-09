@@ -523,7 +523,7 @@ plotter.write(bounds)
 
 #chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
 t = shapes.label("blahhh", 0.5, 0.5)
-transforms.offset(t,(-plotsize[0]/6, -plotsize[1]+200))
+transforms.offset(t,(200, -plotsize[1]+200))
 plotter.write(t)
 
 #margins
