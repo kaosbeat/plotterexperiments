@@ -583,9 +583,9 @@ startnumber = input('enter startnumber: ')
 stopnumber = input('enter stopnumber: ')
 #plotcover(startnumber, stopnumber)
 for x in xrange(startnumber,stopnumber):
-	ready = input('is record ready? (y/ :')
-	print(str(ready))
-	if(str(ready) == 'y'):
+	ready = input('is record ready? press 1 to continue :')
+	print(ready)
+	if(ready == 1):
 		print x
 		plotcover(x, stopnumber)
 	else:
