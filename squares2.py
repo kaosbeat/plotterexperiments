@@ -520,6 +520,7 @@ plotter.select_pen(1)
 bounds = shapes.rectangle(plotsize[0], plotsize[1])
 transforms.offset(bounds,(-plotsize[0]/2, -plotsize[1]/2) )
 plotter.write(bounds)
+
 plotter.select_pen(4)
 gentop((0,10000),(10000,500),(0,1500),(2500,9500),(5,2),9, 0, 0)
 plotter.select_pen(1)
