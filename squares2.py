@@ -530,9 +530,11 @@ plotter.write(t)
 marginsfront = [10,10,10,10] #mm [top,bottom,left,right]
 frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
 #marginsback = [10,10,10,10]
+gentopstart = (marginsfront[2]/plotunit, marginsfront[1]/plotunit)
+gentopstop = (plotsize[1] - marginsfront[3]/plotunit, plotsize[1] - marginsfront[3]/plotunit )
 
 plotter.select_pen(4)
-gentop((marginsfront[2]/plotunit,(marginsfront[1]/plotunit),(10000,500),(0,1500),(2500,9500),(5,2),9, 0, 0, (plotsize[0]/2, plotsize[1]))
+gentop( (gentopstart[0],gentopstart[1])  ,(, 500),(0,1500),(2500,9500),(5,2),9, 0, 0, (plotsize[0]/2, plotsize[1]))
 plotter.select_pen(1)
 gentop((0,500),(10000,2500),(0,1500),(500,10000),(7,5),5, 0, 0, (plotsize[0]/2, plotsize[1]))
 plotter.select_pen(2)
