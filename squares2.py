@@ -529,7 +529,7 @@ transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 plotter.write(t)
 
 #margins
-marginsfront = [500,70,10,10] #mm [top,bottom,left,right]
+marginsfront = [50,70,10,10] #mm [top,bottom,left,right]
 frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
 #marginsback = [10,10,10,10]
 #gentopbounds
