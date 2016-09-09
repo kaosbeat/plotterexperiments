@@ -536,7 +536,7 @@ frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
 gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[3]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400) 
 gentopYbounds = (marginsfront[0]/plotunit, plotsize[1] - marginsfront[1]/plotunit)
 gentopYsize = gentopYbounds[1] - gentopYbounds[0]
-gentopoffset = (gentopXbounds[0], gentopYbounds[0])  ###-plotsize[1]/2 ) #  + (plotsize[1]-gentopYsize)/2 )
+gentopoffset = (gentopXbounds[0], -plotsize[1]/2 + gentopYbounds[0]) #  + (plotsize[1]-gentopYsize)/2 )
 print(gentopXbounds,gentopYbounds, gentopYsize)
 
 plotter.select_pen(4)
