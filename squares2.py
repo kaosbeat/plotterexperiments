@@ -552,7 +552,7 @@ gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXsize,0.3*gentopYsize),(0,1*ge
 
 wordsoffset=(-plotsize[0], -plotsize[1]/2)
 
-writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[0])
+writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
 plotter.select_pen(4)
 writeword("Triangle", 12, "rus.ttf", 17000,9000)
 writeword("Yur", 12, "rus.ttf", 17000,8200)
