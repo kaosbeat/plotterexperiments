@@ -1,17 +1,17 @@
 from __future__ import division
 from chiplotle import *
 
-from chiplotle.tools.plottertools import instantiate_virtual_plotter
-plotter =  instantiate_virtual_plotter(type="DXY1300")
+#from chiplotle.tools.plottertools import instantiate_virtual_plotter
+#plotter =  instantiate_virtual_plotter(type="DXY1300")
 # plotter.margins.hard.draw_outline()
-#plotter = instantiate_plotters( )[0]
+plotter = instantiate_plotters( )[0]
 # real plotter says
 #    Drawing limits: (left 0; bottom 0; right 16158; top 11040)
 #dagos A1-plotter says (left: -17300, bottom: -11880, right: 16340, top: 11880) 84lmrn X 594mm
 pltmax = [16158, 11040]
 plotunit = 0.025 # 1 coordinate unit per plotter = 0.025 mm
 plotlimits = [-17300,-11880,16340, 11880]  #dagos A1-plotter says (left: -17300, bottom: -11880, right: 16340, top: 11880) 84lmrn X 594mm
-plotleftbottom = [-17300,-11880]  
+plotleftbottom = [-17300,-11880]
 plotsizemm = [626,309] #in mm breedte x hoogte
 plotsize = [plotsizemm[0]/plotunit,plotsizemm[1]/plotunit]
 #coords = plotter.margins.soft.all_coordinates
@@ -28,7 +28,7 @@ from scipy import signal
 # from texttools  import *
 import freetype
 
-#additive syths, 
+#additive syths,
 #	plot a sine wave using a shape (circle)
 #	plot a saw wave using a shape (triangle)
 # 	plot the results using a combination shape
@@ -117,7 +117,7 @@ def writeword(textstring, size, font, xpos, ypos):
 
 
 
-def getrandompoint(wave, table, Vsize):	
+def getrandompoint(wave, table, Vsize):
 	global randpointer
 	# global randpointerjump
 	randpointer = randpointer + int(randpointerjump*randpointerbackrange - random.randint(0, randpointerjump))
@@ -155,7 +155,7 @@ def somewaves(pen,waves, subwaves, wavperiod = [], wavtype = [], wavesize = [], 
 
 	plotter.write(g)
 
-#somewaves(2,False, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])  
+#somewaves(2,False, True, [wav3, wav1], ["cos", "saw", "saw", "sin", "sin"], [1500, 5100, 500, 2000, 6000], ["rect", "cross", "cross", "rect", "cross"])
 
 def wavesdown(pen, freq, offset, width, min, max):
 	global plotter
@@ -169,7 +169,7 @@ def wavesdown(pen, freq, offset, width, min, max):
 	# maxheight = random.randint(min, max)
 	#max = random.randint(min + 100,3000)
 	g.append(shapes.line((0+offset,max),(0+offset,0)))
-	
+
 	#baseblock
 	for f in range(width):
 		#set height
@@ -212,7 +212,7 @@ def wavedecay(wav, rez, height, scale, x, y):
 	# io.view(g)
 	for r in range(rez):
 		#print(int(np.log(r+1)/np.log(rez)*rez))
-		i1 = int(np.log(r+1)/np.log(rez)*rez)-1 
+		i1 = int(np.log(r+1)/np.log(rez)*rez)-1
 		i2 = int(np.log(r+2)/np.log(rez)*rez)-1
 		x1 = np.log(r+1)*scale
 		x2 = np.log(r+2)*scale
@@ -221,7 +221,7 @@ def wavedecay(wav, rez, height, scale, x, y):
 		g.append(shapes.line((x1, y1), (x2, y2)))
 		#plot wav1
 	for r in range(rez):
-		i1 = int(np.log(r+1)/np.log(rez)*rez)-1 
+		i1 = int(np.log(r+1)/np.log(rez)*rez)-1
 		i2 = int(np.log(r+2)/np.log(rez)*rez)-1
 		x1 = np.log(r+1)*scale
 		x2 = np.log(r+2)*scale
@@ -260,7 +260,7 @@ def simplelines2(pen, density, quantity, height):
 	transforms.offset(g, (goffset, 0))
 	plotter.write(g)
 
-def fitpage(shape):		
+def fitpage(shape):
 	if (pltmax[0]/g.width < pltmax[1]/g.height):
 		transforms.scale(shape, (pltmax[0]-100)/shape.width)
 	else:
@@ -275,13 +275,13 @@ def shapelayerrect(layer, pen, x, y, width, height):
 	plotter.select_pen(pen)
 	global plotter
 	global g
-	g = shapes.group([])	
+	g = shapes.group([])
 	for i in range(int(width/shaperez)):
 		x1 = x + i*shaperez + layer*layerarticulation
-		x2 = x1 
+		x2 = x1
 		y1 = y
 		y2 = y + height
-		g.append(shapes.line((x1,y1),(x2,y2))) 
+		g.append(shapes.line((x1,y1),(x2,y2)))
 	plotter.write(g)
 
 
@@ -422,7 +422,7 @@ layermax = interspace/4
 #print "CONSTRUCTION"
 #print [getspace((0,0),(3000,84), interspace),getspace((3000,84),(5000,3000), interspace),getspace((5000,3000),(6000,2000), interspace)]
 #constructshape([(20.0, 0.0), (40.0, 25.0), (60.0, 50.0), (80.0, 75.0), (100.0, 100.0)],[(20.0, 0.0), (40.0, 5.0), (60.0, 5.0), (80.0, 7.0), (100.0, 100.0)],3)
-#constructshape([getspace((0,0),(3000,84), interspace),getspace((3000,84),(5000,3000), interspace),getspace((5000,3000),(6000,2000), interspace)], 
+#constructshape([getspace((0,0),(3000,84), interspace),getspace((3000,84),(5000,3000), interspace),getspace((5000,3000),(6000,2000), interspace)],
 #			   [getspace((0,0),(3000,84), interspace),getspace((0,84),(5000,3000), interspace),getspace((2000,3000),(6000,2000), interspace)] )
 
 # constructshape([getspace((0,0),(1000,1000), interspace) + getspace((1000,1000),(2000,1000), interspace)],
@@ -440,7 +440,7 @@ def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset=(0,0)): #(0,0),(10000
 	gtop.append(start)
 	gbottom.append(start)
 	for i in range(steps[0]):
-		gtop.append((basestepTop*1*(i+1), random.randint(max[0],max[1])))		
+		gtop.append((basestepTop*1*(i+1), random.randint(max[0],max[1])))
 	for i in range(steps[1]):
 		gbottom.append((basestepBottom*1*(i+1), random.randint(min[0],min[1])))
 	gtop.append(stop)
@@ -480,7 +480,7 @@ def dobox(pen,xpos,ypos,width,height,subdiv1,subdiv2,globalx, globaly):
 			y1 = random.randint(0,height)
 			# y1 = height/subdiv1*i
 			y2 = random.randint(0,height/2)
-			# g.append(shapes.line((x1,y1),(x2,y2))) 
+			# g.append(shapes.line((x1,y1),(x2,y2)))
 			g.append(shapes.line((0,y1)	,(width, y2)))
 	transforms.offset(g, (xpos+globalx,ypos+globaly))
 	plotter.write(g)
@@ -506,7 +506,7 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 
 # #for i in range(3):
 # #	length = random.randint(3,8)
-# #	gentop((random.randint(0,2000),random.randint(0, 2000)),(random.randint(2000,4000),random.randint(2000,4000)),(0,0),(2500,4000),(length, length),i*2) 
+# #	gentop((random.randint(0,2000),random.randint(0, 2000)),(random.randint(2000,4000),random.randint(2000,4000)),(0,0),(2500,4000),(length, length),i*2)
 # plotter.select_pen(5)
 # gentop((0,1500),(10000,1500),(0,1500),(1500,3500),(3,7),9, 0, 2500)
 # plotter.select_pen(3)
@@ -518,9 +518,9 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 def plotcover(start, end):
 	###probeersel
 	plotter.select_pen(1)
-	bounds = shapes.rectangle(plotsize[0], plotsize[1])
+	#bounds = shapes.rectangle(plotsize[0], plotsize[1])
 	#transforms.offset(bounds,(-plotsize[0]/2, -plotsize[1]/2) )
-	plotter.write(bounds)
+	#plotter.write(bounds)
 
 	#zero = shapes.rectangle(100,10)
 	#plotter.write(zero)
@@ -533,7 +533,7 @@ def plotcover(start, end):
 	marginsfront = [10,10,10,10] #mm [top,bottom,left,right]
 	frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
 	#gentopbounds
-	gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[3]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400) 
+	gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[3]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400)
 	gentopYbounds = (marginsfront[0]/plotunit, plotsize[1] - marginsfront[1]/plotunit)
 	gentopXsize = gentopXbounds[1] - gentopXbounds[0]
 	gentopYsize = gentopYbounds[1] - gentopYbounds[0]
@@ -552,10 +552,10 @@ def plotcover(start, end):
 	marginsback = [-30,10,30,10] #mm [top,bottom,left,right] in this case, bottom and right are not taken into account
 	wordsoffset=(-plotsize[0] + marginsback[2]/plotunit , -plotsize[1]/2 - marginsback[0]/plotunit)
 
-	
+
 
 	writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
-	
+
 	plotter.select_pen(4)
 
 	writeword("Triangle", 12, "rus.ttf", 17000+wordsoffset[0],9000+wordsoffset[1])
@@ -563,7 +563,7 @@ def plotcover(start, end):
 
 
 	plotter.select_pen(2)
-	
+
 	writeword("A1", 10, "USSR.ttf", 12500+wordsoffset[0], 6900+wordsoffset[1])
 	writeword("Goto_Loopit", 10, "USSR.ttf", 17500+wordsoffset[0], 6900+wordsoffset[1])
 
@@ -572,7 +572,7 @@ def plotcover(start, end):
 
 	writeword("A3", 10, "USSR.ttf", 12500+wordsoffset[0], 4900+wordsoffset[1])
 	writeword("ThreeMoleculesOne", 10, "USSR.ttf", 17500+wordsoffset[0], 4900+wordsoffset[1])
-	
+
 	writeword("A4", 10, "USSR.ttf", 12500+wordsoffset[0], 3900+wordsoffset[1])
 	writeword("Cluster89", 10, "USSR.ttf", 17500+wordsoffset[0], 3900+wordsoffset[1])
 
@@ -591,7 +591,8 @@ def plotcover(start, end):
 	writeword("B3", 10, "USSR.ttf", 12500+wordsoffset[0], 500+wordsoffset[1])
 	writeword("Automatic3CC", 10, "USSR.ttf", 17500+wordsoffset[0], 500+wordsoffset[1])
 
-	io.view(plotter)
+	#io.view(plotter)
+
 	plotter.clear()
 
 print('startnumber/stopnumber will be plotted')
@@ -642,7 +643,3 @@ for x in xrange(startnumber,stopnumber):
 
 
 #wavedecay(wav3, rez/1, 1500,1100,0, 2500)
-
-
-
-
