@@ -578,7 +578,7 @@ def plotcover(start, end):
 	writeword("B2", 10, "USSR.ttf", 12500+wordsoffset[0], 6900+wordsoffset[1])
 	writeword("massInversion", 10, "USSR.ttf", 17500+wordsoffset[0], 6900+wordsoffset[1])
 	io.view(plotter)
-	plotter = False
+	plotter.clear()
 
 print('startnumber/stopnumber will be plotted')
 startnumber = input('enter startnumber: ')
@@ -590,6 +590,7 @@ for x in xrange(startnumber,stopnumber):
 	if(ready == 1):
 		print x
 		plotcover(x, stopnumber)
+		
 	else:
 		print('press CTRL-C')
 
