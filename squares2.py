@@ -558,8 +558,8 @@ def plotcover(start, end):
 	writeword("Triangle", 12, "rus.ttf", 17000+wordsoffset[0],9000+wordsoffset[1])
 	writeword("Yur", 12, "rus.ttf", 17000+wordsoffset[0],8200+wordsoffset[1])
 
-	writeword("A1", 10, "USSR.ttf", 12500+wordsoffset[0], 900+wordsoffset[1])
-	writeword("cluster89", 10, "USSR.ttf", 17500+wordsoffset[0], 900+wordsoffset[1])
+	writeword("A1", 10, "USSR.ttf", 12500+wordsoffset[0], 6900+wordsoffset[1])
+	writeword("Goto_Loopit", 10, "USSR.ttf", 17500+wordsoffset[0], 6900+wordsoffset[1])
 
 	writeword("A2", 10, "USSR.ttf", 12500+wordsoffset[0], 1900+wordsoffset[1])
 	writeword("lowEntropy", 10, "USSR.ttf", 17500+wordsoffset[0], 1900+wordsoffset[1])
@@ -590,7 +590,7 @@ for x in xrange(startnumber,stopnumber):
 	if(ready == 1):
 		print x
 		plotcover(x, stopnumber)
-		
+
 	else:
 		print('press CTRL-C')
 
