@@ -530,7 +530,7 @@ def plotcover(start, end):
 	plotter.write(t)
 
 	#margins
-	marginsfront = [0,10,10,10] #mm [top,bottom,left,right]
+	marginsfront = [10,10,10,10] #mm [top,bottom,left,right]
 	frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
 	#gentopbounds
 	gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[3]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400) 
@@ -552,10 +552,12 @@ def plotcover(start, end):
 	marginsback = [-30,10,30,10] #mm [top,bottom,left,right] in this case, bottom and right are not taken into account
 	wordsoffset=(-plotsize[0] + marginsback[2]/plotunit , -plotsize[1]/2 - marginsback[0]/plotunit)
 
-	plotter.select_pen(1)
+	
 
 	writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
 	
+	plotter.select_pen(4)
+
 	writeword("Triangle", 12, "rus.ttf", 17000+wordsoffset[0],9000+wordsoffset[1])
 	writeword("Yur", 12, "rus.ttf", 17000+wordsoffset[0],8200+wordsoffset[1])
 
