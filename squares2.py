@@ -564,24 +564,24 @@ def plotcover(start, end):
 	writeword("A2", 10, "USSR.ttf", 12500+wordsoffset[0], 5900+wordsoffset[1])
 	writeword("SeaClone", 10, "USSR.ttf", 17500+wordsoffset[0], 5900+wordsoffset[1])
 
-	writeword("A3", 10, "USSR.ttf", 12500+wordsoffset[0], 2900+wordsoffset[1])
+	writeword("A3", 10, "USSR.ttf", 12500+wordsoffset[0], 4900+wordsoffset[1])
 	writeword("ThreeMoleculesOne", 10, "USSR.ttf", 17500+wordsoffset[0], 4900+wordsoffset[1])
 	
-	writeword("A4", 10, "USSR.ttf", 12500+wordsoffset[0], 2900+wordsoffset[1])
+	writeword("A4", 10, "USSR.ttf", 12500+wordsoffset[0], 3900+wordsoffset[1])
 	writeword("Cluster89", 10, "USSR.ttf", 17500+wordsoffset[0], 3900+wordsoffset[1])
 
-	rhythmboxes(2,[1/2, 1/4],5000,2000,13500+wordsoffset[0],0+wordsoffset[1])
 
 	rhythmboxes(4,[1/4, 1/4, 1/4],5000,2000,13500+wordsoffset[0],4000+wordsoffset[1])
 	plotter.select_pen(2)
+	rhythmboxes(2,[1/2, 1/4],5000,2000,13500+wordsoffset[0],0+wordsoffset[1])
 
-	writeword("B1", 10, "USSR.ttf", 12500+wordsoffset[0], 5900+wordsoffset[1])
+	writeword("B1", 10, "USSR.ttf", 12500+wordsoffset[0], 2500+wordsoffset[1])
 	writeword("Mass_Inversion", 10, "USSR.ttf", 17500+wordsoffset[0], 2500+wordsoffset[1])
 
-	writeword("B2", 10, "USSR.ttf", 12500+wordsoffset[0], 6900+wordsoffset[1])
+	writeword("B2", 10, "USSR.ttf", 12500+wordsoffset[0], 1500+wordsoffset[1])
 	writeword("Triangle_Yur", 10, "USSR.ttf", 17500+wordsoffset[0], 1500+wordsoffset[1])
 
-	writeword("B3", 10, "USSR.ttf", 12500+wordsoffset[0], 5900+wordsoffset[1])
+	writeword("B3", 10, "USSR.ttf", 12500+wordsoffset[0], 500+wordsoffset[1])
 	writeword("Automatic3CC", 10, "USSR.ttf", 17500+wordsoffset[0], 500+wordsoffset[1])
 
 	io.view(plotter)
