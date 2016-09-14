@@ -554,10 +554,13 @@ def plotcover(start, end):
 
 
 	writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
-	plotter.select_pen(3)
+	
 	writeword("Triangle", 12, "rus.ttf", 17000+wordsoffset[0],9000+wordsoffset[1])
 	writeword("Yur", 12, "rus.ttf", 17000+wordsoffset[0],8200+wordsoffset[1])
 
+
+	plotter.select_pen(2)
+	
 	writeword("A1", 10, "USSR.ttf", 12500+wordsoffset[0], 6900+wordsoffset[1])
 	writeword("Goto_Loopit", 10, "USSR.ttf", 17500+wordsoffset[0], 6900+wordsoffset[1])
 
@@ -572,7 +575,7 @@ def plotcover(start, end):
 
 	rhythmboxes(2,[1/2, 1/4],5000,2000,13500+wordsoffset[0],0+wordsoffset[1])
 
-	plotter.select_pen(2)
+	plotter.select_pen(4)
 
 	rhythmboxes(4,[1/4, 1/4, 1/4],5000,2000,13500+wordsoffset[0],4000+wordsoffset[1])
 
