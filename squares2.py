@@ -2,9 +2,9 @@ from __future__ import division
 from chiplotle import *
 
 #from chiplotle.tools.plottertools import instantiate_virtual_plotter
-plotter =  instantiate_virtual_plotter(type="DXY1300")
+#plotter =  instantiate_virtual_plotter(type="DXY1300")
 # plotter.margins.hard.draw_outline()
-#plotter = instantiate_plotters( )[0]
+plotter = instantiate_plotters( )[0]
 # real plotter says
 #    Drawing limits: (left 0; bottom 0; right 16158; top 11040)
 #dagos A1-plotter says (left: -17300, bottom: -11880, right: 16340, top: 11880) 84lmrn X 594mm
@@ -410,7 +410,7 @@ def constructshape(spacearraytop, spacearraybottom, layer, xpos, ypos):
 		g.append(shapes.line((top[i][0]+layeroffset, top[i][1]),(bottom[i][0]+layeroffset, bottom[i][1])))
 	# plotter.select_pen(1)
 	transforms.offset(g, (xpos,ypos))
-	plotter.write(g)
+	#plotter.write(g)
 
 	#draw it
 
@@ -595,7 +595,7 @@ def plotcover(start, end):
 	writeword("B3", 10, "USSR.ttf", 12500+wordsoffset[0], 500+wordsoffset[1])
 	writeword("Automatic3CC", 10, "USSR.ttf", 17500+wordsoffset[0], 500+wordsoffset[1])
 
-	io.view(plotter)
+	#io.view(plotter)
 
 	plotter.clear()
 
