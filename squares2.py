@@ -99,7 +99,7 @@ def plotchar(char, size, font, xpos, ypos):
   g.append(shapes.path(VERTS))
   transforms.offset(g, (xpos, ypos))
   print "size is ", g.width
-  plotter.write(g)
+  #plotter.write(g)
   return g.width
 
 
@@ -410,7 +410,7 @@ def constructshape(spacearraytop, spacearraybottom, layer, xpos, ypos):
 		g.append(shapes.line((top[i][0]+layeroffset, top[i][1]),(bottom[i][0]+layeroffset, bottom[i][1])))
 	# plotter.select_pen(1)
 	transforms.offset(g, (xpos,ypos))
-	#plotter.write(g)
+	plotter.write(g)
 
 	#draw it
 
