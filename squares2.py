@@ -564,7 +564,7 @@ def plotcover(start, end):
 
 	writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
 	#plotter.clear()
-	plotter.select_pen(4)
+	#plotter.select_pen(4)
 	hpgl.commands.SP(4)
 	writeword("Triangle", 12, "rus.ttf", 17000+wordsoffset[0],9000+wordsoffset[1])
 	writeword("Yur", 12, "rus.ttf", 17000+wordsoffset[0],8200+wordsoffset[1])
