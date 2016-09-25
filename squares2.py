@@ -609,6 +609,7 @@ for x in xrange(startnumber,stopnumber):
 		plotcover(x, stopnumber)
 	if(ready == 2):
 		print x
+		plotter.select_pen(4)
 		writeword("Triangle_Yur", 10, "USSR.ttf", 100, 100)
 	else:
 		print('press CTRL-C')
