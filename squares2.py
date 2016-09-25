@@ -602,7 +602,7 @@ print('startnumber/stopnumber will be plotted')
 startnumber = input('enter startnumber: ')
 stopnumber = input('enter stopnumber (eg. 300): ')
 #plotcover(startnumber, stopnumber)
-    plotter.clear()
+plotter.clear()
 for x in xrange(startnumber,stopnumber):
 	ready = input('is record ready? press 1 to continue, press 2 for wordtest :')
 	print(ready)
