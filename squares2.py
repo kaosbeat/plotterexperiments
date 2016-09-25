@@ -610,7 +610,7 @@ for x in xrange(startnumber,stopnumber):
 	if(ready == 2):
 		print x
 		plotter.select_pen(4)
-		writeword("Triangle_Yur", 10, "USSR.ttf", 100, 100)
+		writeword("Triangle_Yur", 10, "USSR.ttf", 1000, 10000)
 	else:
 		print('press CTRL-C')
 
