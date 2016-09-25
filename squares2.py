@@ -609,7 +609,7 @@ for x in xrange(startnumber,stopnumber):
 		plotcover(x, stopnumber)
 	if(ready == 2):
 		print x
-		writeword("Triangle_Yur", 10, "USSR.ttf", 17500+wordsoffset[0], 1500+wordsoffset[1])
+		writeword("Triangle_Yur", 10, "USSR.ttf", 100, 100)
 	else:
 		print('press CTRL-C')
 
