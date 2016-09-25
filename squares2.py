@@ -601,7 +601,7 @@ def plotcover(start, end):
 
 print('startnumber/stopnumber will be plotted')
 startnumber = input('enter startnumber: ')
-stopnumber = input('enter stopnumber: ')
+stopnumber = input('enter stopnumber (eg. 300): ')
 #plotcover(startnumber, stopnumber)
 for x in xrange(startnumber,stopnumber):
 	ready = input('is record ready? press 1 to continue :')
