@@ -551,8 +551,6 @@ def plotcover(start, end):
 	plotter.select_pen(2)
 	
 	gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXsize,0.3*gentopYsize),(0,1*gentopYsize),(0*gentopYsize,gentopYsize),(88,88),1, 0, 0, gentopoffset)
-
-
 	marginsback = [-30,10,30,10] #mm [top,bottom,left,right] in this case, bottom and right are not taken into account
 	wordsoffset=(-plotsize[0] + marginsback[2]/plotunit , -plotsize[1]/2 - marginsback[0]/plotunit)
 
@@ -609,7 +607,9 @@ for x in xrange(startnumber,stopnumber):
 	if(ready == 1):
 		print x
 		plotcover(x, stopnumber)
-
+	if(ready == 2):
+		print x
+		writeword("Triangle_Yur", 10, "USSR.ttf", 17500+wordsoffset[0], 1500+wordsoffset[1])
 	else:
 		print('press CTRL-C')
 
