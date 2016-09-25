@@ -517,8 +517,8 @@ def rhythmboxes(pen,rhythm, width16, height16, xpos, ypos):
 
 def plotcover(start, end):
 	###probeersel
-	#plotter.select_pen(1)
-	hpgl.SP(1)
+	plotter.select_pen(1)
+	#hpgl.SP(1)
 	#bounds = shapes.rectangle(plotsize[0], plotsize[1])
 	#transforms.offset(bounds,(-plotsize[0]/2, -plotsize[1]/2) )
 	#plotter.write(bounds)
@@ -542,19 +542,19 @@ def plotcover(start, end):
 	print(gentopXbounds,gentopYbounds, gentopYsize)
 	
 	#plotter.clear()
-	#plotter.select_pen(4)
-	hpgl.SP(4)
+	plotter.select_pen(4)
+	#hpgl.SP(4)
 	###def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset=(0,0)): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
 	gentop((gentopXbounds[0], 0.8*gentopYsize),(gentopXsize,0.2*gentopYsize),(0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
 	#plotter.clear()
 	
-	#plotter.select_pen(1)
-	hpgl.SP(1)
+	plotter.select_pen(1)
+	#hpgl.SP(1)
 
 	gentop((gentopXbounds[0], 0.5*gentopYsize),(gentopXsize,0.5*gentopYsize),(0,0.5*gentopYsize),(0.3*gentopYsize,gentopYsize),(7,5),5, 0, 0, gentopoffset)
 	#plotter.clear()
 	plotter.select_pen(2)
-	hpgl.SP(2)
+	#hpgl.SP(2)
 
 	gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXsize,0.3*gentopYsize),(0,1*gentopYsize),(0*gentopYsize,gentopYsize),(88,88),1, 0, 0, gentopoffset)
 	marginsback = [-30,10,30,10] #mm [top,bottom,left,right] in this case, bottom and right are not taken into account
@@ -564,14 +564,14 @@ def plotcover(start, end):
 
 	writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
 	#plotter.clear()
-	#plotter.select_pen(4)
-	hpgl.SP(4)
+	plotter.select_pen(4)
+	#hpgl.SP(4)
 	writeword("Triangle", 12, "rus.ttf", 17000+wordsoffset[0],9000+wordsoffset[1])
 	writeword("Yur", 12, "rus.ttf", 17000+wordsoffset[0],8200+wordsoffset[1])
 
 	#plotter.clear()
-	#plotter.select_pen(2)
-	hpgl.SP(2)
+	plotter.select_pen(2)
+	#hpgl.SP(2)
 	writeword("A1", 10, "USSR.ttf", 12500+wordsoffset[0], 6900+wordsoffset[1])
 	writeword("Goto_Loopit", 10, "USSR.ttf", 17500+wordsoffset[0], 6900+wordsoffset[1])
 
@@ -586,8 +586,8 @@ def plotcover(start, end):
 
 	rhythmboxes(2,[1/2, 1/4],5000,2000,13500+wordsoffset[0],0+wordsoffset[1])
 	#plotter.clear()
-	#plotter.select_pen(4)
-	hpgl.SP(4)
+	plotter.select_pen(4)
+	#hpgl.SP(4)
 	rhythmboxes(4,[1/4, 1/4, 1/4],5000,2000,13500+wordsoffset[0],4000+wordsoffset[1])
 
 	writeword("B1", 10, "USSR.ttf", 12500+wordsoffset[0], 2500+wordsoffset[1])
