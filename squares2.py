@@ -602,7 +602,7 @@ startnumber = input('enter startnumber: ')
 stopnumber = input('enter stopnumber (eg. 300): ')
 #plotcover(startnumber, stopnumber)
 for x in xrange(startnumber,stopnumber):
-	ready = input('is record ready? press 1 to continue :')
+	ready = input('is record ready? press 1 to continue, press 2 for wordtest :')
 	print(ready)
 	if(ready == 1):
 		print x
