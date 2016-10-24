@@ -540,14 +540,14 @@ def plotcover(start, end):
 	gentopYsize = gentopYbounds[1] - gentopYbounds[0]
 	gentopoffset = (gentopXbounds[0], -plotsize[1]/2 + gentopYbounds[0]) #  + (plotsize[1]-gentopYsize)/2 )
 	print(gentopXbounds,gentopYbounds, gentopYsize)
-	
+
 	#plotter.clear()
 	plotter.select_pen(4)
 	#hpgl.SP(4)
 	###def gentop(start,stop,min,max,steps,layer,xpos,ypos,offset=(0,0)): #(0,0),(10000,1000),(0,2000),(2500,5000),(3,2), 3
 	gentop((gentopXbounds[0], 0.8*gentopYsize),(gentopXsize,0.2*gentopYsize),(0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
 	#plotter.clear()
-	
+
 	plotter.select_pen(1)
 	#hpgl.SP(1)
 
@@ -564,7 +564,7 @@ def plotcover(start, end):
 
 	writeword("Sondervan", 16, "USSR.ttf", 12500+wordsoffset[0],9000+wordsoffset[1])
 	#plotter.clear()
-	plotter.select_pen(4)
+	plotter.select_pen(5)
 	#hpgl.SP(4)
 	writeword("Triangle", 12, "rus.ttf", 17000+wordsoffset[0],9000+wordsoffset[1])
 	writeword("Yur", 12, "rus.ttf", 17000+wordsoffset[0],8200+wordsoffset[1])
