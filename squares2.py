@@ -603,6 +603,7 @@ def plotcover(start, end):
 	writeword("B3", 10, "USSR.ttf", 12500+wordsoffset[0], 500+wordsoffset[1])
 	writeword("Automatic3CC", 10, "USSR.ttf", 17500+wordsoffset[0], 500+wordsoffset[1])
 
+	
 	io.view(plotter)
 
 	plotter.clear()
