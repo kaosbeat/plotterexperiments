@@ -1,8 +1,8 @@
 from __future__ import division
 from chiplotle import *
 
-#from chiplotle.tools.plottertools import instantiate_virtual_plotter
-#plotter =  instantiate_virtual_plotter(type="DXY1300")
+# from chiplotle.tools.plottertools import instantiate_virtual_plotter
+# plotter =  instantiate_virtual_plotter(type="DXY1300")
 # plotter.margins.hard.draw_outline()
 plotter = instantiate_plotters( )[0]
 # real plotter says
@@ -557,6 +557,10 @@ def plotcover(start, end):
 	#hpgl.SP(2)
 
 	gentop((gentopXbounds[0], 0.3*gentopYsize),(gentopXsize,0.3*gentopYsize),(0,1*gentopYsize),(0*gentopYsize,gentopYsize),(88,88),1, 0, 0, gentopoffset)
+	plotter.select_pen(5)
+
+	gentop((gentopXbounds[0], 0.5*gentopYsize),(gentopXsize,0.5*gentopYsize),(0,0.5*gentopYsize),(0.3*gentopYsize,gentopYsize),(2,9),7, 0, 0, gentopoffset)
+	#plotter.clear()
 	marginsback = [-30,10,30,10] #mm [top,bottom,left,right] in this case, bottom and right are not taken into account
 	wordsoffset=(-plotsize[0] + marginsback[2]/plotunit , -plotsize[1]/2 - marginsback[0]/plotunit)
 
@@ -599,7 +603,7 @@ def plotcover(start, end):
 	writeword("B3", 10, "USSR.ttf", 12500+wordsoffset[0], 500+wordsoffset[1])
 	writeword("Automatic3CC", 10, "USSR.ttf", 17500+wordsoffset[0], 500+wordsoffset[1])
 
-	#io.view(plotter)
+	# io.view(plotter)
 
 	plotter.clear()
 
