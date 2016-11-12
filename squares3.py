@@ -1,10 +1,10 @@
 from __future__ import division
 from chiplotle import *
 
-from chiplotle.tools.plottertools import instantiate_virtual_plotter
-plotter =  instantiate_virtual_plotter(type="DPX3300")
+#from chiplotle.tools.plottertools import instantiate_virtual_plotter
+#plotter =  instantiate_virtual_plotter(type="DPX3300")
 # plotter.margins.hard.draw_outline()
-#plotter = instantiate_plotters( )[0]
+plotter = instantiate_plotters( )[0]
 # real plotter says
 #    Drawing limits: (left 0; bottom 0; right 16158; top 11040)
 #dagos A1-plotter says (left: -17300, bottom: -11880, right: 16340, top: 11880) 84lmrn X 594mm
