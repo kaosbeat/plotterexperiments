@@ -555,8 +555,8 @@ def plotcover(start, end):
 	# gentop((gentopXbounds[0], 0.8*gentopYsize),(gentopXsize,0.2*gentopYsize),(0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
 	#plotter.clear()
 	gentop((gentopXbounds[0], 0.8*gentopYsize),(0.3*gentopXsize,0.2*gentopYsize),(0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
-	gentop((0.3*gentopXsize,0.2*gentopYsize), (0.6*gentopXsize, 0.8*gentopYsize), (0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
-	gentop((0.6*gentopXsize, 0.8*gentopYsize), (gentopXsize,0.2*gentopYsize), (0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
+	# gentop((0.3*gentopXsize,0.2*gentopYsize), (0.6*gentopXsize, 0.8*gentopYsize), (0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
+	# gentop((0.6*gentopXsize, 0.8*gentopYsize), (gentopXsize,0.2*gentopYsize), (0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
 
 	plotter.select_pen(1)
 	#hpgl.SP(1)
