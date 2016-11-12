@@ -521,7 +521,7 @@ def plotcover(start, end):
 	plotter.select_pen(1)
 	#hpgl.SP(1)
 	bounds = shapes.rectangle(plotsize[0], plotsize[1])
-	transforms.offset(bounds,(200 ,-200)) #(-plotsize[0]/2 - 200, -plotsize[1]/2 - 200) )
+	transforms.offset(bounds,(0,0)) #(-plotsize[0]/2 - 200, -plotsize[1]/2 - 200) )
 	plotter.write(bounds)
 
 	#zero = shapes.rectangle(100,10)
