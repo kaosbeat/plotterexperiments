@@ -521,7 +521,7 @@ def plotcover(start, end):
 	plotter.select_pen(1)
 	#hpgl.SP(1)
 	bounds = shapes.rectangle(plotsize[0], plotsize[1])
-	transforms.offset(bounds,(0 ,0)) #(-plotsize[0]/2 - 200, -plotsize[1]/2 - 200) )
+	transforms.offset(bounds,(200 ,-200)) #(-plotsize[0]/2 - 200, -plotsize[1]/2 - 200) )
 	plotter.write(bounds)
 
 	#zero = shapes.rectangle(100,10)
@@ -545,7 +545,7 @@ def plotcover(start, end):
 	# gentopXsize = 16340 + 17300
 	# gentopYsize = 11880 + 11880
 	# gentopoffset = (gentopXbounds[0], -plotsize[1]/2 + gentopYbounds[0]) #  + (plotsize[1]-gentopYsize)/2 )
-	gentopoffset = (-gentopXsize/2 -1000,-gentopYsize/2)
+	gentopoffset = (-gentopXsize/2 -500,-gentopYsize/2)
 	print(gentopXbounds,gentopYbounds, gentopYsize)
 	
 	#plotter.clear()
