@@ -13,7 +13,7 @@ pltmax = [16340, 11880]
 plotunit = 0.025 # 1 coordinate unit per plotter = 0.025 mm
 plotlimits = [-17300,-11880,16340, 11880]  #dagos A1-plotter says (left: -17300, bottom: -11880, right: 16340, top: 11880) 84lmrn X 594mm
 plotleftbottom = [-17300,-11880]
-plotsizemm = [594,841] #in mm breedte x hoogte
+plotsizemm = [841,594] #in mm breedte x hoogte
 plotsize = [plotsizemm[0]/plotunit,plotsizemm[1]/plotunit]
 #coords = plotter.margins.soft.all_coordinates
 # plotter.select_pen(1)
@@ -520,9 +520,9 @@ def plotcover(start, end):
 	###probeersel
 	plotter.select_pen(1)
 	#hpgl.SP(1)
-	#bounds = shapes.rectangle(plotsize[0], plotsize[1])
-	#transforms.offset(bounds,(-plotsize[0]/2, -plotsize[1]/2) )
-	#plotter.write(bounds)
+	bounds = shapes.rectangle(plotsize[0], plotsize[1])
+	transforms.offset(bounds,(-plotsize[0]/2, -plotsize[1]/2) )
+	plotter.write(bounds)
 
 	#zero = shapes.rectangle(100,10)
 	#plotter.write(zero)
