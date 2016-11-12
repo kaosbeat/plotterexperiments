@@ -540,8 +540,8 @@ def plotcover(start, end):
 	gentopXbounds = (marginsfront[2]/plotunit, 16340 + 17300 - marginsfront[3]/plotunit)
 	gentopYbounds = (marginsfront[2]/plotunit,11880 + 11880 - marginsfront[1]/plotunit)
 	# gentopYbounds = (marginsfront[0]/plotunit, plotsize[1] - marginsfront[1]/plotunit)
-	gentopXsize = gentopXbounds[1] - gentopXbounds[0] - 5000
-	gentopYsize = gentopYbounds[1] - gentopYbounds[0] - 5000
+	gentopXsize = gentopXbounds[1] - gentopXbounds[0]
+	gentopYsize = gentopYbounds[1] - gentopYbounds[0]
 	# gentopXsize = 16340 + 17300
 	# gentopYsize = 11880 + 11880
 	# gentopoffset = (gentopXbounds[0], -plotsize[1]/2 + gentopYbounds[0]) #  + (plotsize[1]-gentopYsize)/2 )
