@@ -528,7 +528,7 @@ def plotcover(start, end):
 	#plotter.write(zero)
 	#chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
 	t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
-	transforms.offset(t,(-, -plotsize[1]/2 + 200))
+	transforms.offset(t,(-plotsize[0], -plotsize[1]))
 	plotter.write(t)
 
 	#margins
@@ -555,8 +555,8 @@ def plotcover(start, end):
 	# gentop((gentopXbounds[0], 0.8*gentopYsize),(gentopXsize,0.2*gentopYsize),(0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
 	#plotter.clear()
 	gentop((gentopXbounds[0], 0.8*gentopYsize),(0.3*gentopXsize,0.2*gentopYsize),(0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
-	# gentop((0.3*gentopXsize,0.2*gentopYsize), (0.6*gentopXsize, 0.8*gentopYsize), (0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
-	# gentop((0.6*gentopXsize, 0.8*gentopYsize), (1gentopXsize,0.2*gentopYsize), (0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
+	gentop((0.3*gentopXsize,0.2*gentopYsize), (0.6*gentopXsize, 0.8*gentopYsize), (0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
+	gentop((0.6*gentopXsize, 0.8*gentopYsize), (gentopXsize,0.2*gentopYsize), (0,0.3*gentopYsize),(0.4*gentopYsize,gentopYsize),(5,2),9, 0, 0, gentopoffset)
 
 	plotter.select_pen(1)
 	#hpgl.SP(1)
