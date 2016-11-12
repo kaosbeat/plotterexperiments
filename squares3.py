@@ -532,8 +532,8 @@ def plotcover(start, end):
 	plotter.write(t)
 
 	#margins
-	marginsfront = [10,10,0,0] #mm [top,bottom,left,right]
-	frontoffset = (0,-plotsize[1]/2) #bottomleft x,y for front drawing
+	marginsfront = [10,10,10,10] #mm [top,bottom,left,right]
+	frontoffset = (-500,-plotsize[1]/2) #bottomleft x,y for front drawing
 	#gentopbounds
 	# gentopXbounds = (marginsfront[2]/plotunit, plotsize[0]/2 - marginsfront[3]/plotunit) #(marginsfront[2]/plotunit, marginsfront[1]/plotunit) = (400,400)
 			# -17300,-11880,16340, 11880]
