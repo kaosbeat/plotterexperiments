@@ -528,7 +528,7 @@ def plotcover(start, end):
 	#plotter.write(zero)
 	#chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
 	t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
-	transforms.offset(t,(-plotsize[0]/2 +200, -plotsize[1]/2 -200))
+	transforms.offset(t,(-plotsize[0]/2 +200, -plotsize[1]/2 +200))
 	plotter.write(t)
 
 	#margins
