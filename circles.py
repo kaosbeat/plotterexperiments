@@ -16,7 +16,7 @@ plotsize = [10, 10]
 
 def filledcircle(radius):
 
-	x = np.linspace(0, 2*np.pi, 10)
+	x = np.linspace(0, 2*np.pi, 100)
 	y = np.sin(x)
 	print (x,", ", y)
 	for i in xrange(1,10):
