@@ -24,8 +24,8 @@ def filledcircle(cx,cy,radius,rate):
 	g = shapes.group([])
 	for i in xrange(1,100):
 		g.append(shapes.line(
-			( (cx + r * cos(a[i-1])),(cy + r * sin(a[i-1])) )
-			( (cx + r * cos(a[i])),(cy + r * sin(a[i])) )))
+			( (cx + radius * cos(a[i-1])),(cy + radius * sin(a[i-1])) )
+			( (cx + radius * cos(a[i])),(cy + radius * sin(a[i])) )))
 		# g.append(shapes.line((x[i-1]*radius,y[i]*radius),(x[i]*radius, y[i]*radius)))
 	plotter.write(g)
 
