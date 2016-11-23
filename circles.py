@@ -22,7 +22,7 @@ def filledcircle(cx,cy,radius,rate):
 
 	x = np.linspace(0, 2*np.pi, rate)
 	y = np.sin(x)
-	print (a)
+	# print (a)
 	# for i in xrange(1,100):
 	# 	print (y[i]*50)
 		
