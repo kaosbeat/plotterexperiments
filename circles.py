@@ -14,7 +14,7 @@ plotsize = [10, 10]
 
 # Y = np.linspace(p1[1] ,p2[1], len(spaceX))
 
-def filledcircle(rate):
+def filledcircle(radius):
 
 	x = np.linspace(0, 2*np.pi, 10)
 	y = np.sin(x)
@@ -24,7 +24,7 @@ def filledcircle(rate):
 		
 	g = shapes.group([])
 	for i in xrange(1,10):
-		g.append(shapes.line((x[i-1]*r,y[i]),(x[i], y[i])))
+		g.append(shapes.line((x[i-1]*radius,y[i]*radius),(x[i]*radius, y[i]*radius)))
 	plotter.write(g)
 
 def plot(start, end):
@@ -32,7 +32,7 @@ def plot(start, end):
 	t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
 	transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 	plotter.write(t)
-	filledcircle(10)
+	filledcircle(1000)
 	io.view(plotter)
 
 plot(0,1)
