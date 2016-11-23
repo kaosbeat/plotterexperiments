@@ -31,9 +31,9 @@ def filledcircle(cx,cy,radius,rate):
 		print(np.cos(a[i-1]))
 		# g.append(shapes.line())
 		# g.append(shapes.line((x[i-1]*radius,y[i]*radius),(x[i]*radius, y[i]*radius)))
-		# g.append(shapes.line(
-			# ( cx + radius * np.cos(a[i-1]),(cy + radius * np.sin(a[i-1])) )
-			# ( (cx + radius * np.cos(a[i])),(cy + radius * np.sin(a[i])) )))
+		g.append(shapes.line(
+			( cx + radius * np.cos(a[i-1]),cy + radius * np.sin(a[i-1]) )
+			( cx + radius * np.cos(a[i]),cy + radius * np.sin(a[i]) )))
 
 	plotter.write(g)
 
