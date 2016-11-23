@@ -16,8 +16,7 @@ plotsize = [10, 10]
 # #
 # The parametric equation for a circle is
 
-x = cx + r * cos(a)
-y = cy + r * sin(a)
+
 
 def filledcircle(cx,cy,radius,rate):
 
