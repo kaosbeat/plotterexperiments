@@ -20,7 +20,7 @@ def filledcircle(rate):
 	y = np.sin(x)
 	print (x,", ", y)
 	for i in xrange(1,10):
-		print (y[i])
+		print (y[i]*50)
 		pass
 
 def plot(start, end):
