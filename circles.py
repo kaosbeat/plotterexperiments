@@ -16,18 +16,21 @@ plotsize = [10, 10]
 # #
 # The parametric equation for a circle is
 
-
+x = cx + r * cos(a)
+y = cy + r * sin(a)
 
 def filledcircle(cx,cy,radius,rate):
 
-	a = np.linspace(0, 2*np.pi, rate)
-	
+	x = np.linspace(0, 2*np.pi, rate)
+	y = np.sin(x)
+	print (x,", ", y)
+	for i in xrange(1,100):
+		print (y[i]*50)
+		
 	g = shapes.group([])
 	for i in xrange(1,100):
-		g.append(shapes.line(
-			( (cx + radius * np.cos(a[i-1])),(cy + radius * np.sin(a[i-1])) )
-			( (cx + radius * np.cos(a[i])),(cy + radius * np.sin(a[i])) )))
-		# g.append(shapes.line((x[i-1]*radius,y[i]*radius),(x[i]*radius, y[i]*radius)))
+		g.append(shapes.line())
+		g.append(shapes.line((x[i-1]*radius,y[i]*radius),(x[i]*radius, y[i]*radius)))
 	plotter.write(g)
 
 def plot(start, end):
