@@ -10,7 +10,7 @@ import random
 import numpy as np
 from scipy import signal
 
-plotsize = 10
+plotsize = [10, 10]
 
 
 def plot(start, end):
