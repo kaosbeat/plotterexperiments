@@ -19,7 +19,7 @@ def filledcircle(radius):
 	x = np.linspace(0, 2*np.pi, 1000)
 	y = np.sin(x)
 	print (x,", ", y)
-	for i in xrange(1,10):
+	for i in xrange(1,1000):
 		print (y[i]*50)
 		
 	g = shapes.group([])
