@@ -18,3 +18,5 @@ def plot(start, end):
 	transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 	plotter.write(t)
 	io.view(plotter)
+
+plot(0,1)
