@@ -13,6 +13,11 @@ from scipy import signal
 plotsize = [10, 10]
 
 # Y = np.linspace(p1[1] ,p2[1], len(spaceX))
+# #
+# The parametric equation for a circle is
+
+x = cx + r * cos(a)
+y = cy + r * sin(a)
 
 def filledcircle(radius):
 
