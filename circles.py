@@ -21,7 +21,11 @@ def filledcircle(rate):
 	print (x,", ", y)
 	for i in xrange(1,10):
 		print (y[i]*50)
-		pass
+		
+	g = shapes.group([])
+	for i in xrange(1,10):
+		g.append(shapes.line((x[i-1],y[i]),(x[i], y[i])))
+	plotter.write(g)
 
 def plot(start, end):
 	plotter.select_pen(1)
@@ -29,6 +33,6 @@ def plot(start, end):
 	transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 	plotter.write(t)
 	filledcircle(10)
-	# io.view(plotter)
+	io.view(plotter)
 
 plot(0,1)
