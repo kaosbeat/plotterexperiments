@@ -21,6 +21,7 @@ plotsize = [10, 10]
 def filledcircle(cx,cy,radius,rate):
 
 	a = np.linspace(0, 2*np.pi, rate)
+	
 	g = shapes.group([])
 	for i in xrange(1,100):
 		g.append(shapes.line(
