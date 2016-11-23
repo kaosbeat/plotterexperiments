@@ -30,6 +30,8 @@ def filledcircle(cx,cy,radius,rate):
 	for i in xrange(1,100):
 		# g.append(shapes.line())
 		g.append(shapes.line((x[i-1]*radius,y[i]*radius),(x[i]*radius, y[i]*radius)))
+	
+
 	plotter.write(g)
 
 def plot(start, end):
