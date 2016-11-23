@@ -19,6 +19,9 @@ def filledcircle(rate):
 	x = np.linspace(0, 2*np.pi, 10)
 	y = np.sin(x)
 	print (x,", ", y)
+	for i in xrange(1,10):
+		print (y[i])
+		pass
 
 def plot(start, end):
 	plotter.select_pen(1)
