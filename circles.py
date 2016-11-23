@@ -24,7 +24,7 @@ def filledcircle(rate):
 		
 	g = shapes.group([])
 	for i in xrange(1,10):
-		g.append(shapes.line((x[i-1]*,y[i]),(x[i], y[i])))
+		g.append(shapes.line((x[i-1]*r,y[i]),(x[i], y[i])))
 	plotter.write(g)
 
 def plot(start, end):
