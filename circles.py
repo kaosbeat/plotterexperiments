@@ -12,9 +12,11 @@ from scipy import signal
 
 plotsize = [10, 10]
 
+Y = np.linspace(p1[1] ,p2[1], len(spaceX))
 
 def filledcircle(rate):
-	
+	x = np.linspace(0, 2*np.pi, 10)
+	y = np.sin(x)
 
 
 def plot(start, end):
