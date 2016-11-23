@@ -23,8 +23,8 @@ def filledcircle(cx,cy,radius,rate):
 	a = np.linspace(0, 2*np.pi, rate)
 	# y = np.sin(x)
 	print (a)
-	for i in xrange(1,100):
-		print (y[i]*50)
+	# for i in xrange(1,100):
+	# 	print (y[i]*50)
 		
 	g = shapes.group([])
 	for i in xrange(1,100):
