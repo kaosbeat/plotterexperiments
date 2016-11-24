@@ -38,8 +38,9 @@ def filledcircle(cx,cy,radius,rate):
 		# x^2 + y^2 = r^2
 		x0 = cx + radius * np.cos(a[i-1])
 		y0 = np.sqrt(radius^2 - x^2)
-		x1 = np.sqrt(radius^2 - y0^2)
-		# g.append(shapes.line(a,b))
+		# x1 = np.sqrt(radius^2 - y0^2)
+
+		g.append(shapes.line((x0,y0),b))
 	plotter.write(g)
 
 def plot(start, end):
