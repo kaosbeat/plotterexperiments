@@ -52,8 +52,10 @@ def takeawalk(size):
 	# for x in xrange(1,10):
 	path = []
 	for x in xrange(1,10):
-		i
-		path.append((x*100,x*10*x))
+		if (x % 4):
+			path.append((x*100,0))
+		else:
+			path.append((x*100,x*10*x))
 	g.append(shapes.bezier_path(path, 0,5))
 	plotter.write(g)
 
