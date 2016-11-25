@@ -1,9 +1,9 @@
 from __future__ import division
 from chiplotle import *
 
-# from chiplotle.tools.plottertools import instantiate_virtual_plotter
-# plotter =  instantiate_virtual_plotter(type="DXY1300")
-plotter = instantiate_plotters( )[0]
+from chiplotle.tools.plottertools import instantiate_virtual_plotter
+plotter =  instantiate_virtual_plotter(type="DXY1300")
+# plotter = instantiate_plotters( )[0]
 
 import math
 import random
@@ -83,7 +83,8 @@ def takeacirclewalk(steps):
 	plotter.write(g)
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
-	
+	plotter.set_origin_center()
+	plotter.write(shapes.rectangle(14158,9040))
 	# plotter.write(shapes.rectangle(16158,11040))
 	# t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
 	# transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
