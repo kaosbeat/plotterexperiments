@@ -19,8 +19,11 @@ plotsize = [10, 10]
 def verticalfilledcircle(cx,cy,radius,rate, full):
 	# a = np.linspace(0, 2*np.pi, rate)
 	g = shapes.group([])
-	for i in xrange(1,rate):
-		x0 = radius/rate*i
+	for i in xrange(0,rate):
+		if (i = 0):
+			x0 = 0
+		else: 
+			x0 = radius/rate*i
 		# y0 = np.sqrt(radius^2 - int(x0)^2)
 		y0 = np.sqrt(radius**2 - x0**2)		
 		g.append(shapes.line((x0,y0),(x0,0)))
