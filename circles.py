@@ -16,11 +16,13 @@ plotsize = [10, 10]
 # #
 # The parametric equation for a circle is
 
-def verticalfilledcicle(cx,cy,radius,rate, full):
+def verticalfilledcircle(cx,cy,radius,rate, full):
 	a = np.linspace(0, 2*np.pi, rate)
 	g = shapes.group([])
 	for i in xrange(1,rate):
-		
+		x0 = radius/rate*x
+		# y0 = np.sqrt(radius^2 - int(x0)^2)
+		y0 = np.sqrt(radius**2 - x0**2)		
 
 def filledcircle(cx,cy,radius,rate, full):
 
@@ -73,9 +75,10 @@ def plot(start, end):
 	# filledcircle(0,0,1000,50,0)
 	# filledcircle(1000,500,1000,50,1)
 	# filledcircle(1000,-500,1500,150,0)
+	verticalfilledcircle(x*400, 2000, x*400, x*15,0 )
 
-	for x in xrange(1,20):
-		filledcircle(x*400, 2000, x*400, x*15,0 )
+	# for x in xrange(1,20):
+		# filledcircle(x*400, 2000, x*400, x*15,0 )
 	# takeawalk(80)
 
 	io.view(plotter)
