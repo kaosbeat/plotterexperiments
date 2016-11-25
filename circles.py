@@ -17,7 +17,7 @@ plotsize = [10, 10]
 # The parametric equation for a circle is
 
 def verticalfilledcircle(cx,cy,radius,rate, full):
-	a = np.linspace(0, 2*np.pi, rate)
+	# a = np.linspace(0, 2*np.pi, rate)
 	g = shapes.group([])
 	for i in xrange(1,rate):
 		x0 = radius/rate*i
