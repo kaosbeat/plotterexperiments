@@ -83,7 +83,7 @@ def takeacirclewalk(steps):
 	plotter.write(g)
 
 def plot(start, end):
-	plotter.select_pen(1)
+	
 	# t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
 	# transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 	# plotter.write(t)
