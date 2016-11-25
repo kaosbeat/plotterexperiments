@@ -59,7 +59,7 @@ def plot(start, end):
 	transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 	plotter.write(t)
 	filledcircle(0,0,1000,50)
-	takeawalk(40)
+	takeawalk(80)
 	io.view(plotter)
 
 plot(0,1)
