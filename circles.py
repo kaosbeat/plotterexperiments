@@ -91,7 +91,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	# filledcircle(0,0,1000,50,0)
 	# filledcircle(1000,500,1000,50,1)
 	# filledcircle(1000,-500,1500,150,0)
-	offsetx = -2000
+	offsetx = 2000
 	offsety = 0
 	for x in xrange(1,10):
 		print(x % 4)
