@@ -55,7 +55,7 @@ def takeawalk(size):
 		if (x % 4):
 			path.append((x*100,0))
 		else:
-			path.append((x*100,x*1*(random.randint(x))))
+			path.append((x*100,x*1*(random.randint(x,0))))
 	g.append(shapes.bezier_path(path, 0,5))
 	plotter.write(g)
 
