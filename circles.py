@@ -26,7 +26,7 @@ def verticalfilledcircle(cx,cy,radius,rate, full):
 			x0 = radius/rate*i
 		# y0 = np.sqrt(radius^2 - int(x0)^2)
 		y0 = np.sqrt(radius**2 - x0**2)	
-		print(x0)
+		# print(x0)
 		
 		if (full == 1):
 			g.append(shapes.line((-x0,-y0),(-x0,y0)))
@@ -91,6 +91,8 @@ def plot(start, end):
 	# filledcircle(1000,500,1000,50,1)
 	# filledcircle(1000,-500,1500,150,0)
 	for x in xrange(1,10):
+		print(x % 4)
+		plotter.select_pen(x % 4)
 		verticalfilledcircle(x*500, 0, 4000+(x*250), 25,0 )
 
 	# for x in xrange(1,20):
