@@ -17,7 +17,7 @@ plotsize = [10, 10]
 def fib(n):
     return ((1+math.sqrt(5))**n-(1-math.sqrt(5))**n)/(2**n*math.sqrt(5))
 
-print(F(10))
+print(fib(10))
 
 # Y = np.linspace(p1[1] ,p2[1], len(spaceX))
 # #
