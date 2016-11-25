@@ -67,6 +67,7 @@ def plot(start, end):
 	plotter.write(t)
 	filledcircle(0,0,1000,50)
 	filledcircle(1000,500,1000,50)
+	filledcircle(1000,-500,1000,50)
 	takeawalk(80)
 
 	io.view(plotter)
