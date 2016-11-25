@@ -90,7 +90,8 @@ def plot(start, end):
 	# filledcircle(0,0,1000,50,0)
 	# filledcircle(1000,500,1000,50,1)
 	# filledcircle(1000,-500,1500,150,0)
-	verticalfilledcircle(400, 2000, 400, 25,0 )
+	for x in xrange(1,10):
+		verticalfilledcircle(x*100, 0, 400+(x*50), 25,0 )
 
 	# for x in xrange(1,20):
 		# filledcircle(x*400, 2000, x*400, x*15,0 )
