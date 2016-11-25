@@ -20,7 +20,7 @@ def verticalfilledcircle(cx,cy,radius,rate, full):
 	a = np.linspace(0, 2*np.pi, rate)
 	g = shapes.group([])
 	for i in xrange(1,rate):
-		x0 = radius/rate*x
+		x0 = radius/rate*i
 		# y0 = np.sqrt(radius^2 - int(x0)^2)
 		y0 = np.sqrt(radius**2 - x0**2)		
 
