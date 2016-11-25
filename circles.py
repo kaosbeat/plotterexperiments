@@ -43,6 +43,7 @@ def filledcircle(cx,cy,radius,rate):
 		# x1 = np.sqrt(radius^2 - y0^2)
 
 		g.append(shapes.line((x0,y0),(-x0,y0)))
+		g.append(shapes.line((x0,-y0),(-x0,-y0)))
 	plotter.write(g)
 
 def plot(start, end):
