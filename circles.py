@@ -39,7 +39,7 @@ def filledcircle(cx,cy,radius,rate):
 
 		g.append(shapes.line((x0,y0),(-x0,y0)))
 		g.append(shapes.line((x0,-y0),(-x0,-y0)))
-		transforms.offset(g, (abs(width)/2,height/2))
+		transforms.offset(g, )
 	plotter.write(g)
 
 
