@@ -55,7 +55,7 @@ def verticalfibcircle(cx,cy,radius,rate, full):
 		if (i ==0):
 			x0 = 0
 		else: 
-			x0 = fib(i)*radius/100
+			x0 = fib(i)*radius
 		# y0 = np.sqrt(radius^2 - int(x0)^2)
 		print x0
 		y0 = np.sqrt(radius**2 - x0**2)	
@@ -129,10 +129,10 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	offsetx = -2000
 	offsety = 0
 	for x in xrange(1,10):
-		print(x % 4)
+		# print(x % 4)
 		plotter.select_pen((x % 4)+1)
 		# verticalfilledcircle(x*500 + offsetx, 0 + offsety, 3200+(x*250), 25,0)
-		verticalfibcircle(x*500 + offsetx, 0 + offsety, 3200+(x*250), 5,0)
+		verticalfibcircle(x*500 + offsetx, 0 + offsety, 200+(x*250), 5,0)
 
 	# for x in xrange(1,20):
 		# filledcircle(x*400, 2000, x*400, x*15,0 )
@@ -140,5 +140,5 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 
 	io.view(plotter)
 
-print(fib(1))
+# print(fib(1))
 plot(0,1)
