@@ -1,9 +1,9 @@
 from __future__ import division
 from chiplotle import *
 
-from chiplotle.tools.plottertools import instantiate_virtual_plotter
-plotter =  instantiate_virtual_plotter(type="DXY1300")
-
+# from chiplotle.tools.plottertools import instantiate_virtual_plotter
+# plotter =  instantiate_virtual_plotter(type="DXY1300")
+plotter = instantiate_plotters( )[0]
 
 import math
 import random
