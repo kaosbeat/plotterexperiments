@@ -12,6 +12,13 @@ from scipy import signal
 
 plotsize = [10, 10]
 
+
+#helpers
+def F(n):
+    return ((1+sqrt(5))**n-(1-sqrt(5))**n)/(2**n*sqrt(5))
+
+print(F(10))
+
 # Y = np.linspace(p1[1] ,p2[1], len(spaceX))
 # #
 # The parametric equation for a circle is
@@ -63,6 +70,8 @@ def filledcircle(cx,cy,radius,rate, full):
 			g.append(shapes.line((x0,-y0),(-x0,-y0)))
 	transforms.offset(g, (cx,cy))
 	plotter.write(g)
+
+
 
 
 def takeawalk(size):
