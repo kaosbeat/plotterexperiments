@@ -26,6 +26,8 @@ def verticalfilledcircle(cx,cy,radius,rate, full):
 		g.append(shapes.line((x0,y0),(-x0,y0)))
 		if (full == 1):
 			g.append(shapes.line((x0,-y0),(-x0,-y0)))
+	transforms.offset(g, (cx,cy))
+	plotter.write(g)
 def filledcircle(cx,cy,radius,rate, full):
 
 	a = np.linspace(0, 2*np.pi, rate)		
