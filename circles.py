@@ -46,12 +46,20 @@ def filledcircle(cx,cy,radius,rate):
 		g.append(shapes.line((x0,-y0),(-x0,-y0)))
 	plotter.write(g)
 
+
+
+def takeawalk(steps):
+	g = shapes.group([])
+	g.append(shapes.random_walk_cartesian(steps, step_size=500))
+	plotter.write(g)
+
 def plot(start, end):
 	plotter.select_pen(1)
 	t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
 	transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 	plotter.write(t)
 	filledcircle(0,0,1000,50)
+	takeawalk(400)
 	io.view(plotter)
 
 plot(0,1)
