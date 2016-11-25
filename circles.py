@@ -23,7 +23,7 @@ def verticalfilledcircle(cx,cy,radius,rate, full):
 		x0 = radius/rate*i
 		# y0 = np.sqrt(radius^2 - int(x0)^2)
 		y0 = np.sqrt(radius**2 - x0**2)		
-		g.append(shapes.line((x0,y0),(-x0,y0)))
+		g.append(shapes.line((x0,y0),(x0,0)))
 		if (full == 1):
 			g.append(shapes.line((x0,-y0),(-x0,-y0)))
 	transforms.offset(g, (cx,cy))
