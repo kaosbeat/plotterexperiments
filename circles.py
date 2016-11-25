@@ -18,7 +18,7 @@ plotsize = [10, 10]
 
 
 
-def filledcircle(cx,cy,radius,rate):
+def filledcircle(cx,cy,radius,rate, full):
 
 	a = np.linspace(0, 2*np.pi, rate)		
 	g = shapes.group([])
@@ -38,7 +38,8 @@ def filledcircle(cx,cy,radius,rate):
 		# x1 = np.sqrt(radius^2 - y0^2)
 
 		g.append(shapes.line((x0,y0),(-x0,y0)))
-		g.append(shapes.line((x0,-y0),(-x0,-y0)))
+		if (full == 1):
+			g.append(shapes.line((x0,-y0),(-x0,-y0)))
 	transforms.offset(g, (cx,cy))
 	plotter.write(g)
 
@@ -65,9 +66,9 @@ def plot(start, end):
 	t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
 	transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 	plotter.write(t)
-	filledcircle(0,0,1000,50)
-	filledcircle(1000,500,1000,50)
-	filledcircle(1000,-500,1500,150)
+	filledcircle(0,0,1000,50,0)
+	filledcircle(1000,500,1000,50,1)
+	filledcircle(1000,-500,1500,150,0)
 	takeawalk(80)
 
 	io.view(plotter)
