@@ -47,8 +47,11 @@ def filledcircle(cx,cy,radius,rate):
 	plotter.write(g)
 
 
+def takeawalk(size):
+	g = shapes.group([])
+	shapes.bezier_path(points, curvature, interpolation_count=50)
 
-def takeawalk(steps):
+def takeacirclewalk(steps):
 	g = shapes.group([])
 	g.append(shapes.random_walk_polar(steps, step_size=1000))
 	plotter.write(g)
