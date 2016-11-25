@@ -55,7 +55,7 @@ def verticalfibcircle(cx,cy,radius,rate, full):
 		if (i ==0):
 			x0 = 0
 		else: 
-			x0 = fib(i)*radius
+			x0 = fib(i)*radius*1000
 		# y0 = np.sqrt(radius^2 - int(x0)^2)
 		print x0
 		y0 = np.sqrt(radius**2 - x0**2)	
