@@ -113,5 +113,5 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 
 	io.view(plotter)
 
-print(fib(10))
+print(fib(1))
 # plot(0,1)
