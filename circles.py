@@ -50,7 +50,7 @@ def filledcircle(cx,cy,radius,rate):
 
 def takeawalk(steps):
 	g = shapes.group([])
-	g.append(shapes.random_walk_polar(steps, step_size=2000))
+	g.append(shapes.random_walk_polar(steps, step_size=1000))
 	plotter.write(g)
 
 def plot(start, end):
