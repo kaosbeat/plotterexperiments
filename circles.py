@@ -65,7 +65,7 @@ def plot(start, end):
 	plotter.select_pen(1)
 	# t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
 	# transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
-	plotter.write(t)
+	# plotter.write(t)
 	# filledcircle(0,0,1000,50,0)
 	# filledcircle(1000,500,1000,50,1)
 	# filledcircle(1000,-500,1500,150,0)
