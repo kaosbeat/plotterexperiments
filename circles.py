@@ -82,8 +82,8 @@ def takeacirclewalk(steps):
 	g.append(shapes.random_walk_polar(steps, step_size=1000))
 	plotter.write(g)
 
-def plot(start, end):
-	rect
+def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
+	shapes.rect(0,0,16158,11040)
 	# t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
 	# transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 	# plotter.write(t)
