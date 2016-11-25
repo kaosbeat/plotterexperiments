@@ -15,7 +15,7 @@ plotsize = [10, 10]
 
 #helpers
 def F(n):
-    return ((1+math.sqrt(5))**n-(1-math.sqrt(5))**n)/(2**n*sqrt(5))
+    return ((1+math.sqrt(5))**n-(1-math.sqrt(5))**n)/(2**n*math.sqrt(5))
 
 print(F(10))
 
