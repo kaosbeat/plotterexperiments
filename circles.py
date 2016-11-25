@@ -70,7 +70,8 @@ def plot(start, end):
 	filledcircle(1000,500,1000,50,1)
 	filledcircle(1000,-500,1500,150,0)
 
-	for
+	for x in xrange(1,10):
+		pass
 	takeawalk(80)
 
 	io.view(plotter)
