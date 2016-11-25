@@ -30,7 +30,7 @@ def verticalfilledcircle(cx,cy,radius,rate, full):
 		g.append(shapes.line((-x0,y0),(-x0,0)))
 		if (full == 1):
 			g.append(shapes.line((-x0,-y0),(-x0,0)))
-			g.append(shapes.line((-x0,-y0),(-x0,0)))
+			g.append(shapes.line((x0,-y0),(x0,0)))
 	transforms.offset(g, (cx,cy))
 	plotter.write(g)
 def filledcircle(cx,cy,radius,rate, full):
@@ -84,7 +84,7 @@ def plot(start, end):
 	# filledcircle(0,0,1000,50,0)
 	# filledcircle(1000,500,1000,50,1)
 	# filledcircle(1000,-500,1500,150,0)
-	verticalfilledcircle(400, 2000, 400, 25,0 )
+	verticalfilledcircle(400, 2000, 400, 25,1 )
 
 	# for x in xrange(1,20):
 		# filledcircle(x*400, 2000, x*400, x*15,0 )
