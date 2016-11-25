@@ -93,7 +93,7 @@ def plot(start, end):
 	for x in xrange(1,10):
 		print(x % 4)
 		plotter.select_pen(x % 4)
-		verticalfilledcircle(x*500, 0, 4000+(x*250), 25,0 )
+		verticalfilledcircle(x*500, 0, 4000+(x*250), 25,1 )
 
 	# for x in xrange(1,20):
 		# filledcircle(x*400, 2000, x*400, x*15,0 )
