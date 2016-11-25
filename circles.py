@@ -49,9 +49,9 @@ def filledcircle(cx,cy,radius,rate):
 
 def takeawalk(size):
 	g = shapes.group([])
-	for x in xrange(1,10):
-		g.append(shapes.bezier_path([(0,0),(500,0)], 0.5,50))
-		plotter.write(g)
+	# for x in xrange(1,10):
+	g.append(shapes.bezier_path([(0,0),(500,0)], 0.5,50))
+	plotter.write(g)
 
 def takeacirclewalk(steps):
 	g = shapes.group([])
