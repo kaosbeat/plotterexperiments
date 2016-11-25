@@ -20,8 +20,7 @@ plotsize = [10, 10]
 
 def filledcircle(cx,cy,radius,rate):
 
-	a = np.linspace(0, 2*np.pi, rate)
-		
+	a = np.linspace(0, 2*np.pi, rate)		
 	g = shapes.group([])
 	for i in xrange(1,rate):
 		# print((x[i-1]*radius,y[i]*radius),(x[i]*radius, y[i]*radius))
