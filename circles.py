@@ -29,7 +29,8 @@ def verticalfilledcircle(cx,cy,radius,rate, full):
 		g.append(shapes.line((x0,y0),(x0,0)))
 		g.append(shapes.line((-x0,y0),(-x0,0)))
 		if (full == 1):
-			g.append(shapes.line((x0,-y0),(-x0,-y0)))
+			g.append(shapes.line((-x0,-y0),(-x0,0)))
+			g.append(shapes.line((-x0,-y0),(-x0,0)))
 	transforms.offset(g, (cx,cy))
 	plotter.write(g)
 def filledcircle(cx,cy,radius,rate, full):
