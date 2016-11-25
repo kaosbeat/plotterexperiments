@@ -31,7 +31,7 @@ def filledcircle(cx,cy,radius,rate):
 		# 	( cx + radius * np.cos(a[i]),cy + radius * np.sin(a[i]) )))
 		#figure out how to get point at certin y-value
 		# x^2 + y^2 = r^2
-		x0 = cx + radius * np.cos(a[i-1])
+		x0 = radius * np.cos(a[i-1])
 		# y0 = np.sqrt(radius^2 - int(x0)^2)
 		y0 = np.sqrt(radius**2 - x0**2)
 
