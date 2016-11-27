@@ -104,7 +104,7 @@ def takeawalk(size, rate):
 	g = shapes.group([])
 	# for x in xrange(1,10):
 	path = []
-	for k in xrange (1,10):
+	for k in xrange (1,3):
 		for x in xrange(1,size):
 			print(x % 4)
 			if (0 == (x % 4)):
@@ -120,7 +120,7 @@ def takeawalk(size, rate):
 			# else:
 				# path.append((x*100,x*1*(random.randint(0,x))))
 		g.append(shapes.bezier_path(path, 0.1 * k ,5))
-	transforms.offset(g, (-5000,0))
+	transforms.offset(g, (-5000,100))
 	plotter.write(g)
 	plotter.pen_up([(0,0)])
 		
