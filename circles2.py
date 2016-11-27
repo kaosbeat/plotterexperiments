@@ -107,8 +107,9 @@ def takeawalk(size):
 	for x in xrange(1,100):
 		if (x % 1):
 			path.append((x*100,0))
-		if (x % 4):
-			path.append((x*100,0))
+		if (x % 2):
+			y = x*1*(random.randint(0,x))
+			path.append((x*100,y))
 		if (x % 4):
 			path.append((x*100,0))
 		if (x % 4):
