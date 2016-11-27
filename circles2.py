@@ -108,18 +108,18 @@ def takeawalk(size, rate):
 		for x in xrange(1,size):
 			print(x % 4)
 			if (0 == (x % 4)):
-				path.append((x*rate/k,0-(k*500)))
+				path.append((x*rate,0-(k*500)))
 			if (1 == (x % 4)):
 				y = x*1*(random.randint(0,x))
-				path.append(((x-1)*rate/k,y-(k*500)))
+				path.append(((x-1)*rate,y-(k*500)))
 			if (2 == (x % 4)):
-				path.append((x*rate/k,y-(k*500)))
+				path.append((x*rate,y-(k*500)))
 			if (3 == (x % 4)):
-				path.append(((x-1)*rate/k,00-(k*500)))
+				path.append(((x-1)*rate,00-(k*500)))
 			
 			# else:
 				# path.append((x*100,x*1*(random.randint(0,x))))
-		g.append(shapes.bezier_path(path, 0 ,5))
+		g.append(shapes.bezier_path(path, 0.1 * k ,5))
 		plotter.write(g)
 		plotter.pen_up([(0,0)])
 		
