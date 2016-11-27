@@ -104,7 +104,7 @@ def takeawalk(size, rate):
 	g = shapes.group([])
 	# for x in xrange(1,10):
 	path = []
-	for k in xrange (1,3):
+	for k in xrange (1,8):
 		for x in xrange(1,size):
 			print(x % 4)
 			if (0 == (x % 4)):
