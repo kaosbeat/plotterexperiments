@@ -104,20 +104,22 @@ def takeawalk(size, rate):
 	g = shapes.group([])
 	# for x in xrange(1,10):
 	path = []
-	for x in xrange(1,size):
-		print(x % 4)
-		if (0 == (x % 4)):
-			path.append((x*rate,0))
-		if (1 == (x % 4)):
-			y = x*1*(random.randint(0,x))
-			path.append(((x-1)*rate,y))
-		if (2 == (x % 4)):
-			path.append((x*rate,y))
-		if (3 == (x % 4)):
-			path.append(((x-1)*rate,0))
-		# else:
-			# path.append((x*100,x*1*(random.randint(0,x))))
-	g.append(shapes.bezier_path(path, 0 ,5))
+	for k in xrange (0,10):
+		for x in xrange(1,size):
+			print(x % 4)
+			if (0 == (x % 4)):
+				path.append((x*rate,0))
+			if (1 == (x % 4)):
+				y = x*1*(random.randint(0,x))
+				path.append(((x-1)*rate,y))
+			if (2 == (x % 4)):
+				path.append((x*rate,y))
+			if (3 == (x % 4)):
+				path.append(((x-1)*rate,0))
+			# else:
+				# path.append((x*100,x*1*(random.randint(0,x))))
+		g.append(shapes.bezier_path(path, 0 ,5))
+		
 	plotter.write(g)
 
 def takeacirclewalk(steps):
