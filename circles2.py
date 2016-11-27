@@ -116,11 +116,12 @@ def takeawalk(size, rate):
 				path.append((x*rate/k,y-(k*500)))
 			if (3 == (x % 4)):
 				path.append(((x-1)*rate/k,00-(k*500)))
-			plotter.pen_up([(0,0)])
+			
 			# else:
 				# path.append((x*100,x*1*(random.randint(0,x))))
 		g.append(shapes.bezier_path(path, 0 ,5))
 		plotter.write(g)
+		plotter.pen_up([(0,0)])
 		
 		
 	
