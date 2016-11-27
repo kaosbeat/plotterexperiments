@@ -113,7 +113,7 @@ def takeawalk(size):
 			path.append(((x-1)*100,y))
 		if (2 == (x % 4)):
 			path.append((x*100,y))
-		if (1 == (x % 4)):
+		if ( == (x % 4)):
 			path.append(((x-1)*100,0))
 		# else:
 			# path.append((x*100,x*1*(random.randint(0,x))))
