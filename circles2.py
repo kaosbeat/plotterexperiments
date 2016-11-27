@@ -106,6 +106,7 @@ def takeawalk(size, rate):
 	path = []
 	for k in xrange (1,10):
 		for x in xrange(1,size):
+			chiplotle.hpgl.commands.PD()
 			print(x % 4)
 			if (0 == (x % 4)):
 				path.append((x*rate/k,0-(k*500)))
@@ -119,7 +120,7 @@ def takeawalk(size, rate):
 			# else:
 				# path.append((x*100,x*1*(random.randint(0,x))))
 		g.append(shapes.bezier_path(path, 0 ,5))
-		
+		chiplotle.hpgl.commands.PU()
 		
 	plotter.write(g)
 
