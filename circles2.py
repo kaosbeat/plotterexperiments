@@ -109,7 +109,7 @@ def takeawalk(size):
 			path.append((x*100,0))
 		else:
 			path.append((x*100,x*1*(random.randint(0,x))))
-	g.append(shapes.bezier_path(path, 0.5 ,5))
+	g.append(shapes.bezier_path(path, 0.3 ,5))
 	plotter.write(g)
 
 def takeacirclewalk(steps):
