@@ -128,7 +128,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	# filledcircle(1000,-500,1500,150,0)
 	offsetx = -2000
 	offsety = 0
-	for x in xrange(1,10):
+	# for x in xrange(1,10):
 		# print(x % 4)
 		# plotter.select_pen((x % 4)+1)
 		# verticalfilledcircle(x*500 + offsetx, 0 + offsety, 3200+(x*250), 25,1)
