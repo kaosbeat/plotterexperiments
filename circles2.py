@@ -122,7 +122,7 @@ def takeawalk(size, rate):
 		g.append(shapes.bezier_path(path, 0.1 * k ,5))
 		# transforms.offset(g, (-5000,0))
 	plotter.write(g)
-		plotter.pen_up([(0,0)])
+	plotter.pen_up([(0,0)])
 		
 		
 	
