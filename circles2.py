@@ -117,13 +117,12 @@ def takeawalk(size, rate):
 			if (3 == (x % 4)):
 				path.append(((x-1)*rate/k,00-(k*500)))
 			plotter.pen_up([(0,0)])
-			g.append(shapes.bezier_path(path, 0 ,5))
-			plotter.write(g)
 			# else:
 				# path.append((x*100,x*1*(random.randint(0,x))))
-				
+		g.append(shapes.bezier_path(path, 0 ,5))
 		
-	
+		
+	plotter.write(g)
 
 def takeacirclewalk(steps):
 	g = shapes.group([])
