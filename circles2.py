@@ -120,7 +120,7 @@ def takeawalk(size, rate):
 			# else:
 				# path.append((x*100,x*1*(random.randint(0,x))))
 		g.append(shapes.bezier_path(path, 0 ,5))
-		hpgl.commands.PU()
+		plotter.pen_up([(0,0)])
 		
 	plotter.write(g)
 
