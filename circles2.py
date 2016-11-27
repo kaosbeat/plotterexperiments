@@ -105,7 +105,7 @@ def takeawalk(size):
 	# for x in xrange(1,10):
 	path = []
 	for x in xrange(1,100):
-		print(x % 1)
+		print(x % 2)
 		if (x % 1):
 			path.append((x*100,0))
 		if (x % 2):
