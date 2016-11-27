@@ -135,7 +135,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 		# verticalfibcircle(x*500 + offsetx, 0 + offsety, 200+(x*250), 5,0)
 
 	for x in xrange(1,20):
-		filledcircle(x*400 - 2000, 0, x*200, x*5,1 )
+		filledcircle(x*400 - 5000, 0, x*200, x*5,1 )
 	# takeawalk(80)
 
 	io.view(plotter)
