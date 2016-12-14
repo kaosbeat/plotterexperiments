@@ -46,8 +46,11 @@ def kerstboom(xpos,ypos,jump,size,number):
 		plotter.write(g)
 
 def kerstboom2(xpos,ypos,size,number):
+	g = shapes.group([])
+	g.append(shapes.line((0,0),(0,y)))
 	for i in xrange(1,number):
-		
+		x1 = 
+		y1 = 
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.clear()
