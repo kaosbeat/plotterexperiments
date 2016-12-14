@@ -40,12 +40,12 @@ def connectthedots(object1,object2):
 def kerstboom(xpos,ypos,jump,size,number):
 	for i in xrange(1,number):
 		y = -i**jump*size
-		x = i*size+jump
+		x = i*size+jump*jump
 		g = shapes.group([])
 		g.append(shapes.line((-x,y),(x,y)))
 		plotter.write(g)
 
-
+# def kers
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.clear()
