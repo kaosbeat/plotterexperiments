@@ -44,7 +44,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 		print(len(objects))
 
 	for x in xrange(0,len(objects))
-	 	print(objects[x].x)
+	 	print(objects[x].get('x'))
 
 
 	io.view(plotter)
