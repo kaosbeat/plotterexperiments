@@ -59,7 +59,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	t = shapes.label("Merel", 1, 1)
 	transforms.offset(t,(500, -200))
 	plotter.write(t)
-	plotter.select_pen(3)
+	plotter.select_pen(1)
 	kerstboom(1000,1000,1.3,15,80)
 
 	# for x in xrange(1,10):
