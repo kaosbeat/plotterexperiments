@@ -23,8 +23,8 @@ def addobject1(x,y):
 	g.append(shapes.line((50,0),(50,50)))
 	g.append(shapes.line((0,50),(10,50)))
 	g.append(shapes.line((90,50),(100,50)))
-	objects.append()
-
+	objects.append({'class': 'obj1', 'x': x, 'y', y, 'connections' : 3, })
+	
 
 
 
