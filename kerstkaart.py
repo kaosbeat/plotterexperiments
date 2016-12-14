@@ -73,6 +73,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	transforms.offset(t,(500, -200))
 	plotter.write(t)
 	plotter.select_pen(1)
+	kerstboom2(800,700,1.1,350,30)
 	kerstboom2(1000,1000,1.2,450,40)
 
 	# for x in xrange(1,10):
