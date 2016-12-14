@@ -43,8 +43,8 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 		addobject1(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
 		print(len(objects))
 
-	# for x in xrange(0,len(objects))
-	#  	print(objects[x].x)
+	for x in xrange(0,len(objects))
+	 	print(objects[x].x)
 
 
 	io.view(plotter)
