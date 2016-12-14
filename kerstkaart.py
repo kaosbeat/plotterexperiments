@@ -51,9 +51,12 @@ def kerstboom2(xpos,ypos,size,number):
 	for i in xrange(1,number):
 		y1 = (i*10)
 		p1 = (0, y1)
-		x2 = 
-		y2 = 
-		p2 = 
+		x2 = (100*i)
+		y2 = (i*10)+200
+		p2 = (x2,y2)
+		g.append(shapes.line(p1,p2))
+	plotter.write(g)
+
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.clear()
