@@ -52,9 +52,11 @@ def kerstboom2(xpos,ypos,jump,size,number):
 		y1 = (i*size/10)
 		p1 = (0, y1)
 		x2 = size - (size/number*i)
-		y2 = (i*size/10)+size/2+size/20
+		y2 = (i*size/10)+size/2
+		y3 = y2 + size/20
 		p2 = (x2,y2)
-		p3 = (-x2,y2)
+		p3 = (0, y1 + size/20)
+		p4 = (-x2,y3)
 		g.append(shapes.line(p1,p2))
 		g.append(shapes.line(p1,p3))
 	transforms.offset(g, (xpos, ypos))
