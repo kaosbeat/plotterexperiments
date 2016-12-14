@@ -45,6 +45,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.write(shapes.rectangle(16158,11040))
 	offsetx = -2000
 	offsety = 0	
+	plotter.select_pen(2)
 	#chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
 	t = shapes.label("Merel", 50, 50)
 	# transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
