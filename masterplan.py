@@ -28,11 +28,14 @@ def addobject1(x,y,size):
 	objects.append({'class': 'obj1', 'x': x, 'y': y, 'size':size, 'connections' : 3, 'dots' : {(size/2,0),(0,size/2),(size,size/2) } })
 	plotter.write(g)
 
-def connectthedots(object1,dot1,object2,dot2):
+def connectthedots(object1,object2):
 	x1 = object1.get('x') - object1.get('size')/2
-	y1 = 
-
-
+	y1 = object1.get('y') - object1.get('size')/2
+	x2 = object2.get('x') - object2.get('size')/2
+	y2 = object2.get('y') - object2.get('size')/2
+	g = shapes.group([])
+	g.append(shapes.line((x1,y1),(x2,y2)))
+	plotter.write(g)
 
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
@@ -48,9 +51,9 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 		addobject1(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
 		print(len(objects))
 
-	for x in xrange(0,len(objects)):
+	for x in xrange(0,len(objects)-1):
 	 	print(objects[x].get('x'))
-
+	 	connectthedots(objects[x],objects[x+1])
 
 	io.view(plotter)
 
