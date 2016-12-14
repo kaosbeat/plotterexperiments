@@ -29,7 +29,7 @@ def addobject1(x,y,size):
 	plotter.write(g)
 
 def connectthedots(object1,object2):
-	x1 = object1.get('x')  object1.get('size')/2
+	x1 = object1.get('x') + object1.get('size')/2
 	y1 = object1.get('y') - object1.get('size')/2
 	x2 = object2.get('x') - object2.get('size')/2
 	y2 = object2.get('y') - object2.get('size')/2
