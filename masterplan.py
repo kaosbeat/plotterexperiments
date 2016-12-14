@@ -30,7 +30,7 @@ def addobject1(x,y):
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.clear()
-	# plotter.set_origin_center()
+	plotter.set_origin_center()
 	# plotter.select_pen(1)
 	plotter.write(shapes.rectangle(16158,11040))
 	offsetx = -2000
