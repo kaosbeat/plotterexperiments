@@ -37,8 +37,8 @@ def connectthedots(object1,object2):
 	g.append(shapes.line((x1,y1),(x2,y2)))
 	plotter.write(g)
 
-def kerstboom(x,y,jump,size,number):
-	for x in xrange(1,10):
+def kerstboom(xpos,ypos,jump,size,number):
+	for i in xrange(1,10):
 		y = 
 		g = shapes.group([])
 		g.append(shapes.line((x,-y),(x,y)))
