@@ -24,7 +24,7 @@ def addobject1(x,y):
 	g.append(shapes.line((0,50),(10,50)))
 	g.append(shapes.line((90,50),(100,50)))
 	objects.append({'class': 'obj1', 'x': x, 'y', y, 'connections' : 3, })
-	
+	plotter.write(g)
 
 
 
@@ -35,7 +35,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.write(shapes.rectangle(16158,11040))
 	offsetx = -2000
 	offsety = 0	
-
+	addobject1(1000,1000)
 	io.view(plotter)
 
 
