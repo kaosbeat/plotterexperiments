@@ -17,14 +17,14 @@ objects = []
 def fib(n):
     return ((1+math.sqrt(5))**n-(1-math.sqrt(5))**n)/(2**n*math.sqrt(5))
 
-def addobject1(x,y):
+def addobject1(x,y,size):
 	g = shapes.group([])
-	g.append(shapes.rectangle(100,100))
-	transforms.offset(g, (50,50))
-	g.append(shapes.line((50,0),(50,50)))
-	g.append(shapes.line((0,50),(10,50)))
-	g.append(shapes.line((90,50),(100,50)))
-	objects.append({'class': 'obj1', 'x': x, 'y': y, 'connections' : 3 })
+	g.append(shapes.rectangle(size,size))
+	transforms.offset(g, (size/2,size/2))
+	g.append(shapes.line((size/2,0),(size/2,size/2)))
+	g.append(shapes.line((0,size/2),(size/10,size/2)))
+	g.append(shapes.line((size/10*9,size/2),(size,size/2)))
+	objects.append({'class': 'obj1', 'x': x, 'y': y, 'connections' : 3, 'size':size })
 	plotter.write(g)
 
 
@@ -36,7 +36,8 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.write(shapes.rectangle(16158,11040))
 	offsetx = -2000
 	offsety = 0	
-	addobject1(1000,1000)
+	for x in xrange(1,10):
+		addobject1(random.randint(16000),random.randint(10000),random.randint(2000))
 	io.view(plotter)
 
 
