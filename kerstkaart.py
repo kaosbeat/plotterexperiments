@@ -47,7 +47,7 @@ def kerstboom(xpos,ypos,jump,size,number):
 
 def kerstboom2(xpos,ypos,jump,size,number):
 	g = shapes.group([])
-	g.append(shapes.line((0,0),(0,y)))
+	g.append(shapes.line((0,0),(0,size)))
 	for i in xrange(1,number):
 		y1 = (i*10)
 		p1 = (0, y1)
