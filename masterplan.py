@@ -37,7 +37,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	offsetx = -2000
 	offsety = 0	
 	for x in xrange(1,10):
-		addobject1(random.randint(16000),random.randint(10000),random.randint(02000))
+		addobject1(random.randint(16000),random.randint(10000),random.randint(0,2000))
 	io.view(plotter)
 
 
