@@ -25,7 +25,7 @@ def addobject1(x,y,size):
 	g.append(shapes.line((0,size/2),(size/10,size/2)))
 	g.append(shapes.line((size/10*9,size/2),(size,size/2)))
 	transforms.offset(g, (x, y))
-	objects.append({'class': 'obj1', 'x': x, 'y': y, 'size':size, 'connections' : 3, 'dots' : {((size/2,0), ) } })
+	objects.append({'class': 'obj1', 'x': x, 'y': y, 'size':size, 'connections' : 3, 'dots' : {(size/2,0),(0,size/2),(size,size/2) } })
 	plotter.write(g)
 
 def connectthedots(object1,dot1,object2,dot2):
