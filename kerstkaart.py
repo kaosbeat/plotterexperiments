@@ -45,7 +45,7 @@ def kerstboom(xpos,ypos,jump,size,number):
 		g.append(shapes.line((-x,y),(x,y)))
 		plotter.write(g)
 
-def kerstboom2(xpos,ypos,size,number):
+def kerstboom2(xpos,ypos,jusize,number):
 	g = shapes.group([])
 	g.append(shapes.line((0,0),(0,y)))
 	for i in xrange(1,number):
