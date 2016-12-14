@@ -54,8 +54,9 @@ def kerstboom2(xpos,ypos,jump,size,number):
 		x2 = size - (size/number*i)
 		y2 = (i*size/10)+size/2
 		p2 = (x2,y2)
+		p3 = (-x2,y2)
 		g.append(shapes.line(p1,p2))
-		g.append(shapes.line(p1,p2))
+		g.append(shapes.line(p1,p3))
 	plotter.write(g)
 
 
