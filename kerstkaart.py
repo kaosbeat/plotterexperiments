@@ -54,7 +54,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.write(shapes.rectangle(16158,11040))
 	offsetx = -2000
 	offsety = 0	
-	plotter.select_pen(2)
+	plotter.select_pen(1)
 	#chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
 	t = shapes.label("Merel", 1, 1)
 	transforms.offset(t,(500, -200))
@@ -62,14 +62,14 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.select_pen(3)
 	kerstboom(1000,1000,1.3,15,80)
 
-	for x in xrange(1,10):
-		addobject1(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
-		print(len(objects))
-	plotter.select_pen(2)
+	# for x in xrange(1,10):
+	# 	addobject1(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
+	# 	print(len(objects))
+	# plotter.select_pen(2)
 
-	for x in xrange(0,len(objects)-1):
-	 	print(objects[x].get('x'))
-	 	connectthedots(objects[x],objects[x+1])
+	# for x in xrange(0,len(objects)-1):
+	#  	print(objects[x].get('x'))
+	#  	connectthedots(objects[x],objects[x+1])
 
 	io.view(plotter)
 
