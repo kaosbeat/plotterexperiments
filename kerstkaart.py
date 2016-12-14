@@ -47,11 +47,11 @@ def kerstboom(xpos,ypos,jump,size,number):
 
 def kerstboom2(xpos,ypos,jump,size,number):
 	g = shapes.group([])
-	g.append(shapes.line((0,0),(0,size*10)))
+	g.append(shapes.line((0,0),(0,size)))
 	for i in xrange(1,number):
-		y1 = (i*10)
+		y1 = (i*size/10)
 		p1 = (0, y1)
-		x2 = (10*i)
+		x2 = size - (size/number*i)
 		y2 = (i*10)+200
 		p2 = (x2,y2)
 		g.append(shapes.line(p1,p2))
@@ -71,7 +71,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	transforms.offset(t,(500, -200))
 	plotter.write(t)
 	plotter.select_pen(1)
-	kerstboom2(1000,1000,1.2,45,8)
+	kerstboom2(1000,1000,1.2,450,8)
 
 	# for x in xrange(1,10):
 	# 	addobject1(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
