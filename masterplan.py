@@ -19,7 +19,7 @@ def fib(n):
 
 def addobject1(x,y,size):
 	g = shapes.group([])
-	# g.append(shapes.rectangle(size,size))
+	g.append(shapes.rectangle(size,size))
 	transforms.offset(g, (size/2,size/2))
 	g.append(shapes.line((size/2,0),(size/2,size/2)))
 	g.append(shapes.line((0,size/2),(size/10,size/2)))
@@ -47,7 +47,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	offsety = 0	
 	
 
-	for x in xrange(1,100):
+	for x in xrange(1,10):
 		addobject1(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
 		print(len(objects))
 	plotter.select_pen(2)
