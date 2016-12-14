@@ -47,8 +47,8 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	offsety = 0	
 	plotter.select_pen(2)
 	#chiplotle.geometry.shapes.label(text, charwidth, charheight, charspace=None, linespace=None, origin='bottom-left')
-	t = shapes.label("Merel", 5, 5)
-	# transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
+	t = shapes.label("Merel", 1, 1)
+	transforms.offset(t,(500, -200))
 	plotter.write(t)
 
 
