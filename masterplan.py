@@ -20,6 +20,7 @@ def fib(n):
 def addobject1(x,y):
 	g = shapes.group([])
 	g.append(shapes.rectangle(100,100))
+	transforms.offset(g, (50,50))
 	g.append(shapes.line((50,0),(50,50)))
 	g.append(shapes.line((0,50),(10,50)))
 	g.append(shapes.line((90,50),(100,50)))
