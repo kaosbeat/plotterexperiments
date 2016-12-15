@@ -5,6 +5,8 @@ from chiplotle.tools.plottertools import instantiate_virtual_plotter
 plotter =  instantiate_virtual_plotter(type="DXY1300")
 
 
+# interesting https://en.wikipedia.org/wiki/3D_projection#Perspective_projection
+
 import math
 import random
 import numpy as np
