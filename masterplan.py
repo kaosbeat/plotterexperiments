@@ -30,7 +30,7 @@ def addobject1(x,y,size):
 
 def addobject2(x,y,size):
 	g = shapes.group([])
-	g.append(shapes.circle(size))
+	g.append(shapes.circle(size/2))
 	transforms.offset(g, (size/2,size/2))
 	g.append(shapes.line((size/2,0),(size/2,size/2)))
 	g.append(shapes.line((0,size/2),(size/10,size/2)))
