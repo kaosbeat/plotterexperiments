@@ -55,8 +55,9 @@ def connectthedots(object1,object2):
 def kartelconnect(p1,p2):
 	#p1 = np.array([1,1])
 	length = np.linalg.norm(p2-p1)
+	xs = np.arange
 	print(length)
-	
+
 
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
