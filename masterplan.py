@@ -67,14 +67,14 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	offsety = 0	
 	kartelconnect(np.array([0,0]), np.array([3,3]))
 
-	for x in xrange(1,10):
-		addobject2(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
-		print(len(objects))
-	plotter.select_pen(2)
+	# for x in xrange(1,10):
+	# 	addobject2(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
+	# 	print(len(objects))
+	# plotter.select_pen(2)
 
-	for x in xrange(0,len(objects)-1):
-	 	print(objects[x].get('x'))
-	 	connectthedots(objects[x],objects[x+1])
+	# for x in xrange(0,len(objects)-1):
+	#  	print(objects[x].get('x'))
+	#  	connectthedots(objects[x],objects[x+1])
 
 	# io.view(plotter)
 
