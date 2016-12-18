@@ -52,6 +52,9 @@ def connectthedots(object1,object2):
 	g.append(shapes.line((x1,y1),(x2,y2)))
 	plotter.write(g)
 
+def kartelconnect(p1,p2):
+	
+
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.clear()
