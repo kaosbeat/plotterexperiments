@@ -52,11 +52,13 @@ def connectthedots(object1,object2):
 	g.append(shapes.line((x1,y1),(x2,y2)))
 	plotter.write(g)
 
-def kartelconnect(p1,p2, ):
+def kartelconnect(p1,p2,size):
 	#p1 = np.array([1,1])
 	length = np.linalg.norm(np.array(p2)-np.array(p1))
-	length = (p2[1]-p1[1])
-	print(length)
+	sublength = (p2[1]-p1[1])/size
+	print(sublength)
+	for x in xrange(1,length/sublength):
+		
 
 
 
@@ -67,7 +69,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.write(shapes.rectangle(16158,11040))
 	offsetx = -2000
 	offsety = 0	
-	kartelconnect((3,9), (3,3))
+	kartelconnect((3,9000), (300,3000),100)
 
 	# for x in xrange(1,10):
 	# 	addobject2(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
