@@ -56,7 +56,7 @@ def kartelconnect(p1,p2):
 	#p1 = np.array([1,1])
 	length = np.linalg.norm(p2-p1)
 	
-	print(p1)
+	print(p1[0])
 
 
 
