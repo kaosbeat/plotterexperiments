@@ -58,6 +58,7 @@ def kartelconnect(p1,p2,size):
 	sublength = (p2[1]-p1[1])/size
 	parts = int(abs(math.floor(length/sublength)))
 	partsspace = np.logspace(0.23 ,2, parts)
+	partsYspace = 
 	print(parts)
 	for i in xrange(0,parts):
 		print i
