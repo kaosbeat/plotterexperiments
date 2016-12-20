@@ -71,6 +71,8 @@ def kartelconnect(p1,p2,size,log):
 			g.append(shapes.line((i*sublength,partsYspace[i]),(i*sublength,y1)))
 			g.append(shapes.line((i*sublength,y1),((i+1)*sublength,y1)))
 			g.append(shapes.line(((i+1)*sublength,y1),((i+1)*sublength,partsYspace[i+1])))
+		else:
+			g.append(shapes.line((i*sublength,partsYspace[i]),(i*sublength,y1)))
 	plotter.write(g)
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
@@ -81,7 +83,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	offsetx = -2000
 	offsety = 0	
 	kartelconnect((1000,-5000), (300,3000),100, False)
-	kartelconnect((1000,5000), (300,3000),10, False)
+	kartelconnect((1000,5000), (300,3000),10, True)
 
 	# for x in xrange(1,10):
 	# 	addobject2(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
