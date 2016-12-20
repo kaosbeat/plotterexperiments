@@ -48,7 +48,7 @@ def connectthedots(object1,object2):
 	y1 = object1.get('y') + object1.get('size')/2
 	x2 = object2.get('x') + object2.get('size')/2
 	y2 = object2.get('y') + object2.get('size')/2
-	kartelconnect((x1,y1),(x2,y2),10)
+	kartelconnect((x1,y1),(x2,y2),abs(int(math.floor((x2-y2)/100))),True)
 	# plotter.write(g)
 
 def kartelconnect(p1,p2,size,log):
@@ -85,17 +85,17 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.write(shapes.rectangle(16158,11040))
 	offsetx = -2000
 	offsety = 0	
-	kartelconnect((1000,-5000), (3000,3000),50, False)
-	kartelconnect((1000,5000), (300,3000),10, True)
+	# kartelconnect((1000,-5000), (3000,3000),50, False)
+	# kartelconnect((1000,5000), (300,3000),10, True)
 
-	# for x in xrange(1,10):
-	# 	addobject2(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
-	# 	print(len(objects))
-	# plotter.select_pen(2)
+	for x in xrange(1,10):
+		addobject2(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
+		print(len(objects))
+	plotter.select_pen(2)
 
-	# for x in xrange(0,len(objects)-1):
-	#  	print(objects[x].get('x'))
-	#  	connectthedots(objects[x],objects[x+1])
+	for x in xrange(0,len(objects)-1):
+	 	print(objects[x].get('x'))
+	 	connectthedots(objects[x],objects[x+1])
 
 	io.view(plotter)
 
