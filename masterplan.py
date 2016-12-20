@@ -57,7 +57,9 @@ def kartelconnect(p1,p2,size):
 	length = np.linalg.norm(np.array(p2)-np.array(p1))
 	sublength = (p2[1]-p1[1])/size
 	print(sublength)
-	for x in xrange(1,length/sublength):
+	for x in xrange(1,math.floor(length/sublength)):
+		print x
+		
 		
 
 
