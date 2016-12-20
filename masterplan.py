@@ -62,9 +62,11 @@ def kartelconnect(p1,p2,size):
 	print(parts)
 	for i in xrange(0,parts):
 		print i
-		y1 = random.uniform(partsYspace[i]-1000,partsYspace[i]+1000)
+		yoffset = random.randint(1000)
+		y1 = partsYspace[i] + 1000
+		#y1 = random.uniform(partsYspace[i]-1000,partsYspace[i]+1000)
 		if (i % 2 == 0):
-			y1=-y1			
+			y1= partsYspace[i] - 1000			
 		g.append(shapes.line((i*sublength,partsYspace[i]),(i*sublength,y1)))
 		g.append(shapes.line((i*sublength,y1),((i+1)*sublength,y1)))
 		g.append(shapes.line(((i+1)*sublength,y1),((i+1)*sublength,partsYspace[i+1])))
