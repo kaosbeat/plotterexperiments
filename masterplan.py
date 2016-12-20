@@ -57,7 +57,7 @@ def kartelconnect(p1,p2,size,log):
 	length = np.linalg.norm(np.array(p2)-np.array(p1))
 	xlength = (p2[0]-p1[0])
 	sublength = xlength/size
-	parts = int(abs(math.floor(length/sublength)))
+	parts = int(abs(math.floor(xlength/sublength)))
 	partsspace = np.logspace(0.23 ,2, parts)
 	partsYspace = np.linspace(p1[1], p2[1], parts+1)
 	print(parts)
