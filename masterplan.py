@@ -87,7 +87,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	#  	print(objects[x].get('x'))
 	#  	connectthedots(objects[x],objects[x+1])
 
-	# io.view(plotter)
+	io.view(plotter)
 
 
 plot(0,1)
