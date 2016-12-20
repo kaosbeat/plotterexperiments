@@ -58,16 +58,16 @@ def kartelconnect(p1,p2,size):
 	sublength = (p2[1]-p1[1])/size
 	parts = int(abs(math.floor(length/sublength)))
 	partsspace = np.logspace(0.23 ,2, parts)
-	partsYspace = 
+	partsYspace = np.linspace(p1[0], p2[0], parts)
 	print(parts)
 	for i in xrange(0,parts):
 		print i
 		y1 = random.randint(0,1000)
 		if (i % 2 == 0):
 			y1=-y1			
-		g.append(shapes.line((i*sublength,0),(i*sublength,y1)))
+		g.append(shapes.line((i*sublength,partsYspace[i]),(i*sublength,y1)))
 		g.append(shapes.line((i*sublength,y1),((i+1)*sublength,y1)))
-		g.append(shapes.line(((i+1)*sublength,y1),((i+1)*sublength,0)))
+		g.append(shapes.line(((i+1)*sublength,y1),((i+1)*sublength,partsYspace[i+1])))
 	plotter.write(g)
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
