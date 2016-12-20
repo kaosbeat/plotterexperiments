@@ -48,9 +48,8 @@ def connectthedots(object1,object2):
 	y1 = object1.get('y') + object1.get('size')/2
 	x2 = object2.get('x') + object2.get('size')/2
 	y2 = object2.get('y') + object2.get('size')/2
-	g = shapes.group([])
-	g.append(shapes.line((x1,y1),(x2,y2)))
-	plotter.write(g)
+	kartelconnect((x1,y1),(x2,y2),10)
+	# plotter.write(g)
 
 def kartelconnect(p1,p2,size):
 	#p1 = np.array([1,1])
@@ -63,13 +62,12 @@ def kartelconnect(p1,p2,size):
 	for i in xrange(0,parts):
 		print i
 		y1 = math.randint(0,100)
-		g.append(shapes.line((i*sublength,0),(i*sublength,y1))
-		g.append(shapes.line((i*sublength,y1),((i+1)*sublength,y1))
-		g.append(shapes.line(((i+1)*sublength,y1),(i*sublength,y1))
-		g.append(shapes.line((i*sublength,0),(i*sublength,y1))
-		
-
-
+		if (i % 2 == 0):
+			y1=-y1			
+		g.append(shapes.line((i*sublength,0),(i*sublength,y1)))
+		g.append(shapes.line((i*sublength,y1),((i+1)*sublength,y1)))
+		g.append(shapes.line(((i+1)*sublength,y1),((i+1)*sublength,0)))
+	plotter.write(g)
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.clear()
