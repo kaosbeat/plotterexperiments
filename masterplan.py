@@ -60,10 +60,13 @@ def kartelconnect(p1,p2,size):
 	parts = math.floor(length/sublength)
 	partsspace = np.logspace(0.23 ,2, parts)
 	print(partsspace)
-	for x in xrange(1,parts):
-		print x
-		g.append(shapes.line((,),(,)))
-
+	for i in xrange(0,parts):
+		print i
+		y1 = math.randint(0,100)
+		g.append(shapes.line((i*sublength,0),(i*sublength,y1))
+		g.append(shapes.line((i*sublength,y1),((i+1)*sublength,y1))
+		g.append(shapes.line(((i+1)*sublength,y1),(i*sublength,y1))
+		g.append(shapes.line((i*sublength,0),(i*sublength,y1))
 		
 
 
