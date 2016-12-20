@@ -62,7 +62,7 @@ def kartelconnect(p1,p2,size):
 	print(parts)
 	for i in xrange(0,parts):
 		print i
-		yoffset = random.randint(1000)
+		yoffset = random.randint(01000)
 		y1 = partsYspace[i] + 1000
 		#y1 = random.uniform(partsYspace[i]-1000,partsYspace[i]+1000)
 		if (i % 2 == 0):
