@@ -51,7 +51,7 @@ def connectthedots(object1,object2):
 	kartelconnect((x1,y1),(x2,y2),10)
 	# plotter.write(g)
 
-def kartelconnect(p1,p2,size):
+def kartelconnect(p1,p2,size,log):
 	#p1 = np.array([1,1])
 	g = shapes.group([])
 	length = np.linalg.norm(np.array(p2)-np.array(p1))
@@ -66,10 +66,11 @@ def kartelconnect(p1,p2,size):
 		y1 = partsYspace[i] + yoffset
 		#y1 = random.uniform(partsYspace[i]-1000,partsYspace[i]+1000)
 		if (i % 2 == 0):
-			y1= partsYspace[i] - yoffset			
-		g.append(shapes.line((i*sublength,partsYspace[i]),(i*sublength,y1)))
-		g.append(shapes.line((i*sublength,y1),((i+1)*sublength,y1)))
-		g.append(shapes.line(((i+1)*sublength,y1),((i+1)*sublength,partsYspace[i+1])))
+			y1= partsYspace[i] - yoffset
+		if (log == False):
+			g.append(shapes.line((i*sublength,partsYspace[i]),(i*sublength,y1)))
+			g.append(shapes.line((i*sublength,y1),((i+1)*sublength,y1)))
+			g.append(shapes.line(((i+1)*sublength,y1),((i+1)*sublength,partsYspace[i+1])))
 	plotter.write(g)
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
@@ -79,7 +80,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.write(shapes.rectangle(16158,11040))
 	offsetx = -2000
 	offsety = 0	
-	kartelconnect((11000,9000), (300,13000),100)
+	kartelconnect((11000,9000), (300,13000),100, False)
 
 	# for x in xrange(1,10):
 	# 	addobject2(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
