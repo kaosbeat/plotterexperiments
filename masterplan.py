@@ -61,7 +61,7 @@ def kartelconnect(p1,p2,size):
 	print(parts)
 	for i in xrange(0,parts):
 		print i
-		y1 = math.randint(0,100)
+		y1 = random.randint(0,100)
 		if (i % 2 == 0):
 			y1=-y1			
 		g.append(shapes.line((i*sublength,0),(i*sublength,y1)))
