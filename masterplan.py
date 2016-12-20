@@ -56,7 +56,7 @@ def kartelconnect(p1,p2,size):
 	g = shapes.group([])
 	length = np.linalg.norm(np.array(p2)-np.array(p1))
 	sublength = (p2[1]-p1[1])/size
-	parts = math.floor(length/sublength)
+	parts = int(math.floor(length/sublength))
 	partsspace = np.logspace(0.23 ,2, parts)
 	print(partsspace)
 	for i in xrange(0,parts):
