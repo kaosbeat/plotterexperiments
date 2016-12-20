@@ -52,7 +52,7 @@ def connectthedots(object1,object2):
 	g.append(shapes.line((x1,y1),(x2,y2)))
 	plotter.write(g)
 
-def kartelconnect(p1,p2):
+def kartelconnect(p1,p2, ):
 	#p1 = np.array([1,1])
 	length = np.linalg.norm(np.array(p2)-np.array(p1))
 	length = (p2[1]-p1[1])
