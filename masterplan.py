@@ -80,7 +80,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.write(shapes.rectangle(16158,11040))
 	offsetx = -2000
 	offsety = 0	
-	kartelconnect((1000,-5000), (300,13000),100, False)
+	kartelconnect((1000,-5000), (300,3000),100, False)
 
 	# for x in xrange(1,10):
 	# 	addobject2(random.randint(-8000,8000),random.randint(-5000,5000),random.randint(220,2000))
