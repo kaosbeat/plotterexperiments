@@ -88,7 +88,10 @@ def kartelconnect(p1,p2,size,size1,size2,log):
 		# transforms.offset(g,(-sublength,0))
 		# g.append(shapes.line((partsspace[-1]*xlength/100,partsYspace[-1]),p2))
 		transforms.offset(g, (p1[0],0-size1/2))
-	
+		if (log == False):
+		# transforms.offset(g,(-sublength,0))
+		# g.append(shapes.line((partsspace[-1]*xlength/100,partsYspace[-1]),p2))
+		transforms.offset(g, (p1[0],0-size1/2))
 	g.append(shapes.line(p1,p2))
 	
 	plotter.write(g)
