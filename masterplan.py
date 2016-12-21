@@ -181,14 +181,14 @@ def bezierpathconnect(p1,p2,size,size1,size2,curvature,log):
 	if (log == False):
 		# transforms.offset(g,(-sublength,0))
 		# g.append(shapes.line((partsspace[-1]*xlength/100,partsYspace[-1]),p2))
-		transforms.offset(path, (p1[0],0-size1/2))
+		transforms.offset(g, (p1[0],0-size1/2))
 	if (log == True):
 		# transforms.offset(g,(-sublength,0))
 		# g.append(shapes.line((partsspace[-1]*xlength/100,partsYspace[-1]),p2))
-		transforms.offset(path, (p1[0],0))
+		transforms.offset(g, (p1[0],0))
 	# g.append(shapes.line(p1,p2))
 	
-	plotter.write(path)
+	plotter.write(g)
 
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.clear()
