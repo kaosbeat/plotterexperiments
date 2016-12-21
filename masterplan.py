@@ -66,7 +66,7 @@ def kartelconnect(p1,p2,size,log):
 	print(length)
 	print("partsYspace = " )
 	print(partsYspace)
-	for i in xrange(0,parts):
+	for i in xrange(0,parts-1):
 		print i
 		yoffset = random.randint(0,1000)
 		y1 = partsYspace[i] + yoffset
