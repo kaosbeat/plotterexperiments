@@ -193,17 +193,17 @@ def bezierpathconnect(p1,p2,size,size1,size2,curvature,log):
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.clear()
 	plotter.set_origin_center()
-	plotter.select_pen(1)
+	plotter.select_pen(2)
 	#plotter.write(shapes.rectangle(16158,11040))
 	offsetx = -2000
 	offsety = 0	
 	# kartelconnect((1000,-5000), (3000,3000),50, False)
 	# kartelconnect((1000,5000), (300,3000),10, True)
 
-	for x in xrange(1,10):
+	for x in xrange(1,20):
 		addobject1(random.randint(-8000,6500),random.randint(-5000,3800),random.randint(220,2000))
 		# print(len(objects))
-	plotter.select_pen(2)
+	plotter.select_pen(1)
 
 	for x in xrange(0,len(objects)-1):
 	 	print(objects[x].get('x'))
