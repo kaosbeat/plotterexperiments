@@ -51,7 +51,7 @@ def connectthedots(object1,object2):
 	g = shapes.group([])
 	g.append(shapes.line((x1,y1),(x2,y2)))
 	plotter.write(g)
-	kartelconnect((x1,y1),(x2,y2),abs(int(math.floor((x2-y2)/100))),True)
+	kartelconnect((x1,y1),(x2,y2),abs(int(math.floor((x2-y2)/100))),False)
 	# plotter.write(g)
 
 def kartelconnect(p1,p2,size,log):
