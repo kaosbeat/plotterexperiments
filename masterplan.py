@@ -122,6 +122,7 @@ def kartelpathconnect(p1,p2,size,size1,size2,log):
 			path = Path([ (i*sublength,partsYspace[i]),(i*sublength,y1),((i+1)*sublength,y1),((i+1)*sublength,partsYspace[i+1]) ])
 		else:
 			path = Path([ (partsspace[i]*xlength/100,partsYspace[i]),(partsspace[i]*xlength/100,y1),(partsspace[i+1]*xlength/100,y1),(partsspace[i+1]*xlength/100,partsYspace[i+1]) ])
+	g.append(path)
 	if (log == False):
 		# transforms.offset(g,(-sublength,0))
 		# g.append(shapes.line((partsspace[-1]*xlength/100,partsYspace[-1]),p2))
