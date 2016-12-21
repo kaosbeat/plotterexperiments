@@ -96,6 +96,44 @@ def kartelconnect(p1,p2,size,size1,size2,log):
 	
 	plotter.write(g)
 
+def kartelpathconnect(p1,p2,size,size1,size2,log):
+	#p1 = np.array([1,1])
+	g = shapes.group([])
+	length = np.linalg.norm(np.array(p1)-np.array(p2))
+	xlength = (p2[0]-p1[0])
+	sublength = xlength/size
+	parts = int(abs(math.floor(xlength/sublength)))
+	partsspace = np.logspace(0 ,2, parts, endpoint=True)
+	partsYspace = np.linspace(p1[1], p2[1], parts)
+	# print(length)
+	# print("partsYspace = " )
+	# print(partsYspace)
+	for i in xrange(0,parts-1):
+		print(" partsspace = ") 
+		print partsspace[i] 
+		print(" partsYspace = ") 
+		print partsYspace[i] 
+		yoffset = random.randint(0,1000)
+		y1 = partsYspace[i] + yoffset
+		#y1 = random.uniform(partsYspace[i]-1000,partsYspace[i]+1000)
+		if (i % 2 == 0):
+			y1= partsYspace[i] - yoffset
+		if (log == False):
+			path = Path([ (i*sublength,partsYspace[i]),(i*sublength,y1),((i+1)*sublength,y1),((i+1)*sublength,partsYspace[i+1]) ])
+		else:
+			path = Path([ (partsspace[i]*xlength/100,partsYspace[i]),(partsspace[i]*xlength/100,y1),(partsspace[i+1]*xlength/100,y1),(partsspace[i+1]*xlength/100,partsYspace[i+1]) ])
+	if (log == False):
+		# transforms.offset(g,(-sublength,0))
+		# g.append(shapes.line((partsspace[-1]*xlength/100,partsYspace[-1]),p2))
+		transforms.offset(g, (p1[0],0-size1/2))
+	if (log == True):
+		# transforms.offset(g,(-sublength,0))
+		# g.append(shapes.line((partsspace[-1]*xlength/100,partsYspace[-1]),p2))
+		transforms.offset(g, (p1[0],0))
+	g.append(shapes.line(p1,p2))
+	
+	plotter.write(g)
+
 def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.clear()
 	plotter.set_origin_center()
