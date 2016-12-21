@@ -130,7 +130,7 @@ def kartelpathconnect(p1,p2,size,size1,size2,log):
 		# transforms.offset(g,(-sublength,0))
 		# g.append(shapes.line((partsspace[-1]*xlength/100,partsYspace[-1]),p2))
 		transforms.offset(g, (p1[0],0))
-	g.append(shapes.line(p1,p2))
+	# g.append(shapes.line(p1,p2))
 	
 	plotter.write(g)
 
@@ -145,8 +145,8 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	# kartelconnect((1000,5000), (300,3000),10, True)
 
 	for x in xrange(1,30):
-		addobject2(random.randint(-8000,6500),random.randint(-5000,3800),random.randint(220,2000))
-		print(len(objects))
+		addobject1(random.randint(-8000,6500),random.randint(-5000,3800),random.randint(220,2000))
+		# print(len(objects))
 	plotter.select_pen(2)
 
 	for x in xrange(0,len(objects)-1):
