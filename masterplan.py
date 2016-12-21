@@ -63,7 +63,7 @@ def kartelconnect(p1,p2,size,log):
 	parts = int(abs(math.floor(xlength/sublength)))
 	partsspace = np.logspace(0.3 ,2, parts+1)
 	partsYspace = np.linspace(p1[1], p2[1], parts+1)
-	print(parts)
+	print(length)
 	for i in xrange(0,parts):
 		print i
 		yoffset = random.randint(0,1000)
