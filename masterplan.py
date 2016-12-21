@@ -80,7 +80,7 @@ def kartelconnect(p1,p2,size,log):
 		else:
 			g.append(shapes.line((-partsspace[i]*length/100,partsYspace[i]),(-partsspace[i]*length/100,y1)))
 			g.append(shapes.line((-partsspace[i]*length/100,y1),(-partsspace[i]*length/100,y1)))
-			g.append(shapes.line((-partsspace[i+1]*length/100,y1),(-partsspace[i]*length/100,partsYspace[i])))
+			g.append(shapes.line((-partsspace[i]*length/100,y1),(-partsspace[i]*length/100,partsYspace[i])))
 
 		# g.append(shapes.line((x1,y1),(x2,y2)))
 	transforms.offset(g, p1)
