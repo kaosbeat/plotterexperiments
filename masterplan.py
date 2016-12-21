@@ -107,7 +107,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	# kartelconnect((1000,5000), (300,3000),10, True)
 
 	for x in xrange(1,30):
-		addobject2(random.randint(-8000,6500),random.randint(-5000,4000),random.randint(220,2000))
+		addobject2(random.randint(-8000,6500),random.randint(-5000,000),random.randint(220,2000))
 		print(len(objects))
 	plotter.select_pen(2)
 
