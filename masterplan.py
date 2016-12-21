@@ -105,7 +105,7 @@ def kartelpathconnect(p1,p2,size,size1,size2,log):
 	sublength = xlength/size
 	# print sublength
 	parts = int(abs(math.floor(xlength/sublength)))
-	# print parts
+	print parts
 	partsspace = np.logspace(0 ,2, parts, endpoint=True)
 	partsYspace = np.linspace(p1[1], p2[1], parts)
 	# print(length)
@@ -209,7 +209,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.select_pen(1)
 
 	for x in xrange(0,len(objects)-1):
-	 	print(objects[x].get('x'))
+	 	# print(objects[x].get('x'))
 	 	connectthedots(objects[x],objects[x+1])
 
 	io.view(plotter)
