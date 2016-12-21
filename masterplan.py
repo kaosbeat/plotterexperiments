@@ -111,10 +111,10 @@ def kartelpathconnect(p1,p2,size,size1,size2,log):
 	# print(partsYspace)
 	path = []
 	for i in xrange(0,parts-1):
-		print(" partsspace = ") 
-		print partsspace[i] 
-		print(" partsYspace = ") 
-		print partsYspace[i] 
+		# print(" partsspace = ") 
+		# print partsspace[i] 
+		# print(" partsYspace = ") 
+		# print partsYspace[i] 
 		yoffset = random.randint(0,1000)
 		y1 = partsYspace[i] + yoffset
 		#y1 = random.uniform(partsYspace[i]-1000,partsYspace[i]+1000)
