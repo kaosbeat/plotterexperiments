@@ -48,9 +48,9 @@ def connectthedots(object1,object2):
 	y1 = object1.get('y') + object1.get('size')/2
 	x2 = object2.get('x') + object2.get('size')/2
 	y2 = object2.get('y') + object2.get('size')/2
-	g = shapes.group([])
-	g.append(shapes.line((x1,y1),(x2,y2)))
-	plotter.write(g)
+	# g = shapes.group([])
+	# g.append(shapes.line((x1,y1),(x2,y2)))
+	# plotter.write(g)
 	kartelpathconnect((x1,y1),(x2,y2),abs(int(math.floor((x2-y2)/100))),object1.get('size'),object2.get('size'),False)
 	# plotter.write(g)
 
