@@ -54,7 +54,7 @@ def connectthedots(object1,object2):
 	kartelconnect((x1,y1),(x2,y2),abs(int(math.floor((x2-y2)/100))),False)
 	# plotter.write(g)
 
-def kartelconnect(p1,p2,size,log):
+def kartelconnect(p1,p2,size,size1,size2,log):
 	#p1 = np.array([1,1])
 	g = shapes.group([])
 	length = np.linalg.norm(np.array(p1)-np.array(p2))
@@ -85,7 +85,7 @@ def kartelconnect(p1,p2,size,log):
 			g.append(shapes.line((partsspace[i]*length/100,y1),(partsspace[i+1]*length/100,y1)))
 			g.append(shapes.line((partsspace[i+1]*length/100,y1),(partsspace[i+1]*length/100,partsYspace[i+1])))
 
-	transforms.offset(g, (p1[0],0))
+	transforms.offset(g, (p1[0],0+size1))
 	g.append(shapes.line(p1,p2))
 	
 	plotter.write(g)
