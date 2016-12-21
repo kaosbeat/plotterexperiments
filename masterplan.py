@@ -61,7 +61,7 @@ def kartelconnect(p1,p2,size,log):
 	xlength = (p1[0]-p2[0])
 	sublength = xlength/size
 	parts = int(abs(math.floor(xlength/sublength)))
-	partsspace = np.logspace(0.3 ,2, parts+1)
+	partsspace = np.logspace(0.3 ,2, parts)
 	partsYspace = np.linspace(p1[1], p2[1], parts+1)
 	print(length)
 	print("partsYspace = " )
@@ -79,8 +79,8 @@ def kartelconnect(p1,p2,size,log):
 			g.append(shapes.line(((i+1)*sublength,y1),((i+1)*sublength,partsYspace[i+1])))
 		else:
 			g.append(shapes.line((-partsspace[i]*length/100,partsYspace[i]),(-partsspace[i]*length/100,y1)))
-			g.append(shapes.line((-partsspace[i]*length/100,y1),(-partsspace[i+1]*length/100,y1)))
-			g.append(shapes.line((-partsspace[i+1]*length/100,y1),(-partsspace[i+1]*length/100,partsYspace[i+1])))
+			g.append(shapes.line((-partsspace[i]*length/100,y1),(-partsspace[i]*length/100,y1)))
+			g.append(shapes.line((-partsspace[i+1]*length/100,y1),(-partsspace[i]*length/100,partsYspace[i])))
 
 		# g.append(shapes.line((x1,y1),(x2,y2)))
 	transforms.offset(g, p1)
