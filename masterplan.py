@@ -177,7 +177,7 @@ def bezierpathconnect(p1,p2,size,size1,size2,curvature,log):
 			path.append((partsspace[i+1]*xlength/100,y1))
 			path.append((partsspace[i+1]*xlength/100,partsYspace[i+1]))
 	# print path
-	g.append(shapes.bezierpath = Path(path, curvature=0.5)
+	g.append(shapes.bezier_path(path, curvature=0.5, interpolation_count=50))
 	if (log == False):
 		# transforms.offset(g,(-sublength,0))
 		# g.append(shapes.line((partsspace[-1]*xlength/100,partsYspace[-1]),p2))
