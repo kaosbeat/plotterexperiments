@@ -98,12 +98,14 @@ def kartelconnect(p1,p2,size,size1,size2,log):
 
 def kartelpathconnect(p1,p2,size,size1,size2,log):
 	#p1 = np.array([1,1])
-	print size
+	# print size
 	g = shapes.group([])
 	length = np.linalg.norm(np.array(p1)-np.array(p2))
 	xlength = (p2[0]-p1[0])
 	sublength = xlength/size
+	print sublength
 	parts = int(abs(math.floor(xlength/sublength)))
+	print parts
 	partsspace = np.logspace(0 ,2, parts, endpoint=True)
 	partsYspace = np.linspace(p1[1], p2[1], parts)
 	# print(length)
