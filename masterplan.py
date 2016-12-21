@@ -57,7 +57,7 @@ def connectthedots(object1,object2):
 def kartelconnect(p1,p2,size,log):
 	#p1 = np.array([1,1])
 	g = shapes.group([])
-	length = np.linalg.norm(np.array(p2)-np.array(p1))
+	length = np.linalg.norm(np.array(p1)-np.array(p2))
 	xlength = (p1[0]-p2[0])
 	sublength = xlength/size
 	parts = int(abs(math.floor(xlength/sublength)))
