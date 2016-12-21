@@ -105,7 +105,7 @@ def kartelpathconnect(p1,p2,size,size1,size2,log):
 	sublength = xlength/size
 	# print sublength
 	parts = int(abs(math.floor(xlength/sublength)))
-	print parts
+	# print parts
 	partsspace = np.logspace(0 ,2, parts, endpoint=True)
 	partsYspace = np.linspace(p1[1], p2[1], parts)
 	# print(length)
