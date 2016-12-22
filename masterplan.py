@@ -215,19 +215,20 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	s = 300
 	r = 10
 	g = shapes.group([])
-	for x in xrange(1,r):
+	for x in xrange(0,r):
 		g.append(shapes.line((0,-s*x*2),(-s*x,-r*s*2)))
 		g.append(shapes.line((0,s*x*2-(r*s*4)),(-s*x,r*s*2-(r*s*4))))
 		g.append(shapes.line((0,s*x*2-(r*s*4)),(s*x,r*s*2-(r*s*4))))
 		g.append(shapes.line((0,-s*x*2),(s*x,-r*s*2)))
 
 		#draw central line
-		g.append(shapes.line((0,-r*s*4),(0,s)))
-		g.append(shapes.line((-r*s,-r*s*2),(r*s,-r*s*2)))
+		# g.append(shapes.line((0,-r*s*4),(0,s)))
+		# g.append(shapes.line((-r*s,-r*s*2),(r*s,-r*s*2)))
 		# g.append(shapes.line((s*r,s*x*2),(s*x,0)))
 		# g.append(shapes.line((s*r,s*x*2),(s*x,0)))
 		# g.append(shapes.line((-s*r,-s*x*2),(-s*x,0)))
 	transforms.rotate(g, 45)
+	for x in xrange(1,r)
 	plotter.write(g)
 
 	io.view(plotter)
