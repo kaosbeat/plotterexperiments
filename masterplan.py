@@ -214,8 +214,8 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	g = shapes.group([])
 	s = 100
 	for x in xrange(1,10):
-		g.append(shapes.line((0,s*x),(s*x,0))
-
+		g.append(shapes.line((0,s*x),(s*x,0)))
+	plotter.write(g)
 
 	io.view(plotter)
 
