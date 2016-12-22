@@ -212,8 +212,8 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	#  	# print(objects[x].get('x'))
 	#  	connectthedots(objects[x],objects[x+1])
 	g = shapes.group([])
-	s = 100
-	r = 100
+	s = 1000
+	r = 1000
 	for x in xrange(1,r):
 		g.append(shapes.line((0,-s*x*2),(-s*x,-r*s*2)))
 		g.append(shapes.line((0,s*x*2-(r*s*4)),(-s*x,r*s*2-(r*s*4))))
