@@ -216,7 +216,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	r = 10
 	for x in xrange(1,r):
 		g.append(shapes.line((0,-s*x*2),(-s*x,-r*s*2)))
-		# g.append(shapes.line((0,s*x*2),(-s*x,r*s*2)))
+		g.append(shapes.line((0,s*x*2),(-s*x,r*s*2)))
 		# g.append(shapes.line((s*r,s*x*2),(s*x,0)))
 		# g.append(shapes.line((s*r,s*x*2),(s*x,0)))
 		# g.append(shapes.line((-s*r,-s*x*2),(-s*x,0)))
