@@ -227,6 +227,8 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 		# g.append(shapes.line((s*r,s*x*2),(s*x,0)))
 		# g.append(shapes.line((s*r,s*x*2),(s*x,0)))
 		# g.append(shapes.line((-s*r,-s*x*2),(-s*x,0)))
+	r = 20
+	s = 150
 	transforms.rotate(g, -np.pi/4)
 	transforms.center_at(g, (0,0))
 	plotter.write(g)
@@ -235,8 +237,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 		g.append(shapes.line((0,4*s*x),(4*s*x,4*r*s)))
 	transforms.center_at(g, (0,0))
 	transforms.rotate(g,np.pi)
-	r = 20
-	s = 150
+
 	plotter.write(g)
 	g = shapes.group([])
 	for x in xrange(1,r):
