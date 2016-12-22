@@ -237,7 +237,13 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	transforms.rotate(g,np.pi)
 
 	plotter.write(g)
+	g = shapes.group([])
+	for x in xrange(1,r):
+		g.append(shapes.line((0,4*s*x),(4*s*x,4*r*s)))
+	transforms.center_at(g, (0,0))
+	transforms.rotate(g,np.pi)
 
+	plotter.write(g)
 	io.view(plotter)
 
 
