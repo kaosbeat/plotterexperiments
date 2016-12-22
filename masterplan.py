@@ -227,7 +227,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 		# g.append(shapes.line((s*r,s*x*2),(s*x,0)))
 		# g.append(shapes.line((s*r,s*x*2),(s*x,0)))
 		# g.append(shapes.line((-s*r,-s*x*2),(-s*x,0)))
-	transforms.rotate(g, 135)
+	transforms.rotate(g, 90)
 	for x in xrange(1,r):
 		g.append(shapes.line((0,4*s*x),(4*s*x,4*r*s)))
 	plotter.write(g)
