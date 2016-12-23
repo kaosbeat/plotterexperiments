@@ -214,7 +214,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	
 	s = 300
 	r = 10
-	f = 2.2
+	f = 2.15
 	g = shapes.group([])
 	for x in xrange(0,r):
 		g.append(shapes.line((0,-s*x*f),(-s*x,-r*s*f)))
