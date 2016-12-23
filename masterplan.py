@@ -214,12 +214,13 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	
 	s = 300
 	r = 10
+	f = 2.3
 	g = shapes.group([])
 	for x in xrange(0,r):
-		g.append(shapes.line((0,-s*x*2),(-s*x,-r*s*2)))
-		g.append(shapes.line((0,s*x*2-(r*s*4)),(-s*x,r*s*2-(r*s*4))))
-		g.append(shapes.line((0,s*x*2-(r*s*4)),(s*x,r*s*2-(r*s*4))))
-		g.append(shapes.line((0,-s*x*2),(s*x,-r*s*2)))
+		g.append(shapes.line((0,-s*x*f),(-s*x,-r*s*f)))
+		g.append(shapes.line((0,s*x*f-(r*s*2*f)),(-s*x,r*s*f-(r*s*2*f))))
+		g.append(shapes.line((0,s*x*f-(r*s*2*f)),(s*x,r*s*f-(r*s*2*f))))
+		g.append(shapes.line((0,-s*x*f),(s*x,-r*s*f)))
 
 		#draw central line
 		# g.append(shapes.line((0,-r*s*4),(0,s)))
