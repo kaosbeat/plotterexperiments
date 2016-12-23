@@ -245,7 +245,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	for x in xrange(1,r):
 		g.append(shapes.line((0,4*s2*x),(4*s2*x,4*r2*s2)))
 	transforms.center_at(g, (0,0))
-	transforms.scale(g, r)
+	transforms.scale(g, s/r)
 
 	plotter.write(g)
 	io.view(plotter)
