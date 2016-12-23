@@ -213,7 +213,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	#  	connectthedots(objects[x],objects[x+1])
 	
 	s = 300
-	r = 100
+	r = 10
 	f = 2.15
 	g = shapes.group([])
 	for x in xrange(0,r):
@@ -235,14 +235,14 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.write(g)
 	g = shapes.group([])
 	for x in xrange(1,r):
-		g.append(shapes.line((0,4*x*r),(4*x*r,4*r*s)))
+		g.append(shapes.line((0,4*s*x),(4*s*x,4*r*s)))
 	transforms.center_at(g, (0,0))
 	transforms.rotate(g,np.pi)
 
 	plotter.write(g)
 	g = shapes.group([])
 	for x in xrange(1,r):
-		g.append(shapes.line((0,4*x*r),(4*x*r,4*r*s)))
+		g.append(shapes.line((0,4*s*x),(4*s*x,4*r*s)))
 	transforms.center_at(g, (0,0))
 	
 
