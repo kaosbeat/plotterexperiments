@@ -213,7 +213,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	#  	connectthedots(objects[x],objects[x+1])
 	
 	s = 300
-	r = 50
+	r = 10
 	f = 2.15
 	g = shapes.group([])
 	for x in xrange(0,r):
