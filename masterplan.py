@@ -197,7 +197,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	plotter.clear()
 	plotter.set_origin_center()
 	plotter.select_pen(2)
-	plotter.write(shapes.rectangle(16158,11040))
+	# plotter.write(shapes.rectangle(16158,11040))
 	offsetx = -2000
 	offsety = 0	
 	# kartelconnect((1000,-5000), (3000,3000),50, False)
