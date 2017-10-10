@@ -83,6 +83,7 @@ def renderline(data, y):
 	print(len(data))
 	g = shapes.group([])
 	c = 1.6 #curvature
+	
 	# //do perspective correction
 	for y in xrange(1,len(modulationdata)-1):
 		for x in xrange(1,len(inputdata)-1):
