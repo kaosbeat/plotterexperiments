@@ -83,20 +83,20 @@ def renderline(data, y):
 	print(len(data))
 	g = shapes.group([])
 	c = 1.6 #curvature
-	
+	p = 4 #perspective stretch
 	# //do perspective correction
 	for y in xrange(1,len(modulationdata)-1):
 		for x in xrange(1,len(inputdata)-1):
-			x1 = x*6*y
+			x1 = x*6*(y*p)
 			y1 = (60-c*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
-			x2 = (x+1)*6*y
+			x2 = (x+1)*6*(y*p)
 			y2 = (60-c*y)*y+(y*50+inputdata[x+1]*5 * modulationdata[y])
 			g.append(shapes.line((x1,y1),(x2,y2)))
 			x1 = x*6*y
 			y1 = (60-c*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
 			x2 = x*6*(y+1)
 			y2 = (60-c*(y+1))* (y+1)+((y+1)*50+(inputdata[x]*5 * modulationdata[y+1]))
-			g.append(shapes.line((x1,y1),(x2,y2)))
+			# g.append(shapes.line((x1,y1),(x2,y2)))
 			# g.append(shapes)
 	plotter.write(g)
 
