@@ -89,7 +89,7 @@ def renderline(data, y):
 				(x*6*y,
 					60*y+(y*50+(inputdata[x]*5 * modulationdata[y]))), 
 				((x+1)*6*y, 
-					6*y+(y*50+inputdata[x+1]*5 * modulationdata[y])
+					60*y+(y*50+inputdata[x+1]*5 * modulationdata[y])
 					)))
 	plotter.write(g)
 
