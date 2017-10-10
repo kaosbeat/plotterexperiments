@@ -83,8 +83,8 @@ def renderline(data, y):
 	print(len(data))
 	g = shapes.group([])
 	# //do perspective correction
-	for y in xrange(1,len(inputdata)-1):
-		for x in xrange(1,len(modulationdata)-1):
+	for y in xrange(1,len(modulationdata)-1):
+		for x in xrange(1,len(inputdata)-1):
 			x1 = x*6*y
 			y1 = (60-2*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
 			x2 = (x+1)*6*y
