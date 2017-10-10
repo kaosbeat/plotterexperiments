@@ -85,11 +85,15 @@ def renderline(data, y):
 	# //do perspective correction
 	for y in xrange(1,len(modulationdata)-1):
 		for x in xrange(1,len(inputdata)-1):
-			x1 = x*6*y
-			y1 = (60-2*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
-			x2 = (x+1)*6*y
-			y2 = (60-2*y)*y+(y*50+inputdata[x+1]*5 * modulationdata[y])
+			ix = x
+			iy = y
+			x1 = x*6*iy
+			y1 = (60-2*iy)*iy+(iy*50+(inputdata[ix]*5 * modulationdata[iy]))
+			x2 = (ix+1)*6*iy
+			y2 = (60-2*iy)*iy+(iy*50+inputdata[ix+1]*5 * modulationdata[iy])
 			g.append(shapes.line((x1,y1),(x2,y2)))
+			x1 = 
+
 			# g.append(shapes)
 	plotter.write(g)
 
