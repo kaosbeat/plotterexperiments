@@ -86,7 +86,7 @@ def renderline(data, y):
 	for y in xrange(1,len(modulationdata)-1):
 		for x in xrange(1,len(inputdata)-1):
 			x1 = x*6*y
-			y1 = (60-2*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
+			y1 = (60-*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
 			x2 = (x+1)*6*y
 			y2 = (60-2*y)*y+(y*50+inputdata[x+1]*5 * modulationdata[y])
 			g.append(shapes.line((x1,y1),(x2,y2)))
