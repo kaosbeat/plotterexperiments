@@ -25,7 +25,7 @@ plotter.select_pen(1)
 # plotter.margins.hard.draw_outline()
 
 
-print("Margins are cool" + plotter.margins)
+print(plotter.margins)
 
 objects = []
 def addAndPlotObject(soort, x, y, size, maxsize, data):
