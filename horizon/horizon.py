@@ -87,18 +87,18 @@ def renderline(data, y):
 	# //do perspective correction
 	for y in xrange(1,len(modulationdata)-1):
 		for x in xrange(1,len(inputdata)-1-44+y):
-			x1 = x * 600 / y
+			x1 = -x * 600 / y
 			y1 = (60-c*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
 			x2 = -(x+1)*600/(y)
 			y2 = (60-c*y)*y+(y*50+inputdata[x+1]*5 * modulationdata[y])
-			# if (x1 < 600):
-			g.append(shapes.line((x1,y1),(x2,y2)))
+			if (x1 < 100):
+				g.append(shapes.line((x1,y1),(x2,y2)))
 			x1 = -x * 600 / y
 			y1 = (60-c*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
-			x2 = x * 600 / (y+1)
+			x2 = -x * 600 / (y+1)
 			y2 = (60-c*(y+1))* (y+1)+((y+1)*50+(inputdata[x]*5 * modulationdata[y+1]))
-			# if (x1 < 600):
-			g.append(shapes.line((x1,y1),(x2,y2)))
+			if (x1 < 100):
+				g.append(shapes.line((x1,y1),(x2,y2)))
 			# g.append(shapes)
 	plotter.write(g)
 
