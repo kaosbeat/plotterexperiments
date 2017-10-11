@@ -16,7 +16,7 @@ import math
 # from svgpathtools import svg2paths, Path, Line, Arc, CubicBezier, QuadraticBezier
 # from texttools import *
 
-plotter = instantiate_virtual_plotter(type="DXY1300")
+plotter = instantiate_virtual_plotter(type="DXY1330")
 # Instantiated plotter DXY-1300 in port VirtualSerialPort:
 #    Drawing limits: (left 0; bottom 0; right 10320; top 7920)
 
