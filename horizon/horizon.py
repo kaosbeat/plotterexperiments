@@ -14,8 +14,8 @@ import math
 # from svgpathtools import svg2paths, Path, Line, Arc, CubicBezier, QuadraticBezier
 # from texttools import *
 
-plotter = instantiate_virtual_plotter(type="DXY1300")
-# plotter = instantiate_plotters( )[0]
+# plotter = instantiate_virtual_plotter(type="DXY1300")
+plotter = instantiate_plotters( )[0]
 pltmax = [10320, 7920]
 plotunit = 0.025 # 1 coordinate unit per plotter = 0.025 mm
 # plotunits = (10320/432, 7920/297)
@@ -120,4 +120,4 @@ renderline(inputdata, 80)
 
 
 
-io.view(plotter)
+# io.view(plotter)
