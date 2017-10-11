@@ -6,7 +6,9 @@ from chiplotle import *
 from chiplotle.tools.geometrytools.get_minmax_coordinates import get_minmax_coordinates
 from chiplotle.tools.geometrytools.get_bounding_rectangle import get_bounding_rectangle
 from chiplotle.geometry.core.label import Label
-
+from chiplotle.core.interfaces.interface import _Interface
+from chiplotle.plotters.margins.marginssoft import MarginsSoft
+from chiplotle.plotters.margins.marginshard import MarginsHard
 import random
 import math
 
@@ -16,6 +18,9 @@ import math
 
 plotter = instantiate_virtual_plotter(type="DXY1300")
 # plotter = instantiate_plotters( )[0]
+
+print(MarginsHard(plotter))
+
 pltmax = [10320, 7920]
 plotunit = 0.025 # 1 coordinate unit per plotter = 0.025 mm
 # plotunits = (10320/432, 7920/297)
@@ -24,8 +29,6 @@ plotunit = 0.025 # 1 coordinate unit per plotter = 0.025 mm
 plotter.select_pen(1)
 # plotter.margins.hard.draw_outline()
 
-
-print(plotter.margins)
 
 objects = []
 def addAndPlotObject(soort, x, y, size, maxsize, data):
