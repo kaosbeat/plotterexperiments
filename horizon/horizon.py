@@ -92,8 +92,9 @@ def renderline(data, y):
 			x2 = -(x+1)*600/(y)
 			y2 = (60-c*y)*y+(y*50+inputdata[x+1]*5 * modulationdata[y])
 			if (x1 > -2000):
-				
 				g.append(shapes.line((x1,y1),(x2,y2)))
+	for x in xrange(1,len(inputdata)-1-44+y):
+		for y in xrange(1,len(modulationdata)-1):
 			x1 = -x * 600 / y
 			y1 = (60-c*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
 			x2 = -x * 600 / (y+1)
