@@ -108,7 +108,7 @@ def renderline(data, y):
 	transforms.scale(g, 4.5)
 	transforms.rotate(g,90)
 	print(g.width)
-	# plotter.write(g)
+	plotter.write(g)
 
 
 # for x in xrange(1,2):
