@@ -121,6 +121,7 @@ def renderline(data, y):
 			# g.append(shapes)
 	transforms.scale(g, 4.5)
 	transforms.rotate(g,90)
+	transforms.offset(g, (16158,11040))
 
 	print(g.width)
 	plotter.write(g)
