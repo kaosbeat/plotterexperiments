@@ -95,7 +95,7 @@ def renderline(data, y):
 				g.append(shapes.line((x1,y1),(x2,y2)))
 	# ///we split the loops for effcient polylines construction
 	for x in xrange(1,len(inputdata)-1-44+y):
-		for y in xrange(1,len(modulationdata)-1):
+		for y in xrange(1,len(modulationdata)-2):
 			x1 = -x * 600 / y
 			y1 = (60-c*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
 			x2 = -x * 600 / (y+1)
@@ -104,6 +104,7 @@ def renderline(data, y):
 				g.append(shapes.line((x1,y1),(x2,y2)))
 			# g.append(shapes)
 	transforms.scale(g, 4.5)
+	transforms.rotate(g,90)
 	plotter.write(g)
 
 
