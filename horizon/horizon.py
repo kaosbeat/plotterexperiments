@@ -17,17 +17,22 @@ import math
 # from texttools import *
 
 plotter = instantiate_virtual_plotter(type="DXY1300")
+# Instantiated plotter DXY-1300 in port VirtualSerialPort:
+#    Drawing limits: (left 0; bottom 0; right 10320; top 7920)
+
 # plotter = instantiate_plotters( )[0]
+# Drawing limits: (left 0; bottom 0; right 16158; top 11040)
+
 
 print(MarginsHard(plotter))
 
 pltmax = [10320, 7920]
 plotunit = 0.025 # 1 coordinate unit per plotter = 0.025 mm
 # plotunits = (10320/432, 7920/297)
-# Drawing limits: (left 0; bottom 0; right 16158; top 11040)
+
 # print plotunits
 plotter.select_pen(1)
-# plotter.margins.hard.draw_outline()
+plotter.margins.hard.draw_outline()
 
 
 objects = []
@@ -110,7 +115,7 @@ def renderline(data, y):
 			# g.append(shapes)
 	transforms.scale(g, 4.5)
 	transforms.rotate(g,90)
-	
+
 	print(g.width)
 	plotter.write(g)
 
