@@ -34,7 +34,8 @@ plotunit = 0.025 # 1 coordinate unit per plotter = 0.025 mm
 plotter.select_pen(1)
 plotter.margins.hard.draw_outline()
 plotter.select_pen(2)
-plotter.write(shpaes.rectangle)
+plotter.write(shapes.rectangle((0,0), (16158,11040)))
+plotter.select_pen(1)
 
 
 objects = []
