@@ -105,7 +105,7 @@ def renderline(data, y):
 			if (x1 > -2000):
 				g.append(shapes.line((x1,y1),(x2,y2)))
 			# g.append(shapes)
-	transforms.scale(g, 4.5)
+	transforms.scale(g, g.width/)
 	transforms.rotate(g,90)
 	print(g.width)
 	plotter.write(g)
