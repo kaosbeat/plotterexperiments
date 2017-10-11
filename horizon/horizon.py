@@ -85,7 +85,7 @@ def renderline(data, y):
 	c = 1.2 #curvature
 	p = -4 #perspective stretch
 	# //do perspective correction
-	for y in xrange(1,2):
+	for y in xrange(1,len(modulationdata)-1):
 		for x in xrange(1,len(inputdata)-1-44+y):
 			x1 = -x * 600 / y
 			y1 = (60-c*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
