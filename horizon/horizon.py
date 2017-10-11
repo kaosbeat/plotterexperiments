@@ -97,7 +97,7 @@ modulationdata = [0,0,3,4,4,4,3,2,1,0,0,0,0,1,2,3,4,5,4,3,4,5,0,0,3,4,4,4,3,2,1,
 def renderline(data, y):
 	print(len(data))
 	g = shapes.group([])
-	c = 1.2 #curvature
+	c = 1.8 #curvature
 	p = -4 #perspective stretch
 	# //do perspective correction
 	for y in xrange(1,len(modulationdata)-1):
@@ -120,7 +120,7 @@ def renderline(data, y):
 			g.append(shapes.line((x1,y1),(x2,y2)))
 			# g.append(shapes)
 	transforms.scale(g, 4.5)
-	transforms.rotate(g,90)
+	# transforms.rotate(g,90)
 	transforms.offset(g, (16158/1.5,12040))
 
 	print(g.width)
