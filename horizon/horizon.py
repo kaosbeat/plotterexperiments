@@ -37,7 +37,7 @@ plotter.select_pen(2)
 g = shapes.group([])
 g.append(shapes.rectangle(16158,11040))
 transforms.offset(g, (16158/2,11040/2))
-plotter.write(
+plotter.write(g)
 plotter.select_pen(1)
 
 
