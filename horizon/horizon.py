@@ -14,11 +14,12 @@ import math
 # from svgpathtools import svg2paths, Path, Line, Arc, CubicBezier, QuadraticBezier
 # from texttools import *
 
-# plotter = instantiate_virtual_plotter(type="DXY1300")
-plotter = instantiate_plotters( )[0]
+plotter = instantiate_virtual_plotter(type="DXY1300")
+# plotter = instantiate_plotters( )[0]
 pltmax = [10320, 7920]
 plotunit = 0.025 # 1 coordinate unit per plotter = 0.025 mm
 # plotunits = (10320/432, 7920/297)
+# Drawing limits: (left 0; bottom 0; right 16158; top 11040)
 # print plotunits
 plotter.select_pen(1)
 # plotter.margins.hard.draw_outline()
@@ -93,6 +94,7 @@ def renderline(data, y):
 			y2 = (60-c*y)*y+(y*50+inputdata[x+1]*5 * modulationdata[y])
 			if (x1 > -2000):
 				g.append(shapes.line((x1,y1),(x2,y2)))
+				print(appending)
 	# ///we split the loops for effcient polylines construction
 	for x in xrange(1,len(inputdata)-1-44+y):
 		for y in xrange(1,len(modulationdata)-2):
@@ -119,5 +121,5 @@ renderline(inputdata, 80)
 
 
 
-
-# io.view(plotter)
+# 
+io.view(plotter)
