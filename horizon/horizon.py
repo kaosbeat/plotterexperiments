@@ -33,6 +33,8 @@ plotunit = 0.025 # 1 coordinate unit per plotter = 0.025 mm
 # print plotunits
 plotter.select_pen(1)
 plotter.margins.hard.draw_outline()
+plotter.select_pen(2)
+plotter.write(shpaes.rectangle)
 
 
 objects = []
@@ -118,6 +120,7 @@ def renderline(data, y):
 
 	print(g.width)
 	plotter.write(g)
+
 
 
 # for x in xrange(1,2):
