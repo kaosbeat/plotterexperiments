@@ -97,7 +97,7 @@ def renderline(data, y):
 			y1 = (60-c*y)*y+(y*50+(inputdata[x]*5 * modulationdata[y]))
 			x2 = x * 600 / (y+1)
 			y2 = (60-c*(y+1))* (y+1)+((y+1)*50+(inputdata[x]*5 * modulationdata[y+1]))
-			if (x1 > 100):
+			if (x1 > 600):
 				g.append(shapes.line((x1,y1),(x2,y2)))
 			# g.append(shapes)
 	plotter.write(g)
