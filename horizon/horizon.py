@@ -107,7 +107,7 @@ def renderline(data, y):
 			# g.append(shapes)
 	transforms.scale(g, 4.5)
 	transforms.rotate(g,90)
-	print(g.size)
+	print(g.width)
 	# plotter.write(g)
 
 
