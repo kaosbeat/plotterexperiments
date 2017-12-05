@@ -47,7 +47,7 @@ def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
               (x + ((a2x+a3x)*size), y + ((a2y+a3y)*size)),
               (x + (a2x*size), y + (a2y*size)),
               (x + (a1x*size), y + (a1y*size)),
-              (x + ((a1x+a3y)*size),y + ((a1y+a3y)*size)),
+              (x + ((a1x-a3y)*size),y + ((a1y+a3y)*size)),
               (x + ((a3x+a2x+a1x)*size),y + ((a1y+a2y+a3y)*size)),
               (x + ((a1x+a2x)*size),y + ((a1y+a2y)*size))
     ]
