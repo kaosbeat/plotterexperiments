@@ -33,7 +33,7 @@ def plotCube(size, x, y):
 
 
 
-def plotDynamicCube(size, x, y):
+def plotDynamicCube(size, x, y, xf, yf, zf):
     points = [(x,y),
               (x + (0.8*size), y - (0.2*size)),
               (x - (0.2*size), y + (0.8*size)),
