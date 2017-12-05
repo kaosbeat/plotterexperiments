@@ -41,7 +41,7 @@ def fillSquare(p1,p2,p3,p4):  #parallel lines p1,p2 & p3,p4
     f.append(shapes.line( (p1[0] + (p2[0] - p1[0])/10*i, p1[1] + (p2[1] - p1[1])/10*i), (p3[0] + (p4[0] - p3[0])/10*i, p3[1] + (p4[1] - p3[1])/10*i)))
   plotter.write(f)
 
-  
+
 def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
     a1x = math.cos(a1)
     a1y = math.sin(a1)
@@ -78,7 +78,7 @@ def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
     connectPoints(g,points,6,7)
     connectPoints(g,points,4,7)
 
-    fillSquare(points[0],points[1],points[2],points[3])
+    fillSquare(points[0],points[1],points[3],points[2])
 
     plotter.write(g)
 
