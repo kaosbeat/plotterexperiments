@@ -33,6 +33,7 @@ def plotCube(size, x, y):
 
 def connectPoints(g,points,p1,p2):
   g.append(shapes.line(points[p1], points[p2]))
+  print (points[p1][0], points[p1][1])
 
 def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
     a1x = math.cos(a1)
