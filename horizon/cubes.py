@@ -35,10 +35,10 @@ def connectPoints(g,points,p1,p2):
   g.append(shapes.line(points[p1], points[p2]))
   print (points[p1][0], points[p1][1])
 
-def fillSquare(p1,p2,p3,p4):  #parallel lines p1,p2 & p3,p4
+def fillSquare(p1,p2,p3,p4, density):  #parallel lines p1,p2 & p3,p4
   f =  shapes.group([])
-  for i in range(100):
-    f.append(shapes.line( (p1[0] + (p2[0] - p1[0])/10*i, p1[1] + (p2[1] - p1[1])/10*i), (p3[0] + (p4[0] - p3[0])/10*i, p3[1] + (p4[1] - p3[1])/10*i)))
+  for i in range(density):
+    f.append(shapes.line( (p1[0] + (p2[0] - p1[0])/density*i, p1[1] + (p2[1] - p1[1])/density*i), (p3[0] + (p4[0] - p3[0])/density*i, p3[1] + (p4[1] - p3[1])/density*i)))
   plotter.write(f)
 
 
