@@ -33,7 +33,8 @@ def plotCube(size, x, y):
 
 
 
-def plotDynamicCube(size, x, y, xf, yf, zf):  ## xf, yf, zf normalized vector
+def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
+    = cos(a1)
     points = [(x,y),
               (x + (0.8*size), y - (0.2*size)),
               (x - (0.2*size), y + (0.8*size)),
