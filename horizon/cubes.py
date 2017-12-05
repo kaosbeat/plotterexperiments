@@ -35,6 +35,9 @@ def connectPoints(g,points,p1,p2):
   g.append(shapes.line(points[p1], points[p2]))
   print (points[p1][0], points[p1][1])
 
+def fillSquare(p1,p2,p3,p4):
+  
+
 def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
     a1x = math.cos(a1)
     a1y = math.sin(a1)
@@ -71,6 +74,7 @@ def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
     connectPoints(g,points,6,7)
     connectPoints(g,points,4,7)
 
+    fillSquare(1,2,3,4)
 
     plotter.write(g)
 
