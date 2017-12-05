@@ -86,7 +86,7 @@ def plotDynamicCube(size, x, y, a1, a2, a3, f1,f2,f3,f4):  ##a1,a2,a3 - slantvec
 
 
 
-plotDynamicCube(1000, 0, 0, 0, 20, 100, 0,1,3,2)
+plotDynamicCube(1000, 0, 0, 0, 20, 1000, 0,1,3,2)
 plotDynamicCube(1000, 500, -600, 0, 20, 100, 1,2,5,6)
 # plotCube(300, 500, 600)
 io.view(plotter)
