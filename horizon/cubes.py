@@ -27,8 +27,8 @@ def plotCube(size, x, y):
     ]
     g = shapes.group([])
     for i in range(100):
-        g.append(shapes.line(points[random.randint(0,7)],points[random.randint(0,7)]))
 
+        g.append(shapes.line(points[random.randint(0,7)],points[random.randint(0,7)]))
+    plotter.write(g)
 
 plotCube(1000, 0, 0)
-plotter.write(g)
