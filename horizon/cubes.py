@@ -53,7 +53,7 @@ def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
     g = shapes.group([])
     for i in range(100):
 
-        g.append(shapes.line(points[random.randint(0,8)],points[random.randint(0,8)]))
+        g.append(shapes.line(points[random.randint(0,7)],points[random.randint(0,7)]))
     plotter.write(g)
 
 
