@@ -31,7 +31,8 @@ def plotCube(size, x, y):
         g.append(shapes.line(points[random.randint(0,7)],points[random.randint(0,7)]))
     plotter.write(g)
 
-
+def connectPoints(g,points,p1,p2):
+  g.append(shapes.line(points[p1], points[p2]))
 
 def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
     a1x = math.cos(a1)
@@ -51,10 +52,19 @@ def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
               (x + ((a1x+a2x)*size),y + ((a1y+a2y)*size))
     ]
     g = shapes.group([])
-    for i in range(100):
 
-        g.append(shapes.line(points[random.randint(0,7)],points[random.randint(0,7)]))
+    # for i in range(100):
+
+    #     g.append(shapes.line(points[random.randint(0,7)],points[random.randint(0,7)]))
+
+    connectPoints(g,points,0,1)
+    connectPoints(g,points,1,2)
+    connectPoints(g,points,2,3)
+    connectPoints(g,points,3,0)
+
     plotter.write(g)
+
+
 
 
 
