@@ -76,7 +76,7 @@ def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
     connectPoints(g,points,6,7)
     connectPoints(g,points,4,7)
 
-    fillSquare(1,2,3,4)
+    fillSquare(points[0,2,3,4)
 
     plotter.write(g)
 
