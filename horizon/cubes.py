@@ -27,7 +27,7 @@ def plotCube(size, x, y):
     ]
     g = shapes.group([])
     for i in range(100):
-
+        print(random.randint(0,7))
         g.append(shapes.line(points[random.randint(0,7)],points[random.randint(0,7)]))
     plotter.write(g)
 
