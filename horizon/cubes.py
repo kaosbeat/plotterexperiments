@@ -87,6 +87,6 @@ def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
 
 
 plotDynamicCube(1000, 0, 0, 0, 20, 100)
-plotDynamicCube(1000, 500, -600, 0, 20, 30)
+plotDynamicCube(1000, 500, -600, 0, 20, 70)
 # plotCube(300, 500, 600)
 io.view(plotter)
