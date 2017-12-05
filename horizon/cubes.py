@@ -31,4 +31,26 @@ def plotCube(size, x, y):
         g.append(shapes.line(points[random.randint(0,7)],points[random.randint(0,7)]))
     plotter.write(g)
 
+
+
+def plotDynamicCube(size, x, y):
+    points = [(x,y),
+              (x + (0.8*size), y - (0.2*size)),
+              (x - (0.2*size), y + (0.8*size)),
+              (x + (0.3*size), y + (0.5*size)),
+              (x + (1.1*size), y + (0.3*size)),
+              (x + (0.6*size),y + (0.6*size)),
+              (x + (0.9*size),y + (1.1*size)),
+              (x + (0.1*size),y + (1.3*size))
+    ]
+    g = shapes.group([])
+    for i in range(100):
+
+        g.append(shapes.line(points[random.randint(0,8)],points[random.randint(0,8)]))
+    plotter.write(g)
+
+
+
 plotCube(1000, 0, 0)
+plotCube(300, 500, 600)
+io.view(plotter)
