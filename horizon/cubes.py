@@ -34,21 +34,21 @@ def plotCube(size, x, y):
 
 
 def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
-    a1x = cos(a1)
-    a1y = sin(a1)
-    a2x = sin(a2)
-    a2y = cos(a2)
-    a3x = sin(a3)
-    a3y = cos(a3)
+    a1x = math.cos(a1)
+    a1y = math.sin(a1)
+    a2x = math.sin(a2)
+    a2y = math.cos(a2)
+    a3x = math.sin(a3)
+    a3y = math.cos(a3)
 
     points = [(x,y),
-              (x + (0.8*size), y - (0.2*size)),
-              (x - (0.2*size), y + (0.8*size)),
-              (x + (0.3*size), y + (0.5*size)),
-              (x + (1.1*size), y + (0.3*size)),
-              (x + (0.6*size),y + (0.6*size)),
-              (x + (0.9*size),y + (1.1*size)),
-              (x + (0.1*size),y + (1.3*size))
+              (x + (a3x*size), y + (a3y*size)),
+              (x + ((a2x+a3x)*size), y + ((a2y+a3y)*size)),
+              (x + (a2x*size), y + (a2y*size)),
+              (x + (a1x*size), y + (a1y*size)),
+              (x + ((a1x+a3y)*size),y + ((a1y+a3y)*size)),
+              (x + ((a3x+a2x+a1x)*size),y + ((a1y+a2y+a3y)*size)),
+              (x + (a1x+a2x)*size),y + ((a1y+a2y)*size))
     ]
     g = shapes.group([])
     for i in range(100):
@@ -58,6 +58,6 @@ def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
 
 
 
-plotCube(1000, 0, 0)
+plotDynamicCube(1000, 0, 0)
 plotCube(300, 500, 600)
 io.view(plotter)
