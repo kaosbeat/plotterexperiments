@@ -51,7 +51,7 @@ def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
               (x + ((a1x+a2x)*size),y + ((a1y+a2y)*size))
     ]
     g = shapes.group([])
-    for i in range(100):
+    for i in range(7):
 
         g.append(shapes.line(points[i],points[i]))
     plotter.write(g)
