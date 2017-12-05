@@ -42,7 +42,7 @@ def fillSquare(p1,p2,p3,p4, density):  #parallel lines p1,p2 & p3,p4
   plotter.write(f)
 
 
-def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
+def plotDynamicCube(size, x, y, a1, a2, a3, f1,f2,f3,f4):  ##a1,a2,a3 - slantvectors f1-f4 --fillcorners
     a1x = math.cos(a1)
     a1y = math.sin(a1)
     a2x = math.sin(a2)
@@ -78,7 +78,7 @@ def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
     connectPoints(g,points,6,7)
     connectPoints(g,points,4,7)
 
-    fillSquare(points[0],points[1],points[3],points[2], 50)
+    fillSquare(points[f1],points[f2],points[f3],points[f4], 50)
 
     plotter.write(g)
 
@@ -86,7 +86,7 @@ def plotDynamicCube(size, x, y, a1, a2, a3):  ## xf, yf, zf normalized vector
 
 
 
-plotDynamicCube(1000, 0, 0, 0, 20, 100)
-plotDynamicCube(1000, 500, -600, 0, 20, 100)
+plotDynamicCube(1000, 0, 0, 0, 20, 100, 0,1,2,3)
+plotDynamicCube(1000, 500, -600, 0, 20, 100, 1,2,5,6 )
 # plotCube(300, 500, 600)
 io.view(plotter)
