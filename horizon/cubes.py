@@ -37,7 +37,7 @@ def connectPoints(g,points,p1,p2):
 
 def fillSquare(p1,p2,p3,p4):  #parallel lines p1,p2 & p3,p4
   f =  shapes.group([])
-  for i in range(10):
+  for i in range(100):
     f.append(shapes.line( (p1[0] + (p2[0] - p1[0])/10*i, p1[1] + (p2[1] - p1[1])/10*i), (p3[0] + (p4[0] - p3[0])/10*i, p3[1] + (p4[1] - p3[1])/10*i)))
   plotter.write(f)
 
