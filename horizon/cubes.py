@@ -42,6 +42,26 @@ def fillSquare(p1,p2,p3,p4, density):  #parallel lines p1,p2 & p3,p4
   plotter.write(f)
 
 
+
+#                           (2)
+#                       _.-+.
+#              (1) _.-""     '.
+#              +:""            '.
+#              J \               '.
+#               \ \             _.-+ (3)
+#               |  '.       _.-"   L
+#               J    \  _.-"      /
+#                L (4)+"          J
+#           (5)  +    |           |
+#                 \   |          .+  (7)
+#                  \  |       .-'
+#                   \ |    .-'
+#                    \| .-'
+#                (8)  +'   
+
+
+
+
 def plotDynamicCube(size, x, y, a1, a2, a3, f1,f2,f3,f4):  ##a1,a2,a3 - slantvectors f1-f4 --fillcorners
     a1x = math.cos(a1)
     a1y = math.sin(a1)
