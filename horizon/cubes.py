@@ -43,6 +43,14 @@ def fillSquare(p1,p2,p3,p4, density):  #parallel lines p1,p2 & p3,p4
 
 
 
+
+
+def plotDynamicCube(size, x, y, a1, a2, a3, f1,f2,f3,f4):
+
+    """a1,a2,a3 - slantvectors f1-f4 --fillcorners
+
+
+#
 #                           (2)
 #                       _.-+.
 #              (1) _.-""     '.
@@ -57,19 +65,17 @@ def fillSquare(p1,p2,p3,p4, density):  #parallel lines p1,p2 & p3,p4
 #                  \  |       .-'
 #                   \ |    .-'
 #                    \| .-'
-#                (8)  +'   
+#                (8)  +'
+#
 
 
-
-
-def plotDynamicCube(size, x, y, a1, a2, a3, f1,f2,f3,f4):  ##a1,a2,a3 - slantvectors f1-f4 --fillcorners
+    """
     a1x = math.cos(a1)
     a1y = math.sin(a1)
     a2x = math.sin(a2)
     a2y = math.cos(a2)
     a3x = math.sin(a3)
     a3y = math.cos(a3)
-
     points = [(x,y),
               (x + (a3x*size), y + (a3y*size)),
               (x + ((a2x+a3x)*size), y + ((a2y+a3y)*size)),
@@ -93,7 +99,7 @@ def plotDynamicCube(size, x, y, a1, a2, a3, f1,f2,f3,f4):  ##a1,a2,a3 - slantvec
     connectPoints(g,points,1,5)
     connectPoints(g,points,2,6)
     connectPoints(g,points,3,7)
-    connectPoints(g,points,4,5) 
+    connectPoints(g,points,4,5)
     connectPoints(g,points,5,6)
     connectPoints(g,points,6,7)
     connectPoints(g,points,4,7)
