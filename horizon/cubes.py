@@ -104,7 +104,7 @@ def plotDynamicCube(size, x, y, a1, a2, a3, f1,f2,f3,f4):
     connectPoints(g,points,6,7)
     connectPoints(g,points,4,7)
 
-    fillSquare(points[f1],points[f2],points[f3],points[f4], 50)
+    fillSquare(points[f1],points[f2],points[f3],points[f4], 10)
 
     plotter.write(g)
 
@@ -112,7 +112,12 @@ def plotDynamicCube(size, x, y, a1, a2, a3, f1,f2,f3,f4):
 
 
 
-plotDynamicCube(600, 100, 0, -20, 20, 10,0,1,3,2)
-plotDynamicCube(1000, 300, -500, 0, 20, 10, 1,2,5,6)
+#plotDynamicCube(600, 100, 0, -20, 20, 10,0,1,3,2)
+#plotDynamicCube(1000, 300, -500, 0, 20, 10, 1,2,5,6)
+#plotDynamicCube(1000, 300, -500, 0, 20, 10, 4,3,5,6)
+
+for i in range(50):
+   # plotDynamicCube(500, i*500, 0, 0, math.radians(i*10), 10, i,i+1,i+2,i+3)
+    plotDynamicCube(500, i*500, 0, 0, math.radians(i*2), 10, 3,2,0,1)
 # plotCube(300, 500, 600)
 io.view(plotter)
