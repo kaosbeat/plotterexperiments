@@ -94,13 +94,13 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	# filledcircle(1000,-500,1500,150,0)
 	offsetx = -2000
 	offsety = 0
-	for x in xrange(1,10):
-		print(x % 4)
-		plotter.select_pen((x % 4)+1)
-		verticalfilledcircle(x*500 + offsetx, 0 + offsety, 2500+(x*250), 25,1 )
+	# for x in xrange(1,10):
+	# 	print(x % 4)
+	# 	plotter.select_pen((x % 4)+1)
+	# 	verticalfilledcircle(x*500 + offsetx, 0 + offsety, 2500+(x*250), 25,1 )
 
-	# for x in xrange(1,20):
-		# filledcircle(x*400, 2000, x*400, x*15,0 )
+	for x in xrange(1,20):
+		filledcircle(x*400, 2000, x*400, x*15,0 )
 	# takeawalk(80)
 
 	io.view(plotter)
