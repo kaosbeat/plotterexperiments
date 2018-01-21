@@ -125,6 +125,7 @@ g = shapes.group([])
 
 viewport = (10320,7920)
 horizon = (viewport[0] / 2, viewport[1] / 2)
+horizon = (2000,-2000)
 
 def building(x, y, baseX, baseY, height):
 	#plotter.pen_up([(x,y)])
