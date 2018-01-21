@@ -140,9 +140,9 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	# t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
 	# transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 	# plotter.write(t)
-	# filledcircle(0,0,1000,50,0)
-	# filledcircle(1000,500,1000,50,1)
-	# filledcircle(1000,-500,1500,150,0)
+	filledcircle(0,0,1000,50,0)
+	filledcircle(1000,500,1000,50,1)
+	filledcircle(1000,-500,1500,150,0)
 	offsetx = -2000
 	offsety = 0
 	# for x in xrange(1,10):
@@ -153,7 +153,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 
 	# for x in xrange(1,12):
 		# filledcircle(x*400 - 5000, 0, x*400, x*10,1 )
-	takeawalk(80, 100)
+	# takeawalk(80, 100)
 
 	io.view(plotter)
 
