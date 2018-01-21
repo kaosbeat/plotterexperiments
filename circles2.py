@@ -97,7 +97,7 @@ def filledcircle(cx,cy,radius,rate, full):
 	transforms.offset(g, (cx,cy))
 	plotter.write(g)
 
-
+verticalfibcircle
 
 
 def takeawalk(size, rate):
@@ -140,9 +140,9 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	# t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
 	# transforms.offset(t,(-2500, -plotsize[1]/2 + 200))
 	# plotter.write(t)
-	filledcircle(0,0,1000,50,0)
-	filledcircle(1000,500,1000,50,1)
-	filledcircle(1000,-500,1500,150,0)
+	# filledcircle(0,0,1000,50,0)
+	# filledcircle(1000,500,1000,50,1)
+	# filledcircle(1000,-500,1500,150,0)
 	offsetx = -2000
 	offsety = 0
 	# for x in xrange(1,10):
