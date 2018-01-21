@@ -142,7 +142,7 @@ def building(x, y, baseX, baseY, height):
 		if ( y+baseY >= viewport[1]/2):
 			plotter.pen_up([(x, y+baseY)])
 			plotter.pen_down([(horizon[0], horizon[1])])
-			plotter.pen_up([x+baseX, y])
+			plotter.pen_up([(x+baseX, y)])
 			plotter.pen_down([(horizon[0], horizon[1])])
 
 		if ( y+baseY < viewport[1]/2):
