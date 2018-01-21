@@ -97,7 +97,7 @@ def filledcircle(cx,cy,radius,rate, full):
 	transforms.offset(g, (cx,cy))
 	plotter.write(g)
 
-verticalfibcircle
+verticalfibcircle(0,0,100,10,1)
 
 
 def takeawalk(size, rate):
