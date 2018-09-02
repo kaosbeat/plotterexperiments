@@ -122,8 +122,7 @@ def takeawalk(size, rate):
 	transforms.offset(g, (-5000,-3000))
 	plotter.write(g)
 	plotter.pen_up([(0,0)])
-	io.view(plotter)
-		
+
 		
 	
 
@@ -158,5 +157,4 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	io.view(plotter)
 
 # print(fib(1))
-# plot(0,1)
-takeawalk(10,10)
+plot(0,1)
