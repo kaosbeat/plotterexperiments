@@ -1,4 +1,4 @@
-from chiplotle import *
+1
 from chiplotle.tools.geometrytools.get_minmax_coordinates import get_minmax_coordinates
 from chiplotle.tools.geometrytools.get_bounding_rectangle import get_bounding_rectangle
 from chiplotle.geometry.core.label import Label
@@ -7,9 +7,55 @@ from chiplotle.plotters.margins.marginssoft import MarginsSoft
 from chiplotle.plotters.margins.marginshard import MarginsHard
 import random
 import math
+import plottools
+import numpy as np
+import freetype
+
+#pltmax = [10320, 7920] # <<<
+plotunit = 0.025 # 1 coordinate unit per plotter = 0.025 mm
+#plotunits = (10320/432, 7920/297)
+# print plotunits
+#plotter.select_pen(3)
+#plotter.margins.hard.draw_outline()
+#plotsizemm = [626,309] #in mm breedte x hoogte maximale plotoppervlakte buitenkant karton, zonder lijmflappen
+plotsizemm = [635,315]
+plotsize = [plotsizemm[0]/plotunit,plotsizemm[1]/plotunit]
+globaloffset = [-plotsize[0]/2,-plotsize[1]/2]  ##deze bijregelen om de plot op een andere plats te plotten
+margin = 3
+##grootte van de plot en zones
+recordsize = 306 ### make this fit next lines sizes!!! (306 + 3 = 309) ### 306 voor een 12"
+
+backflap = [(margin/plotunit,margin/plotunit),((recordsize+margin)/plotunit,(recordsize+margin)/plotunit)] #volledige achterflap
+backcubezone = [(15/plotunit, 15/plotunit),(150/plotunit, 150/plotunit)]
+
+frontflap= [((backflap[1][0]*plotunit + 2*margin)/plotunit,margin/plotunit),((plotsizemm[0]-margin)/plotunit, (recordsize+margin)/plotunit)] #volledige voorflap
+#record jackect size = 635mm,312mm
+fullzone = [(0,0) , (plotsizemm[0]/plotunit,plotsizemm[1]/plotunit)]
+squareszonesize = 0.8*frontflap[0][0]*plotunit ### 60% of frontflap
+squareszone = [
+         ((((frontflap[1][0]*plotunit) - squareszonesize) / plotunit) ,
+         (((frontflap[1][1]*plotunit) - squareszonesize) / plotunit)),
+        (frontflap[1])]
+squareszonemarge = 25
+squareszone = [(squareszonemarge/plotunit + frontflap[0][0] , squareszonemarge/plotunit ),(frontflap[1][0] - squareszonemarge/plotunit, frontflap[1][1] - squareszonemarge/plotunit ) ]
+tracklistzone = [(175/plotunit,40/plotunit),(backflap[1][0],250/plotunit)]
+titlezone = [(20/plotunit,200/plotunit), (175/plotunit,backflap[1][1] - 25/plotunit )]
+filldensity = 20
+print fullzone
+print squareszone
+#####configuratieopties
+virtualplotting = True  ##False for real plotter, True for virtual
+plotbounds = True
+
+#######CONFIG STOP, do not change below
 
 
-plotter = instantiate_virtual_plotter(type="DXY1300")
+if (virtualplotting == True):
+        plotter = instantiate_virtual_plotter(type="DXY1300")
+else:
+        plotter = instantiate_plotters( )[0]
+
+
 #plotter = instantiate_plotters()[0]
 print(MarginsHard(plotter))
 plotter.select_pen(1)
@@ -20,6 +66,21 @@ plotter.select_pen(1)
 #plotter.write(bounds)
 maingroup = shapes.group([])
 cubes = {}
+
+
+
+
+
+def plotzonebounds(zone):
+#	plotter.select_pen(1)
+	x1,y1 = zone[0]
+	x2,y2 = zone[1]
+	r = shapes.rectangle((x2-x1), (y2-y1))
+	transforms.offset(r,((x2-x1)/2,(y2-y1)/2))
+	transforms.offset(r,(x1,y1))
+        transforms.offset(r,globaloffset)
+	plotter.write(r)
+
 
 def plotCube(size, x, y):
     points = [(x,y),
@@ -52,11 +113,11 @@ def fillSquare(p1,p2,p3,p4, density, cubeID):  #parallel lines p1,p2 & p3,p4
  #       vx1 = p1[0] + (p2[0] - p1[0])/density*i
         vx1 = p1[0] + intervalX*i
 #        vy1 = p1[1] + (p2[1] - p1[1])/density*i
-        vy1 = p1[1] + (p2[1] - p1[1])/totinterval*i
+        vy1 = p1[1] + (p2[1] - p1[1])/((totinterval*i))
         #vx2 = p3[0] + (p4[0] - p3[0])/density*i
         vx2 = p3[0] + intervalX*i
         #vy2 = p3[1] + (p4[1] - p3[1])/density*i
-        vy2 = p3[1] + (p4[1] - p3[1])/totinterval*i
+        vy2 = p3[1] + (p4[1] - p3[1])/((totinterval*i))
         f.append(shapes.line((vx1,vy1),(vx2,vy2)))
         if (i == 0):
             cubes[cubeID]["vector"] = ((vx1,vy1),(vx2,vy2))
@@ -95,7 +156,7 @@ def fillSquarePerpendicular(p1,p2,p3,p4,density,cubeID):
     l = [p1,p2,p3,p4]
     #print l
     sortedl = sorted(l,key=getKeyX)
-    print sortedl
+    #print sortedl
     if (sortedl[1][0] == sortedl[0][0]):
         #do a parallel fill, we're done here
         print ("doinf parallel lines!!")
@@ -113,8 +174,8 @@ def fillSquarePerpendicular(p1,p2,p3,p4,density,cubeID):
     normalvector13 = (sortedl[3][0] - sortedl[1][0], sortedl[3][1] - sortedl[1][1])
     normalvector02 = (sortedl[2][0] - sortedl[0][0], sortedl[2][1] - sortedl[0][1])
     normalvector23 = (sortedl[3][0] - sortedl[2][0], sortedl[3][1] - sortedl[2][1])
-    print ("normalvectopr")
-    print (normalvector23)
+    #print ("normalvectopr")
+    #print (normalvector23)
     i = 0
     x1 = 0
     toplist = []
@@ -126,18 +187,21 @@ def fillSquarePerpendicular(p1,p2,p3,p4,density,cubeID):
             y1 = sortedl[0][1] + normalvector01[1] * (intervalX * i) / normalvector01[0]
         i = i + 1
         toplist.append((x1,y1))
-        print (x1,y1)
-        print("go down")
-        print toplist
+        #print (x1,y1)
+        #print("go down")
+        #print toplist
     j = 0
-    print x1
+    #print x1
+    offsetcorrectionX = i*intervalX - normalvector01[0]
+
+    #print offsetcorrectionX
     while x1 < sortedl[3][0] - intervalX:
-        x1 = sortedl[0][0] + i * intervalX
-        y1 = sortedl[1][1] + normalvector13[1] *   (intervalX * j) / normalvector13[0]
+        x1 = sortedl[0][0] + (i * intervalX)
+        y1 = sortedl[1][1] + normalvector13[1] *   (intervalX * j + offsetcorrectionX) / normalvector13[0]
         i = i + 1
         j = j + 1
         toplist.append((x1,y1))
-        print (x1,y1)
+        #print (x1,y1)
 
     i = 0
     x1 = 0
@@ -147,17 +211,20 @@ def fillSquarePerpendicular(p1,p2,p3,p4,density,cubeID):
         y1 = sortedl[0][1] + normalvector02[1] *   (intervalX * i) / normalvector02[0]
         i = i + 1
         bottomlist.append((x1,y1))
-        print (x1,y1)
-    print x1
+        #print (x1,y1)
+    #print x1
     j = 0
+    offsetcorrectionX = i*intervalX - normalvector02[0]
+
+    #print offsetcorrectionX
     while x1 < sortedl[3][0] - intervalX:
         x1 = sortedl[0][0] + i * intervalX
-        y1 = sortedl[2][1] + normalvector23[1] * (intervalX * (j+1)) / normalvector23[0]
+        y1 = sortedl[2][1] + normalvector23[1] * (intervalX * j + offsetcorrectionX) / normalvector23[0]
 #        y1 = 980 -  999 * 950/10
         i = i + 1
         j = j + 1
         bottomlist.append((x1,y1))
-        print (x1,y1)
+        #print (x1,y1)
 
     for i in range(len(toplist)):
         x1 = toplist[i][0]
@@ -179,14 +246,14 @@ def oldfillsquares():
     else:
         pass
 #interval?
-    print ("points")
-    print(p1, p2, p3, p4 )
+    #print ("points")
+    #print(p1, p2, p3, p4 )
     normalvector12 = (p2[0] - p1[0], p2[1] - p1[1])
     normalvector14 = (p4[0] - p1[0], p4[1] - p1[1])
     interval = (p3[0] - p1[0]) / density
-    print("interval =" + str(interval))
-    print("normalvector12 " + str(normalvector12))
-    print("normalvector14" + str(normalvector14))
+    #print("interval =" + str(interval))
+    #print("normalvector12 " + str(normalvector12))
+    #print("normalvector14" + str(normalvector14))
     if (p2[1] == p1[1]):
         interval12Y = 0
     else:
@@ -195,7 +262,7 @@ def oldfillsquares():
         interval14Y = 0
     else:
         interval14Y = (normalvector14[1]) / ((p4[0]-p1[0])/interval)
-    print("interval12Y" + str(interval12Y))
+    #print("interval12Y" + str(interval12Y))
     for i in range(int(interval12Y)):
         x1 = p1[0] + i*interval
         y1 = p1[1] + (normalvector12[1]/normalvector12[0]) * i * interval12Y
@@ -270,10 +337,10 @@ def plotDynamicCube(cubeID, size, x, y, a1, a2, a3, f1,f2,f3,f4, density):
 
     print len(points)
 
-    #for p in range(7):
-    #    t = shapes.label("P"+str(p), 0.2, 0.2)
-    #    transforms.offset(t, points[p])
-    #    g.append(t)
+    # for p in range(7):
+    #     t = shapes.label("P"+str(p), 0.2, 0.2)
+    #     transforms.offset(t, points[p])
+    #     g.append(t)
 
     #fillSquare(points[f1],points[f2],points[f3],points[f4], density, cubeID)
     fill = fillSquarePerpendicular (points[f1],points[f2],points[f3],points[f4], density, cubeID)
@@ -305,26 +372,251 @@ def cubeStudies():
 
 
 #plotDynamicCube(600, 100, 0, -20, 20, 10,0,1,3,2)
-#plotDynamicCube(1000, 300, -500, 0, 20, 10, 1,2,5,6)
+#plotDynamicCube(1000, 300, -500, 0,20, 10, 1,2,5,6)
 #plotDynamicCube(1000, 300, -500, 0, 20, 10, 4,3,5,6)
 
-def intersectStudy():
+def intersectStudy(scale, x, y):
     maingroup = shapes.group([])
     plotter.select_pen(1)
-    maingroup.append(plotDynamicCube("cube1", 1000, 0,0, 0.1, 0.5, 0.2, 3,2,0,1, 30))
+    maingroup.append(plotDynamicCube("cube1", 800, 100,0, 0.4, 0.9, 0.2, 0,1,2,3, 30))
+    transforms.scale(maingroup, scale)
+    transforms.offset(maingroup, (x+globaloffset[0],y+globaloffset[1]))
     plotter.write(maingroup)
 
     maingroup = shapes.group([])
     plotter.select_pen(2)
-    maingroup.append(plotDynamicCube("cube2", 800, -600,-200, 0.2, 0, 0.5, 7,6,4,5,30))
+    maingroup.append(plotDynamicCube("cube2", 700, -615,-200, 0.3, 0.5, 0.2, 7,6,4,5,30))
+    transforms.scale(maingroup, scale)
+    transforms.offset(maingroup, (x+globaloffset[0],y+globaloffset[1]))
     plotter.write(maingroup)
+
 
 
     maingroup = shapes.group([])
     plotter.select_pen(3)
-    plotDynamicCube("cube3", 1800, -800,-800, 0.2,0,0.5, 2,6,1,5,30)
+    maingroup.append(plotDynamicCube("cube3", 1200, -823,-400, 0.2,0,0.5, 2,6,1,5,30))
+    transforms.scale(maingroup, scale)
+    transforms.offset(maingroup, (x+globaloffset[0],y+globaloffset[1]))
     plotter.write(maingroup)
-intersectStudy()
+
+
+
+    maingroup = shapes.group([])
+    plotter.select_pen(3)
+    maingroup.append(plotDynamicCube("cube4", 900, 829,-200, 0.3,0.8,0.5, 2,6,7,3,30))
+    transforms.scale(maingroup, scale)
+    transforms.offset(maingroup, (x+globaloffset[0],y+globaloffset[1]))
+    plotter.write(maingroup)
+
+
+
+def randomintersectstudy():
+    maingroup = shapes.group([])
+    for f in xrange(6):
+        if (f == 0):
+            q,r,s,t = 2,6,5,1
+        if (f == 1):
+            q,r,s,t = 0,1,5,4
+        if (f == 2):
+            q,r,s,t = 3,2,6,7
+        if (f == 3):
+            q,r,s,t = 0,4,7,3
+        if (f == 4):
+            q,r,s,t = 4,5,6,7
+        if (f == 5):
+            q,r,s,t = 0,1,2,3
+        subgroup = shapes.group([])
+        subgroup.append(plotDynamicCube("cube",
+                                        random.randrange(1000,1500,100),
+                                        random.randrange(0,2200,30)+(f*3),
+                                        random.randrange(0,1000,30),
+                                        random.uniform(0.2,0.7)-0.4,
+                                        random.uniform(0.01,0.4)-0.2,
+                                        random.uniform(0.3,0.7)-0.5,
+                                        q,r,s,t,
+                                        filldensity))
+        maingroup.append(subgroup)
+    return maingroup
+
+
+
+#    plotter.write(maingroup)
+
+
+
+
+
+def plotchar(char, size, font, xpos, ypos):
+#code adapted from freetype-py vector example
+  global plotter
+  face = freetype.Face(font)
+  face.set_char_size( size*64 )
+  face.load_char(char)
+  slot = face.glyph
+  outline = slot.outline
+  points = np.array(outline.points, dtype=[('x',float), ('y',float)])
+  x, y = points['x'], points['y']
+  start, end = 0, 0
+  VERTS, CODES = [], []
+  # Iterate over each contour
+  for i in range(len(outline.contours)):
+      end    = outline.contours[i]
+      points = outline.points[start:end+1]
+      points.append(points[0])
+      tags   = outline.tags[start:end+1]
+      tags.append(tags[0])
+
+      segments = [ [points[0],], ]
+      for j in range(1, len(points) ):
+          segments[-1].append(points[j])
+          if tags[j] & (1 << 0) and j < (len(points)-1):
+              segments.append( [points[j],] )
+      verts = [points[0], ]
+      # codes = [Path.MOVETO,]
+      for segment in segments:
+          if len(segment) == 2:
+              verts.extend(segment[1:])
+              # codes.extend([Path.LINETO])
+          elif len(segment) == 3:
+              verts.extend(segment[1:])
+              # codes.extend([Path.CURVE3, Path.CURVE3])
+          else:
+              verts.append(segment[1])
+              # codes.append(Path.CURVE3)
+              for i in range(1,len(segment)-2):
+                  A,B = segment[i], segment[i+1]
+                  C = ((A[0]+B[0])/2.0, (A[1]+B[1])/2.0)
+                  verts.extend([ C, B ])
+                  # codes.extend([ Path.CURVE3, Path.CURVE3])
+              verts.append(segment[-1])
+              # codes.append(Path.CURVE3)
+      VERTS.extend(verts)
+      # CODES.extend(codes)
+      start = end+1
+  g = shapes.group([])
+  g.append(shapes.path(VERTS))
+  transforms.offset(g, (xpos, ypos))
+  #print "size is ", g.width
+  #plotter.write(g)
+  return g
+
+
+
+
+  # print VERTS
+def writeword(textstring, size, font, xpos, ypos):
+        word = shapes.group([])
+	print (textstring)
+	tt = xpos
+	for char in textstring:
+                a = plotchar(char, size, font, tt, ypos)
+		tt = tt + a.width
+                word.append(a)
+        return word
+
+
+
+
+#intersectStudy(4,6000,1800)
+#def randomCubes():
+def plotgroup(g,paddingfactor,zone,noisexy,pen):
+	plotter.select_pen(pen)
+	x1,y1 = zone[0]
+	x2,y2 = zone[1]
+	maxx = abs(x2-x1)
+	maxy = abs(y2-y1)
+	xfactor = maxx / g.width/paddingfactor
+	yfactor = maxy / g.height/paddingfactor
+	if (yfactor <= xfactor):
+		scale = yfactor
+		transforms.scale(g, scale)
+		transforms.offset(g,((recordsize/plotunit - g.width)/2 , (recordsize/plotunit - g.height)/2))
+
+	else:
+		scale = xfactor
+		transforms.scale(g, scale)
+		# transforms.offset(g,(0,(y2-y1+g.height)/2))
+
+	print ("SCALE = " + str(scale))
+	transforms.offset(g, (x1,y1))
+	if not noisexy == (0,0):
+		transforms.noise(g,noisexy)
+	# plotter.write(g)
+        zonesize = (zone[1][0] - zone[0][0], zone[1][1] - zone[0][1])
+        rightx = zone[0][0] - g.minmax_coordinates[0].x + (zonesize[0] - g.width) / 2
+        righty = zone[0][1] - g.minmax_coordinates[0].y + (zonesize[1] - g.height) / 2
+        transforms.offset(g,(rightx,righty ))
+	return g
+
+
+def plotcover(start, end):
+        #plot metadata
+        t = shapes.label(str(start) + "/" + str(end), 0.5, 0.5)
+        transforms.offset(t,(10/plotunit+globaloffset[0],10/plotunit+globaloffset[1]))
+        plotter.write(t)
+        plotter.select_pen(3)
+        #plott some cubes
+        G = randomintersectstudy()
+        scaledG = plotgroup(G,1,squareszone,(0,0),1)
+#        scaledG = plotgroup(G,1,frontflap,(0,0),1)
+        #print scaledG.bounding_rectangle
+        print scaledG.minmax_coordinates[0].x
+        transforms.offset(scaledG,globaloffset)
+        print scaledG.width
+        print scaledG.height
+        pen = 1
+        pens = 8
+        for g in scaledG:
+                plotter.select_pen(pen%pens)
+                plotter.write(g)
+                pen = pen+1
+
+        #plottext
+
+        text = shapes.group([])
+        text.append(writeword("A", 20, "rus.ttf", 500, 10500))
+        text.append(writeword("little_white_box", 13, "USSR.ttf", 500,9000))
+        text.append(writeword("railway_horizon", 13, "USSR.ttf", 500,8000))
+        text.append(writeword("level_in_het_bos", 13, "USSR.ttf", 500,7000))
+        text.append(writeword("Leeds", 13, "USSR.ttf", 500,6000))
+        text.append(writeword("G_Spreads", 13, "USSR.ttf", 500,5000))
+
+        text.append(writeword("B", 20, "rus.ttf", 500, 3500))
+        text.append(writeword("Swing_Along", 13, "USSR.ttf", 500,2000))
+        text.append(writeword("Sponge_Breeds", 13, "USSR.ttf", 500,1000))
+        text.append(writeword("88", 13, "USSR.ttf", 500,0))
+        text.append(writeword("Death_Threads", 13, "USSR.ttf", 500,-1000))
+        text.append(writeword("Two_of_a_kind", 13, "USSR.ttf", 500,-2000))
+        text.append(writeword("Forest_Code", 13, "USSR.ttf", 500,-3000))
+        text.append(writeword("Disobedient_Operator", 13, "USSR.ttf", 500,-4000))
+        text.append(writeword("N-Rave", 13, "USSR.ttf", 500,-5000))
+        text.append(writeword("Short_Cuts", 13, "USSR.ttf", 500,-6000))
+        text = plotgroup(text,1,tracklistzone,(0,0),1)
+        transforms.offset(text,globaloffset)
+        plotter.write(text)
+
+        title = shapes.group([])
+        title.append(writeword("SONDERVAN", 30, "USSR.ttf", 500, 5000))
+        title.append(writeword("CUTS", 25, "rus.ttf", 500, 2000))
+        title.append(writeword("of_the", 20, "USSR.ttf", 500, 500))
+        title.append(writeword("HYPERCUBE", 25, "rus.ttf", 500, -1300))
+        title = plotgroup(title,1,titlezone,(0,0),1)
+        transforms.offset(title,globaloffset)
+        plotter.write(title)
+
+        backcube = plotDynamicCube("cube",
+                                        random.randrange(1000,1500,100),
+                                        random.randrange(0,2200,30),
+                                        random.randrange(0,1000,30),
+                                        random.uniform(0.2,0.7)-0.4,
+                                        random.uniform(0.01,0.4)-0.2,
+                                        random.uniform(0.3,0.7)-0.5,
+                                        3,2,6,7,
+                                        filldensity)
+        backcubeplot = plotgroup(backcube,1,backcubezone,(0,0),3)
+        transforms.offset(backcubeplot, globaloffset)
+        plotter.write(backcubeplot)
+
 
 
 
@@ -336,4 +628,45 @@ intersectStudy()
 #plotter.write(shapes.line((0,0), (0,2500)))
 
 #print(cubes)
-io.view(plotter)
+
+
+
+
+if plotbounds:
+        ##disable to not plot bounds
+        plotter.select_pen(2)
+        plotzonebounds(fullzone)
+        plotter.select_pen(2)
+        plotzonebounds(backflap)
+        plotter.select_pen(2)
+        plotzonebounds(frontflap)
+        #plotter.select_pen(3)
+        #plotzonebounds(squareszone)
+
+
+
+
+
+print('startnumber/stopnumber will be plotted')
+startnumber = input('enter startnumber: ')
+stopnumber = input('enter stopnumber (eg. 300): ')
+#plotter.clear()
+for x in xrange(startnumber,stopnumber):
+        ready = input('is record ready? press 1 to continue, press 2 for boundingboxtest (needs 2 pens) :')
+        print(ready)
+        if(ready == 1):
+                print x
+                plotcover(x, stopnumber)
+                io.view(plotter)
+
+
+        if(ready == 2):
+                plotter.select_pen(1)
+                plotzonebounds(fullzone)
+                plotter.select_pen(2)
+                plotzonebounds(backflap)
+                plotzonebounds(frontflap)
+                io.view(plotter)
+
+        else:
+                print('press CTRL-C')
