@@ -122,6 +122,7 @@ def takeawalk(size, rate):
 	transforms.offset(g, (-5000,-3000))
 	plotter.write(g)
 	plotter.pen_up([(0,0)])
+	io.view(plotter)
 		
 		
 	
