@@ -1,0 +1,14 @@
+in emacs
+
+install jedi
+install pyvenv
+
+
+
+activate python2.7 envirionment from within emcas
+
+in my case M-x pyvenv-activaste /usr/local/anaconda3/envs/magenta
+
+
+
+C-c C-p runswhole file
