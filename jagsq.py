@@ -1,9 +1,10 @@
 from chiplotle import *
+from PIL import Image
 
 from chiplotle.tools.plottertools import instantiate_virtual_plotter
-plotter =  instantiate_virtual_plotter(type="DXY1300")
-# plotter.margins.hard.draw_outline()
-#plotter = instantiate_plotters( )[0]
+#plotter =  instantiate_virtual_plotter(type="DXY1300")
+#plotter.margins.hard.draw_outline()
+plotter = instantiate_plotters( )[0]
 # real plotter says
 #    Drawing limits: (left 0; bottom 0; right 16158; top 11040)
 
@@ -90,13 +91,15 @@ def dosquare1():
 
 #dosquare1()
 
-def dosquare2(depth,xoff,yoff):
+def dosquare2(depth,size,xoff,yoff):
     l = shapes.group([])
-    size = 400
+
+    #size = 250
     x = 0
     dx = 0
     y = 0
     dy = 0
+    pa = [(x,y)]
     for i in xrange(depth):
         h = random.randint(0,2)
         v = random.randint(0,2)
@@ -104,19 +107,51 @@ def dosquare2(depth,xoff,yoff):
             dx = random.randint(0,size)
         if v == 1:
             dy = random.randint(0,size)
-#        print((x,y),(dx,dy))
-        l.append(shapes.line((x,y),(dx,dy)))
+        #print((x,y),(dx,dy))
+        pa.append((dx,dy))
+        #l.append(shapes.line((x,y),(dx,dy)))
         x = dx
         y = dy
-    transforms.offset(l, (xoff, yoff))
-    plotter.write(l)
+    p = shapes.path(pa)
+    transforms.offset(p, (xoff, yoff))
+    plotter.write(p)
 
 
-for x in xrange(10):
-    for y in xrange(10):
-        dosquare2((x+1)*5, x*500, y*500)
+#for x in xrange(20):
+#    for y in xrange(20):
+        #dosquare2((x+1)*3,450, x*500, y*500)
+
+        #pass
+
+
+def image2droodle(img):
+    img = Image.open(img).convert('L')  # convert image to 8-bit grayscale
+    WIDTH, HEIGHT = img.size
+    data = list(img.getdata()) # convert image data to a list of integers
+    # convert that to 2D list (list of lists of integers)
+    data = [data[offset:offset+WIDTH] for offset in range(0, WIDTH*HEIGHT, WIDTH)]
+    # At this point the image's pixels are all in memory and can be accessed
+    # individually using data[row][col].
+    # For example:
+    y=0
+    space = 10000/img.size[0]
+    for row in data:
+        y = y+1
+        x = 0
+        for val in row:
+            print("about to plot")
+            #print(' '.join('{:3}'.format(value) for x,value in row))
+            dosquare2((255-val)/5+3,int(0.9*space) ,x*space,y*space)
+            x = x+1
+
+    # Here's another more compact representation.
+    #chars = '@%#*+=-:. '  # Change as desired.
+    #scale = (len(chars)-1)/255.
+    #print()
+    #for row in data:
+    #    print(' '.join(chars[int(value*scale)] for value in row))
+
+
+image2droodle('smalpic.png')
 
 io.view(plotter)
-
-##moveleft/up  or up
-##moveright or downleft
