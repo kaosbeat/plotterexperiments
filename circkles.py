@@ -4,10 +4,9 @@ import math
 from plothelpers import sign
 
 from chiplotle.tools.plottertools import instantiate_virtual_plotter
-plotter =  instantiate_virtual_plotter(type="DXY1300")
+#plotter =  instantiate_virtual_plotter(type="DXY1300")
 
-
-#plotter = instantiate_plotters( )[0]
+plotter = instantiate_plotters( )[0]
 # real plotter says
 #    Drawing limits: (left 0; bottom 0; right 16158; top 11040)
 plotter.select_pen(3)
@@ -16,7 +15,7 @@ plotter.select_pen(3)
 pltmax = [16158, 11040]
 bounds =shapes.rectangle(pltmax[0],pltmax[1])
 transforms.offset(bounds,(pltmax[0]/2,pltmax[1]/2) )
-#plotter.write(bounds)
+plotter.write(bounds)
 #coords = plotter.margins.soft.all_coordinates
 # plotter.select_pen(1)
 b = 0
@@ -168,7 +167,7 @@ def brokencircle (x,y, num, decay, segs, size):
     s = 2*math.pi/segs
     for i in xrange(num):
         c = shapes.group([])
-        d = random.randint(1,20)
+        d = random.randint(1,segs)
         e = 0
         while e < segs:
             g = random.randint(0,segs/d)
@@ -183,9 +182,15 @@ def brokencircle (x,y, num, decay, segs, size):
 
 plotter.select_pen(1)
 size = 4500
-brokencircle(1.1*size+500,1.1*size+800, 40 ,0.993, 130, size)
+#brokencircle(1.1*size+500,1.1*size+800, 40 ,0.993, 130, size)
+
+
+
+size = 2500
+for x in xrange(3):
+    for y in xrange(2):
+        brokencircle(2.1*size*x+size+150,2.1*size*y+size+150, 20 + 20*y , 0.9 + x/111 +y/111, 8 + x + 2*y, size)
 
 plotter.write(sign('circkles.py'))
-
 
 io.view(plotter)
