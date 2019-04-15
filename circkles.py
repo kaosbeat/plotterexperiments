@@ -4,16 +4,19 @@ import math
 from plothelpers import sign
 
 from chiplotle.tools.plottertools import instantiate_virtual_plotter
-#plotter =  instantiate_virtual_plotter(type="DXY1300")
+plotter =  instantiate_virtual_plotter(type="DXY1300")
 
 
-plotter = instantiate_plotters( )[0]
+#plotter = instantiate_plotters( )[0]
 # real plotter says
 #    Drawing limits: (left 0; bottom 0; right 16158; top 11040)
 plotter.select_pen(3)
-plotter.margins.hard.draw_outline()
+#plotter.margins.hard.draw_outline()
 
 pltmax = [16158, 11040]
+bounds =shapes.rectangle(pltmax[0],pltmax[1])
+transforms.offset(bounds,(pltmax[0]/2,pltmax[1]/2) )
+plotter.write(bounds)
 #coords = plotter.margins.soft.all_coordinates
 # plotter.select_pen(1)
 b = 0
@@ -173,14 +176,14 @@ def brokencircle (x,y, num, decay, segs, size):
             e = e + g + g/2
             c.append(seg)
 
-        transforms.offset(c, (x+random.randint(0,i*size/20),y+random.randint(0,i*size/20)))
+        transforms.offset(c, (x+random.randint(0,size/20),y+random.randint(0,size/20)))
         plotter.write(c)
 
 
 
 plotter.select_pen(1)
-size = 2000
-brokencircle(1.1*size,1.1*size, 50 ,0.99,50, size)
+size = 4500
+brokencircle(1.1*size+500,1.1*size+800, 50 ,0.95, 30, size)
 
 plotter.write(sign('circkles.py'))
 
