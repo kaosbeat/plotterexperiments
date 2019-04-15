@@ -12,3 +12,12 @@ in my case M-x pyvenv-activaste /usr/local/anaconda3/envs/magenta
 
 
 C-c C-p runswhole file
+
+
+GIT
+C-x g > starts git shell
+q hops back one window
+s stages change
+c commit
+type commit message
+ then C-c C-c
