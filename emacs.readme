@@ -21,3 +21,7 @@ s stages change
 c commit
 type commit message
  then C-c C-c
+
+
+Push
+P then p
