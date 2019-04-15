@@ -1,6 +1,7 @@
 from __future__ import division
 from chiplotle import *
 
+
 from chiplotle.tools.plottertools import instantiate_virtual_plotter
 plotter =  instantiate_virtual_plotter(type="DXY1300")
 # plotter = instantiate_plotters( )[0]
@@ -22,12 +23,12 @@ def verticalfilledcircle(cx,cy,radius,rate, full):
 	for i in xrange(0,rate+1):
 		if (i ==0):
 			x0 = 0
-		else: 
+		else:
 			x0 = radius/rate*i
 		# y0 = np.sqrt(radius^2 - int(x0)^2)
-		y0 = np.sqrt(radius**2 - x0**2)	
+		y0 = np.sqrt(radius**2 - x0**2)
 		# print(x0)
-		
+
 		if (full == 1):
 			g.append(shapes.line((-x0,-y0),(-x0,y0)))
 			if (x0 != 0):
@@ -41,7 +42,7 @@ def verticalfilledcircle(cx,cy,radius,rate, full):
 	plotter.write(g)
 def filledcircle(cx,cy,radius,rate, full):
 
-	a = np.linspace(0, 2*np.pi, rate)		
+	a = np.linspace(0, 2*np.pi, rate)
 	g = shapes.group([])
 	for i in xrange(1,rate):
 		# print((x[i-1]*radius,y[i]*radius),(x[i]*radius, y[i]*radius))
@@ -104,5 +105,7 @@ def plot(start, end): #(left 0; bottom 0; right 16158; top 11040)
 	# takeawalk(80)
 
 	io.view(plotter)
+
+
 
 plot(0,1)
