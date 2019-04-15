@@ -16,7 +16,7 @@ plotter.select_pen(3)
 pltmax = [16158, 11040]
 bounds =shapes.rectangle(pltmax[0],pltmax[1])
 transforms.offset(bounds,(pltmax[0]/2,pltmax[1]/2) )
-plotter.write(bounds)
+#plotter.write(bounds)
 #coords = plotter.margins.soft.all_coordinates
 # plotter.select_pen(1)
 b = 0
@@ -168,7 +168,7 @@ def brokencircle (x,y, num, decay, segs, size):
     s = 2*math.pi/segs
     for i in xrange(num):
         c = shapes.group([])
-        d = random.randint(3,20)
+        d = random.randint(1,20)
         e = 0
         while e < segs:
             g = random.randint(0,segs/d)
@@ -183,7 +183,7 @@ def brokencircle (x,y, num, decay, segs, size):
 
 plotter.select_pen(1)
 size = 4500
-brokencircle(1.1*size+500,1.1*size+800, 50 ,0.95, 30, size)
+brokencircle(1.1*size+500,1.1*size+800, 40 ,0.993, 130, size)
 
 plotter.write(sign('circkles.py'))
 
