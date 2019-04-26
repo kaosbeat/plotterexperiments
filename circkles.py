@@ -4,17 +4,18 @@ import math
 from plothelpers import sign
 
 from chiplotle.tools.plottertools import instantiate_virtual_plotter
-#plotter =  instantiate_virtual_plotter(type="DXY1300")
+plotter =  instantiate_virtual_plotter(type="DXY1300")
 
-plotter = instantiate_plotters( )[0]
+#plotter = instantiate_plotters( )[0]
 # real plotter says
 #    Drawing limits: (left 0; bottom 0; right 16158; top 11040)
-plotter.select_pen(3)
+#plotter.select_pen(3)
 #plotter.margins.hard.draw_outline()
 
 pltmax = [16158, 11040]
 bounds =shapes.rectangle(pltmax[0],pltmax[1])
 transforms.offset(bounds,(pltmax[0]/2,pltmax[1]/2) )
+plotter.select_pen(3)
 plotter.write(bounds)
 #coords = plotter.margins.soft.all_coordinates
 # plotter.select_pen(1)
@@ -180,16 +181,43 @@ def brokencircle (x,y, num, decay, segs, size):
 
 
 
-plotter.select_pen(1)
+def brokenrotatedcircle (x,y, num, decay, segs, size):
+    s = 2*math.pi/segs
+    for i in xrange(num):
+        c = shapes.group([])
+        d = random.randint(1,segs)
+        e = 0
+        while e < segs:
+            g = random.randint(0,segs/d)
+            seg = shapes.arc_circle(size*math.pow(decay,i), s*e, s*(e+g), segs, '2PI')
+            e = e + g + g/2
+            c.append(seg)
+        transforms.rotate(c, math.degrees(360/segs/num*i))
+        transforms.offset(c, (x+random.randint(0,size/20),y+random.randint(0,size/20)))
+        plotter.write(c)
+
+
+
+plotter.select_pen(2)
 size = 4500
 #brokencircle(1.1*size+500,1.1*size+800, 40 ,0.993, 130, size)
+#brokenrotatedcircle(size/2,size/2, 40 , 0.92, 8, size)
 
-
+x=1
+y=0
+brokenrotatedcircle(size/2+2500,size/2+2500, 20 + 20*y , 0.99, 98 + x + 2*y, size)
 
 size = 2500
 for x in xrange(3):
     for y in xrange(2):
-        brokencircle(2.1*size*x+size+150,2.1*size*y+size+150, 20 + 20*y , 0.9 + x/111 +y/111, 8 + x + 2*y, size)
+        #brokenrotatedcircle(2.1*size*x+size+150,2.1*size*y+size+150, 20 + 20*y , 0.9 + x/111 +y/111, 8 + x + 2*y, size)
+        pass
+
+
+# def noisestudy():
+#     for x in xrange(10):
+#         for y in xrange(10):
+#             for z in xrange(10):
 
 plotter.write(sign('circkles.py'))
 
